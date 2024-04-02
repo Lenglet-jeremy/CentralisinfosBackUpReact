@@ -1,0 +1,87 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+p{
+    color: #FFFFFF ;
+}
+
+/* === HEADER === */
+.NavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, #0b223ae6, #001325b3);
+    height: 50px;
+}
+.NavBar li{
+    display: inline;
+    padding: 20px 10px;
+}
+.NavBarLeft{
+    padding-left: 20px;
+}
+.NavBarRight{
+    padding-right: 20px;
+}
+/* === /HEADER === */
+
+
+/* === MAIN === */
+.Main{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.LeftPanel{
+    width: 20%;
+    background-color: #111111;
+}
+.LeftPanel p {
+    padding-top: 50px;
+
+}
+.CenterPanel{
+    width: 60%;
+    background-color: #222222;
+}
+
+.RightPanel{
+    width: 20%;
+    background-color: #333333;
+}
+.Notes{
+    height: 80%;
+}
+.Dons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    background-color: #444;
+}
+/* === /MAIN === */
+
+
+/* === FOOTER === */
+.Footer{
+    width: 100%;
+    height: 60px;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #111111;
+}
+/* === /FOOTER === */
