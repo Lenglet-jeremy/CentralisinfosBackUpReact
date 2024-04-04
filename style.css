@@ -22,7 +22,7 @@ p{
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to top, #0b223ae6, #001325b3);
-    height: 50px;
+    height: 60px;
 }
 .NavBar li{
     display: inline;
@@ -30,6 +30,28 @@ p{
 }
 .NavBarLeft{
     padding-left: 20px;
+    position: relative; 
+}
+.Subjects {
+    position: relative;
+}
+.SubSubjects {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #222222;
+    z-index: 1000;
+}
+.Subjects:hover .SubSubjects{
+    display: block;
+}
+.SubSubjects ul {
+    list-style-type: none; /* Retirer les puces */
+}
+.SubSubjects li {
+    display: block;
+    white-space: nowrap;
 }
 .NavBarRight{
     padding-right: 20px;
