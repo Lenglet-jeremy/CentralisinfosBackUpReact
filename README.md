@@ -22,3 +22,6 @@ GITHUB :
 
 TRELLO : 
     https://trello.com/b/g8jNoYjN/centralisinfos 
+
+NETLIFY : 
+    https://centralisinfos.netlify.app/ 
