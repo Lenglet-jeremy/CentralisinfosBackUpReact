@@ -33,9 +33,15 @@ export default function NavBar(){
           </ul>
 
           <ul class="RightSide">
-                <li><a href="#">Tutos</a></li>
-                <li><a href="#">Forum</a></li>
-                <li><a href="#">Compte</a></li>
+            {/* ========================================================= */}
+            <label class="DarkLightThemeToggle">
+                <input type="checkbox"/>
+                <span class="DarkLightThemeSlider"></span>
+            </label>
+            {/* ========================================================= */}
+            <li><a href="#">Tutos</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Compte</a></li>
           </ul>
       </nav>
     );
