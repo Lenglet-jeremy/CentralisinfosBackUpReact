@@ -1,15 +1,11 @@
-import NavBar from './components/NavBar'
-import Main from './components/Main'
-import Footer from './components/Footer'
 import './App.css'
+import NavBar from './components/NavBar'
 
 function App() {
 
   return (
     <>
     <NavBar />
-    <Main />
-    <Footer />
     </>
   )
 }

@@ -1,135 +1,51 @@
-li{
-    list-style-type: none;
-}
-
-a{
-    color: #FFFFFF;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-p{
-    color: #FFFFFF;
-}
-
-.NavBar {
+.NavBarArea{
     background-color: #070025;
+    color: #FFFFFF;
+
     height: 60px;
-    line-height: 60px;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
+
+    p{
+        margin-left: 15px;
+    }
+
+    h2{
+        margin-left: 15px;
+    }
+
+    ul{
+        display: flex;
+        flex-direction: row;
+    }
+
+    li{
+        list-style-type: none;
+        margin-left: 15px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
     .LeftSide{
         display: flex;
         flex-direction: row;
-        margin-left: 15px;
-    }
-    .LeftSide > li{
-        margin-left: 15px;
-    }
+        align-items: center;
 
-    .SkillsDropDown {
-        display: none; 
-        position: absolute;
-        background-color: #070025; 
-    }
-    .Skills:hover .SkillsDropDown{
-        display: block;
-        width: 100px;
-        li {
-            line-height: 50px;
-            border: 1px solid #000000;
-        }
-    }
-
-    .SubjectsDropDown {
-        display: none; 
-        position: absolute;
-        background-color: #070025; 
-    }
-    .Subjects:hover .SubjectsDropDown{
-        display: block;
-        width: 100px;
-        li {
-            line-height: 50px;
-            border: 1px solid #000000;
-        }
-    }
-
-    .UniversityCoursesDropDown {
-        display: none; 
-        position: absolute;
-        background-color: #070025; 
-    }
-    .UniversityCourses:hover .UniversityCoursesDropDown{
-        display: block;
-        width: 200px;
-        li {
-            line-height: 50px;
-            border: 1px solid #000000;
-        }
-    }
-
-
-    .NavBar ul li:hover {
-        display: block;
-        background-color: #5A0026;
-    }
-
-    .NavBar li ul li:hover {
-        display: block;
-        background-color: #5A0026;
+        margin-left: 35px;
     }
 
     .RightSide{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-right: 15px;
-
-        > li{
-            margin-right: 15px;
-        }
-    }
-
-
-
-    /* ===================================================================== */
-    .DarkLightThemeToggle{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    
-        input {
-            visibility: hidden;
-        }
         
-        .DarkLightThemeSlider {
-        background-color: #FFFFFF30;
-        width: 50px;
-        height: 24px;
-        border-radius: 12px;
-        position: relative;
-        display: inline-block;
-        }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 
-        ::before {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 10px;
-            background-color: #000000;
-            top: 2px;
-            left: 3px;
-            transition: transform 0.3s ease;
-        }
-
-        input:checked + .DarkLightThemeSlider::before {
-            transform: translateX(24px);
-        }
+        margin-right: 35px;
     }
-    /* ============================================================================ */
 }
