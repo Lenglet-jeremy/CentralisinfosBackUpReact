@@ -1,5 +1,5 @@
 .NavBarArea{
-    background-color: #070025;
+    background-color: #0f0050;
     color: #FFFFFF;
 
     height: 60px;
@@ -9,6 +9,10 @@
     flex-direction: row;
     justify-content: space-between;
 
+    img{
+        width: 100px;
+        height: 50px;
+    }
 
     p{
         margin-left: 15px;

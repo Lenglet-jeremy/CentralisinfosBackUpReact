@@ -1,10 +1,11 @@
 import "./NavBar.css"
+import LOGO from "../../Img/LogoCentralisinfos/LOGO.svg"
 
 export default function NavBar(){
     return(
         <nav class="NavBarArea">
             <div class="LeftSide">
-                <p>LOGO</p>
+                <img src={LOGO} alt="LOGO" />
                 <h2>Centralisinfos</h2>
                 <ul>
                     <li><a href="#">Enseignements par Discipline</a></li>
