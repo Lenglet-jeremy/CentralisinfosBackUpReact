@@ -1,7 +1,7 @@
 import "./NavBar.css"
 
 
-export default function NavBar({handleTheme}){
+export default function NavBar(){
 
 
     return(
