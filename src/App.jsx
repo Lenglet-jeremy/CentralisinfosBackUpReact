@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   const [theme, setTheme] = useState('AppDark')

@@ -1,0 +1,139 @@
+li{
+    list-style-type: none;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+.NavBar {
+    background-color: #070025;
+    height: 60px;
+    line-height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .LeftSide{
+        display: flex;
+        flex-direction: row;
+        margin-left: 15px;
+        width: 100%;
+    }
+    .LeftSide > li{
+        margin-left: 15px;
+    }
+
+    .SkillsDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+
+    .Skills:hover .SkillsDropDown{
+        display: block;
+        width: 100px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+    .SubjectsDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+
+    .Subjects:hover .SubjectsDropDown{
+        display: block;
+        width: 100px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+    .UniversityCoursesDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+    
+    .UniversityCourses:hover .UniversityCoursesDropDown{
+        display: block;
+        width: 200px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+
+    .NavBar ul li:hover {
+        display: block;
+        background-color: #5A0026;
+    }
+
+    .NavBar li ul li:hover {
+        display: block;
+        background-color: #5A0026;
+    }
+
+    .RightSide{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 15px;
+
+        > li{
+            margin-right: 15px;
+        }
+    }
+
+    
+    .DarkLightThemeToggle{
+        background-color: #FFFFFF30;
+
+        width: 50px;
+        height: 24px;
+
+        border-radius: 12px;
+        margin-right: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        input {
+            visibility: hidden;
+        }
+        
+        .DarkLightThemeSlider {
+            position: relative;
+            left: 13px;
+            bottom: 10px;
+        }
+
+        ::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #000000;
+            transition: transform 0.3s ease;
+        }
+
+        input:checked + .DarkLightThemeSlider::before {
+            transform: translateX(-24px);
+        }
+    }
+}

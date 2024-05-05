@@ -7,10 +7,31 @@
   background-color: #000000;
   min-height: 100vh;
   width: 100vw;
+
+  .Logo{
+      width: 120px;
+      height: 100%;
+      background-image: url('../../Img/LogoCentralisinfos/300ppi/Fichier\ 8-jerem.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
 }
 
 .AppLight{
   background-color: #FFFFFF;
   min-height: 100vh;
   width: 100vw;
+
+  .NavBar{
+    background-color: #999999;
+  }
+  .Logo{
+      width: 120px;
+      height: 100%;
+      background-image: url('../../Img/LogoCentralisinfos/300ppi/Fichier\ 1-jerem.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
 }
