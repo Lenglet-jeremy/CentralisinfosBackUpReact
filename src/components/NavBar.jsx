@@ -1,7 +1,7 @@
 import "./NavBar.css"
 
 
-export default function NavBar(){
+export default function NavBar({handleTheme}){
 
 
     return(
@@ -37,7 +37,7 @@ export default function NavBar(){
           <ul class="RightSide">
             {/* ========================================================= */}
             <label class="DarkLightThemeToggle">
-                <input type="checkbox"/>
+                <input type="checkbox" onChange={handleTheme} />
                 <span class="DarkLightThemeSlider"></span>
             </label>
             {/* ========================================================= */}
