@@ -4,13 +4,13 @@
 }
 
 .AppDark{
-  background-color: var(--darkBg);
+  background-color: #000000;
   min-height: 100vh;
   width: 100vw;
 }
 
 .AppLight{
-  background-color: var(--lightBg);
+  background-color: #FFFFFF;
   min-height: 100vh;
   width: 100vw;
 }
