@@ -11,7 +11,7 @@
   .Logo{
       width: 120px;
       height: 100%;
-      background-image: url('../LogoCentralisinfos/300ppi/Fichier 8-jerem.png');
+      background-image: url('../LogoCentralisinfos/300ppi/LOGO3.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -19,17 +19,17 @@
 }
 
 .AppLight{
-  background-color: #FFFFFF;
+  background-color: #000000;
   min-height: 100vh;
   width: 100vw;
 
   .NavBar{
-    background-color: #999999;
+    background-color: #ffffff;
   }
   .Logo{
       width: 120px;
       height: 100%;
-      background-image: url('../LogoCentralisinfos/300ppi/Fichier 1-jerem.png');
+      background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
