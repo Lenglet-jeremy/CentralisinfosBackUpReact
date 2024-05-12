@@ -2,36 +2,3 @@
   padding: 0;
   margin: 0;
 }
-
-.AppDark{
-  background-color: #000000;
-  min-height: 100vh;
-  width: 100vw;
-
-  .Logo{
-      width: 120px;
-      height: 100%;
-      background-image: url('../LogoCentralisinfos/300ppi/LOGO3.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
-}
-
-.AppLight{
-  background-color: #222222;
-  min-height: 100vh;
-  width: 100vw;
-
-  .NavBar{
-    background-color: #ffffff;
-  }
-  .Logo{
-      width: 120px;
-      height: 100%;
-      background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-  }
-}

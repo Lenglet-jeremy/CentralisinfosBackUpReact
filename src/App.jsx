@@ -1,19 +1,26 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './components/NavBar/NavBar'
+import { useState } from 'react';
+import './App.css';
+import NavBarPrimary from './components/1.NavBarPrimary/NavBarPrimary';
+import NavBarSecondary from './components/2.NavBarSecondary/NavBarSecondary';
+import Body from './components/3.Body/Body';
+import { ThemeContext } from "./ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useState('AppDark')
+  const [theme, setTheme] = useState("DarkTheme");
 
-  function handleTheme(){
-    {theme === "AppDark" ? setTheme("AppLight") : setTheme("AppDark")}
+  function handleTheme() {
+    setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
   }
 
   return (
-    <div className={`${theme}`}>
-      <NavBar handleTheme={handleTheme}/>
-    </div>
-  )
+    <ThemeContext.Provider value={theme}>
+      <div>
+        <NavBarPrimary handleTheme={handleTheme} />
+        <NavBarSecondary />
+        <Body />
+      </div>
+    </ThemeContext.Provider>
+  );
 }
 
-export default App
+export default App;

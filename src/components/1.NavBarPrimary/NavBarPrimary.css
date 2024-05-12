@@ -12,18 +12,41 @@ p{
     color: #FFFFFF;
 }
 
-.NavBar {
+
+.NavBarPrimary {
     background-color: #070025;
     height: 60px;
     line-height: 60px;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    
+    .SearchBar{
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        height: 30px;
+        width: 200px;
+        border-radius: 15px;
+
+        img{
+            margin: 0px 10px;
+            width: 20px;
+            height: 20px;
+        }
+        input{
+            border: none;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+    }
 
     .LeftSide{
         display: flex;
         flex-direction: row;
+        align-items: center;
         margin-left: 15px;
         width: 100%;
     }
@@ -77,15 +100,16 @@ p{
     }
 
 
-    .NavBar ul li:hover {
+    .NavBarPrimary ul li:hover {
         display: block;
         background-color: #5A0026;
     }
 
-    .NavBar li ul li:hover {
+    .NavBarPrimary li ul li:hover {
         display: block;
         background-color: #5A0026;
     }
+
 
     .RightSide{
         display: flex;
@@ -95,6 +119,29 @@ p{
 
         > li{
             margin-right: 15px;
+        }
+
+        .Gift{
+            background-color: #999999;
+            color: #000000;
+
+
+            height: 30px;
+            line-height: 30px;
+            width: 160px;
+
+            display: flex;
+            flex-direction: row;
+
+            margin-right: 20px;
+
+            border: 2px solid #000000;
+            border-radius: 15px;
+
+            img{
+                margin: 0px 10px;
+            }
+
         }
     }
 
@@ -106,7 +153,7 @@ p{
         height: 24px;
 
         border-radius: 12px;
-        margin-right: 20px;
+        margin-left: 20px;
 
         display: flex;
         flex-direction: row;
@@ -137,3 +184,27 @@ p{
         }
     }
 }
+
+.DarkTheme{
+    .Logo{
+        width: 120px;
+        height: 100%;
+        background-image: url('../LogoCentralisinfos/300ppi/LOGO3.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+  
+.LightTheme{
+    background-color: #333333;
+    .Logo{
+        width: 120px;
+        height: 100%;
+        background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+  
