@@ -27,16 +27,17 @@ export default function NavBar({ handleTheme }) {
                     <span className={"DarkLightThemeSlider"}></span>
                 </label>
           </ul>
-
-          <label className={"SearchBar"}>
-            <img src="../../../../searchIcon.svg" alt="" />
-            <input placeholder="Recherche"/>
-          </label>
+          <div className={"SearchBarContainer"}>
+            <label className={"SearchBar"}>
+              <img src="../../../../searchIcon.svg" alt="" />
+              <input placeholder="Recherche"/>
+            </label>
+          </div>
 
           <ul className={"RightSide"}>
             <a href="#" className={"Gift"}>
                 <img src='../../../../heart.png' alt="Coeur" />
-                Un petit don ?
+                Tu m'offres un café ?
             </a>
             <li><a href="#">Tutos</a></li>
             <li><a href="#">Forum</a></li>
