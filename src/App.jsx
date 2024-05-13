@@ -4,6 +4,7 @@ import NavBarPrimary from './components/1.NavBarPrimary/NavBarPrimary';
 import NavBarSecondary from './components/2.NavBarSecondary/NavBarSecondary';
 import Body from './components/3.Body/Body';
 import { ThemeContext } from "./ThemeContext";
+import { Outlet } from "react-router-dom"; // Importer Outlet
 
 function App() {
   const [theme, setTheme] = useState("DarkTheme");
@@ -17,6 +18,7 @@ function App() {
       <div>
         <NavBarPrimary handleTheme={handleTheme} />
         <NavBarSecondary />
+        <Outlet />
         <Body />
       </div>
     </ThemeContext.Provider>
