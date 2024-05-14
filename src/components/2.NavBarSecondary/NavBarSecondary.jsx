@@ -19,9 +19,8 @@ export default function NavBarSecondary() {
         </div>
         <div className={`RightSide`}>
             <ul>
-                <li><a href="#">C++</a></li>
-                <li><a href="#">Python</a></li>
-                <li><a href="#">Qt</a></li>
+                <li><i><a href="#">Epingles</a></i></li>
+                <li><i><a href="#">Utilisateur</a></i></li>
             </ul>
         </div>
     </nav>

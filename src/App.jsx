@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import NavBarPrimary from './components/1.NavBarPrimary/NavBarPrimary';
-import NavBarSecondary from './components/2.NavBarSecondary/NavBarSecondary';
 import { ThemeContext } from "./ThemeContext";
 import { Outlet } from "react-router-dom";
 
@@ -15,9 +13,7 @@ function App() {
   return (
     <ThemeContext.Provider value={theme}>
       <div>
-        <NavBarPrimary handleTheme={handleTheme} />
-        <NavBarSecondary />
-        <Outlet />
+        <Outlet /> // Founir handleTheme à tous les enfants
       </div>
     </ThemeContext.Provider>
   );

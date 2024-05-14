@@ -1,6 +1,7 @@
 import "./NavBarPrimary.css";
 import { ThemeContext } from "../../ThemeContext";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function NavBar({ handleTheme }) {
   const theme = useContext(ThemeContext);
@@ -41,7 +42,7 @@ export default function NavBar({ handleTheme }) {
             </a>
             <li><a href="#">Tutos</a></li>
             <li><a href="#">Forum</a></li>
-            <li><a href="#">Compte</a></li>
+            <NavLink to="/register" className={"Register"}>Compte</NavLink>
           </ul>
       </nav>
     )
