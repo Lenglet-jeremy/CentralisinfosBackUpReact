@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./1.1.Register.css";
 import NavBarPrimary from '../../components/1.NavBarPrimary/NavBarPrimary';
 import NavBarSecondary from '../../components/2.NavBarSecondary/NavBarSecondary';
+import { NavLink } from "react-router-dom";
 
 export default function Register() {
     
@@ -19,13 +20,15 @@ export default function Register() {
           <NavBarSecondary />
           <div className={`BodyRegister`}>
             <div className="LeftPanel">
-              <img src="public/LogoCentralisinfos/300ppi/LOGO3.png" alt="" />
+              <img src="/LogoCentralisinfos/300ppi/LOGO3.png" alt="" />
               <p>Contact : centralisinfos.fondateur@gmail.com </p>
             </div>
 
             <div className="RightPanel">
-
+              <div className="RegisterHomepage">
               <h2>Inscription</h2>
+              <NavLink to="/"> Accueil</NavLink>
+              </div>
 
               <form action="">
                 <div className="UserId">

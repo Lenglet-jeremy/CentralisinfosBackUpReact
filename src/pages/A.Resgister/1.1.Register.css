@@ -83,3 +83,8 @@
     color: #FFFFFF;
     min-height: 100vh;
 }
+.RegisterHomepage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
