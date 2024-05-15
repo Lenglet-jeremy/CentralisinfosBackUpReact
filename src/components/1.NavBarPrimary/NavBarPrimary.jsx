@@ -40,7 +40,13 @@ export default function NavBar({ handleTheme }) {
                 <img src='../../../../heart.png' alt="Coeur" />
                 Tu m'offres un café ?
             </a>
-            <li><a href="#">Tutos</a></li>
+            <li className="Tutos"><a href="#">Tutos</a>
+              <ul className="TutosDropdown">
+                <li><a href="src/pages/3.Tutos/1.WebDeveloppement/3.JS/0.Prologue.html">Developpement Web</a></li>
+                <li><a href="#">File Manager</a></li>
+                <li><a href="#">Python et Excel</a></li>
+              </ul>
+            </li>
             <li><a href="#">Forum</a></li>
             <NavLink to="/register" className={"Register"}>Compte</NavLink>
           </ul>

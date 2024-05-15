@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="BuidExpressServer.css">
+    <title>Express Server</title>
+</head>
+<body>
+    <h1>Créer un serveur Express</h1>
+    <p>Vous devez commencez par installer Node.js et npm sur votre machine. Vous pouvez le faire en suivant ce <a href="https://nodejs.org/en/download/">lien</a>.</p>
+    <br>
+    <p>Pour commencer, vous devez commencez par exécuter cet commande dans le terminal placer dans la racine de votre projet : </p>
+        <code>npm init -y</code>
+    <p>Cette commande va créer un fichier package.json qui va contenir les informations, les scripts ou les dépendences de votre projet.</p>
+    <br>
+    <p>Ensuite, vous devez installer Express en exécutant cette commande : </p>
+        <code>npm install express</code>
+    <br>
+    <p>Après avoir installer Express, vous pouvez créer un fichier server.js et ajouter ce code :</p>
+    <pre>
+        <code>
+            const express = require('express');
+            const app = express();
+            const port = 3000;
+
+            app.get('/', (req, res) => {
+                res.send('Hello World!');
+            });
+
+            app.listen(port, () => {
+                console.log(`Server is running on http://localhost:${port}`);
+            });
+        </code>
+    </pre>
+    <p>Enfin, vous pouvez exécuter votre serveur en exécutant cette commande : </p>
+        <code>node server.js</code>
+    <br>
+    <p>Vous pouvez maintenant ouvrir votre navigateur et taper cette adresse : http://localhost:3000</p>
+    <br>
+    <p>Nous allors désormais créer nos premières routes</p>
+    <p>Pour cela nous devons créer des points de terminaisons definissant le chemin d'une URL,
+        le chemin d'une URL se trouver à la suite du nom de domaine, ces points de terminaison permettent de sélectionner les ressources que nous voulons consultés</p>
+    <br>
+        <p>Nous allons ajouter le fichier JSON qui contient quelques données de films (titre et résumé).
+        Cela simule une récupération de données depuis une base de données.</p>
+    <p>Créer un fichier movies.json et ajouter ce code :</p>
+    <pre>
+        <code>[
+            {
+              "title": "Oppenheimer",
+              "resume": "En 1942, convaincus que l’Allemagne nazie est en train de développer une arme nucléaire, les États-Unis initient, dans le plus grand secret, le 'Projet Manhattan' destiné à mettre au point la première bombe atomique de l’histoire. Pour piloter ce dispositif, le gouvernement engage J. Robert Oppenheimer, brillant physicien, qui sera bientôt surnommé 'le père de la bombe atomique'. C’est dans le laboratoire ultra-secret de Los Alamos, au cœur du désert du Nouveau-Mexique, que le scientifique et son équipe mettent au point une arme révolutionnaire dont les conséquences, vertigineuses, continuent de peser sur le monde actuel…"
+            },
+            {
+              "title": "Anatomie d'une chute",
+              "content": "Sandra, Samuel et leur fils malvoyant de 11 ans, Daniel, vivent depuis un an loin de tout, à la montagne. Un jour, Samuel est retrouvé mort au pied de leur maison. Une enquête pour mort suspecte est ouverte. Sandra est bientôt inculpée malgré le doute : suicide ou homicide ? Un an plus tard, Daniel assiste au procès de sa mère, véritable dissection du couple..."
+            },
+            {
+              "title": "Pauvres crétures",
+              "content": "Bella est une jeune femme ramenée à la vie par le brillant et peu orthodoxe Docteur Godwin Baxter. Sous sa protection, elle a soif d’apprendre. Avide de découvrir le monde dont elle ignore tout, elle s'enfuit avec Duncan Wedderburn, un avocat habile et débauché, et embarque pour une odyssée étourdissante à travers les continents. Imperméable aux préjugés de son époque, Bella est résolue à ne rien céder sur les principes d’égalité et de libération..."
+            },
+            {
+              "title": "Winter Break",
+              "content": "Hiver 1970 : Monsieur Hunham est professeur d’histoire ancienne dans un prestigieux lycée d’enseignement privé pour garçons de la Nouvelle-Angleterre. Pédant et bourru, il n’est apprécié ni de ses élèves ni de ses collègues. Alors que Noël approche, Monsieur Hunham est prié de rester sur le campus pour surveiller la poignée de pensionnaires consignés sur place. Il n’en restera bientôt qu’un : Angus, un élève de 1ère aussi doué qu’insubordonné. Trop récemment endeuillée par la mort de son fils au Vietnam, Mary, la cuisinière de l’établissement, préfère rester à l’écart des fêtes. Elle vient compléter ce trio improbable..."
+            }
+          ]
+        </code>
+    </pre>
+    <p>Nous récupérons depuis notre fichier index.js ces données. Nous allons aussi modifier notre port pour l’écoute de requêtes http. Il utilisera la variable
+        d’environnement sinon si elle n’est pas définie, grâce à l’opérateur ||, le port 5000.</p>
+    <p>Remplacez le contenu du fichier server.js de sorte à avoir ce code :</p>
+    <pre>
+        <code>
+            const express = require('express');
+            const app = express();
+            const port = process.env.PORT || 5000;
+            const movies = require('./movies.json');
+
+            app.get('/', (req, res) => {
+                res.send('Hello World!');
+            });
+
+            app.get('/movies', (req, res) => {
+                const data_movies = [...movies];
+                res.send(data_movies);
+            });
+
+            app.listen(port, () => {
+                console.log(`Server is running on http://localhost:${port}`);
+            });
+        </code>
+    </pre>
+    <p>Pour ne pas devoir relancer le serveur à chaque nouvelle modification utiliser un utilitaire :
+        nodemon et qui va permettre de redémarrer automatiquement le serveur dès qu'il y a un
+        changement qui est détecté dans les fichiers sources.
+        Nous allons l’installer avec la commande npm i nodemon -D.</p>
+    <p>pour cela, nous allons modifier le script start dans le fichier package.json pour utiliser nodemon
+        à la place de node. Remplacez le contenu du fichier package.json de sorte à avoir ce code :</p>
+    <pre>
+        <code>
+            {
+                ...
+                "scripts": {
+                  "start": "nodemon server.js", // Remplacez node par nodemon
+                  ...
+                },
+                "dependencies": {
+                  ...
+                },
+                "devDependencies": {
+                  ...
+                }
+              }
+              
+        </code>
+    </pre>
+    <p>Enfin, vous pouvez exécuter votre serveur en exécutant cette commande : </p>
+        <code>npm start</code>
+    <br>
+    <p>Désormais, à chaque enregistrement de chaque fichier modifier npm start s'exécutera automatiquement</p>
+    <p>Vous pouvez maintenant ouvrir votre navigateur et taper cette adresse : http://localhost:5000/movies</p>
+    <p>Nous allons tester une fonctionnalité de notre API : la méthode post qui va servir à rajouter
+        des nouvelles données aux données existantes.
+        Nous allons utiliser un utilitaire : cURL.
+        Nous allons modifier notre fichier d’entrée. Nous allons y déclarer un tableau qui contiendra
+        tous les films, existants et ceux que nous allons ajouter.
+        Nous fusionnons aussi le retour de la méthode GET, pour actualiser à chaque nouvel ajout.</p>
+    <p>Remplacez le contenu du fichier server.js de sorte à avoir ce code :</p>
+    <pre>
+        <code>
+            const express = require('express');
+            const app = express();
+            const port = process.env.PORT || 5000;
+            const movies = require('./movies.json');
+
+            let allMovies = [];
+
+            app.use(express.json());
+
+            app.get('/', (req, res) => {
+                res.send('Hello World!');
+            });
+
+            app.get('/movies', (req, res) => {
+                const data_movies = [...allMovies,...movies];
+                res.send(data_movies);
+            });
+
+            app.post('/movies/create', (req, res) => {
+                allMovies = [...allMovies, req.body];
+                res.send("New movie added successfully");
+            });
+
+            app.listen(port, () => {
+                console.log(`Server is running on http://localhost:${port}`);
+            });
+        </code>
+    </pre>
+
+    <p>Ajout de données avec cURL :</p>
+    <p>Dans votre terminal : </p>
+    <pre>
+        <code>curl -X POST \
+            http://localhost:5000/movies/create \
+            -H 'Content-Type: application/json' \
+            -d '[
+                {
+                    "title": "Barbie",
+                    "resume": "A Barbie Land, vous êtes un être parfait dans un monde parfait? Sauf si vous êtes en crise existentielle, ou si vous êtes Ken..."
+                },
+                {
+                    "title": "The Matrix",
+                    "resume": "Neo, a computer hacker, learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."
+                }
+            ]'        
+        </code>
+    </pre>
+    <p>Nous allons utiliser le mot clé curl puis avec -X la méthode à savoir POST.
+        Puis l’url qui contient notre route /movies/create.
+        Ensuite l’option -H suivi de ‘Content-Type : application/json’ précise que le corps de la
+        requête est du JSON. Enfin l’option -d suivi d’un objet JSON correspond aux données
+        fournies
+        Nous allons depuis une autre fenêtre lancer cette commande. Le message new post
+        successfully added apparait.</p>
+    <p>Vous pouvez maintenant ouvrir votre navigateur et taper cette adresse : http://localhost:5000/movies</p>
+        
+
+    
+</body>
+</html>
