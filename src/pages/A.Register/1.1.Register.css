@@ -28,7 +28,7 @@
 
 .RightPanel{
     background-color: #140a3d;
-    width: 350px;
+    width: 40%;
     padding: 15px;
     display: flex;
     flex-direction: column;

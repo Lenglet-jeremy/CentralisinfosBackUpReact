@@ -7,44 +7,12 @@ import { NavLink } from "react-router-dom";
 export default function Register() {
     
   const [theme, setTheme] = useState("DarkTheme");
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    firstName: "",
-    lastName: "",
-    numberPhone: "",
-    token: "",
-  });
 
   function handleTheme() {
     setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
-  } 
-
-  function handleChange(event) {
-    const { name, value, type, checked } = event.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: type === "checkbox" ? checked : value
-    }));
   }
 
   const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
-
-  function handleSubmit(event) {
-    event.preventDefault(),
-    fetch(process.env.MONGO_URI, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {response.json()})
-      .then((data) => {
-        console.log(data);
-      });
-  }
 
     return (
         <div className={`${bodyTheme}Register RegisterPage`}>
@@ -61,18 +29,12 @@ export default function Register() {
               <NavLink to="/"> Accueil</NavLink>
               </div>
 
-              <form onSubmit={handleSubmit}>
+              <form action="">
                 <div className="UserId">
                   <div>
                     <div className="Left">
                       <p htmlFor="userId">Pseudo : </p>
-                      <input
-                        type="text"
-                        name="pseudo"
-                        placeholder="Pseudo"
-                        value={formData.pseudo}
-                        onChange={handleChange}
-                      />
+                      <input type="text" placeholder="Pseudo" />
                     </div>
                     <div className="Right">
                       <p htmlFor="userId">Nom : </p>
@@ -109,12 +71,12 @@ export default function Register() {
 
                 <br /><br />
 
-                <input type="checkbox" name="acceptConditions" checked={formData.acceptConditions} onChange={handleChange} />
+                <input type="checkbox" />
                 <label>J'accepte les Conditions Générales d'Utilisation</label>
 
                 <br /><br />
 
-                <button type="submit">S'inscrire</button>
+                <button>S'inscrire</button>
 
               </form>
             </div>
