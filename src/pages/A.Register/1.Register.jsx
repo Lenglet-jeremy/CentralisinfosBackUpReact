@@ -20,7 +20,6 @@ export default function Register() {
           <NavBarSecondary />
           <div className={`BodyRegister`}>
             <div className="LeftPanel">
-              <img src="/LogoCentralisinfos/300ppi/LOGO3.png" alt="" />
               <p>Contact : centralisinfos.fondateur@gmail.com </p>
             </div>
 
