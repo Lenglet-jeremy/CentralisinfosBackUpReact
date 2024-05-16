@@ -42,7 +42,7 @@ export default function NavBar({ handleTheme }) {
             </a>
             <li className="Tutos"><a href="#">Tutos</a>
               <ul className="TutosDropdown">
-                <li><a href="src/pages/3.Tutos/1.WebDeveloppement/3.JS/0.Prologue.html">Developpement Web</a></li>
+                <li><a href="front/src/pages/3.Tutos/1.WebDeveloppement/3.JS/0.Prologue.html">Developpement Web</a></li>
                 <li><a href="#">File Manager</a></li>
                 <li><a href="#">Faire mumuse avec Python et Excel</a></li>
               </ul>
