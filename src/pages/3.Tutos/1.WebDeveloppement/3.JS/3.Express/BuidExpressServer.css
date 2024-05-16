@@ -4,6 +4,48 @@
     color: #FFFFFF;
 }
 
-body{
-    background-color: #010101;
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+}
+
+body {
+    background-color: #000000;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.CoursePage{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+    .Sommary{
+        background-color: #070025FF;
+        width: 20%;
+        margin: 20px 20px;
+        border-radius: 20px;
+    }
+
+    .Section{
+        /* border : 1px solid #FFFFFF; */
+        margin: 50px 0px;
+        
+    }
+
+    .CourseBody{
+        width: 75%;
+    }
+
+    pre{
+        overflow-x: scroll;
+    }
+    code{
+        font-size: 15px;
+    }
+
 }
