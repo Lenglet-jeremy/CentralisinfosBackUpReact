@@ -26,13 +26,15 @@ body {
 
     .Sommary{
         background-color: #070025FF;
+        border: 1px solid #FFFFFF;
         width: 20%;
         margin: 20px 20px;
         border-radius: 20px;
+        text-align: center;
+        padding-top: 20px;
     }
 
     .Section{
-        /* border : 1px solid #FFFFFF; */
         margin: 50px 0px;
         
     }
@@ -42,7 +44,11 @@ body {
     }
 
     pre{
+        display: flex;
+        align-items: start;
+        padding: 20px;
         overflow-x: scroll;
+        background-color: #222222;
     }
     code{
         font-size: 15px;

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./1.1.Register.css";
-import NavBarPrimary from '../../components/1.NavBarPrimary/NavBarPrimary';
-import NavBarSecondary from '../../components/2.NavBarSecondary/NavBarSecondary';
+import NavBarPrimary from '../../../components/1.NavBarPrimary/NavBarPrimary';
+import NavBarSecondary from '../../../components/2.NavBarSecondary/NavBarSecondary';
 import { NavLink } from "react-router-dom";
 
 export default function Register() {

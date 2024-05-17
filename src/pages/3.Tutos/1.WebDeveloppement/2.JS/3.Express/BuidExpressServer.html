@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="BuidExpressServer.css">
+    <link rel="stylesheet" href="../0.Annexes/1.StylingTutos.css">
     <title>Express Server</title>
 </head>
 <body>
@@ -18,50 +18,50 @@
 <div class="CourseBody">
 
 <div class="Section">
-    <p>Vous devez commencez par installer Node.js et npm sur votre machine.</p>
+    <p>Vous devez commencez par <ins>installer <i>Node.js</i></ins> et npm sur votre machine.</p>
     <p>Vous pouvez le faire en suivant ce <a href="https://nodejs.org/en/download/">lien</a>.</p>
 </div>
 
 <div class="Section">
     <p>Ensuite, vous devez <ins>exécuter cette commande</ins> dans le terminal placé <ins>à la racine de votre projet</ins> : </p>
-    <pre>
-        <code>npm init -y</code>
-    </pre>
+    <code>
+        <pre>npm init -y</pre>
+    </code>
     <p>Cette commande va créer un fichier <i>package.json</i> qui va contenir les informations, les scripts ou les dépendences de votre projet.</p>
 </div>
 
 <div class="Section">
     <p>Ensuite, vous devez <ins>installer Express en exécutant cette commande</ins> : </p>
-    <pre>
-        <code>npm install express</code>
-    </pre>
+    <code>
+        <pre>npm install express</pre>
+    </code>
 </div>
 
 <div class="Section">
     <p>Après avoir installer Express, vous devez <ins>créer un fichier <i>server.js</i> en y ajoutant ce code</ins> :</p>
 
+<code>
     <pre>
-        <code>
-    const express = require('express');
-    const app = express();
-    const port = 3000;
+const express = require('express');
+const app = express();
+const port = 3000;
 
-    app.get('/', (req, res) => {
-    res.send('Hello World!');
-    });
+app.get('/', (req, res) => {
+res.send('Hello World!');
+});
 
-    app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-    });
-        </code>
-    </pre>
+app.listen(port, () => {
+console.log(`Server is running on http://localhost:${port}`);
+});
+    </pre>  
+</code>
 </div>
 
 <div class="Section">
     <p>Enfin, vous devez <ins>exécuter cette commande</ins> pour lancer votre serveur : </p>
-    <pre>
-        <code>node server.js</code>
-    </pre>
+    <code>
+        <pre>node server.js</pre>
+    </code>
     <p>Vous pouvez maintenant ouvrir votre navigateur et <ins>taper cette adresse</ins> : http://localhost:3000</p>
 </div>
 
@@ -75,10 +75,10 @@
 <div class="Section">
     <p>Nous allons ajouter le fichier JSON qui contient quelques données de films (titre et résumé).
     Cela simule une récupération de données depuis une base de données.</p>
-    <p><ins>Créer un fichier movies.json et ajouter ce code</ins> :</p>
-    
-<pre>
-    <code>
+    <p><ins>Créer un fichier <i>movies.json</i> et ajouter ce code</ins> :</p>
+
+<code>
+    <pre>
 [
     {
         "title": "Oppenheimer",
@@ -97,8 +97,8 @@
         "content": "Hiver 1970 : Monsieur Hunham est professeur d’histoire ancienne dans un prestigieux lycée d’enseignement privé pour garçons de la Nouvelle-Angleterre. Pédant et bourru, il n’est apprécié ni de ses élèves ni de ses collègues. Alors que Noël approche, Monsieur Hunham est prié de rester sur le campus pour surveiller la poignée de pensionnaires consignés sur place. Il n’en restera bientôt qu’un : Angus, un élève de 1ère aussi doué qu’insubordonné. Trop récemment endeuillée par la mort de son fils au Vietnam, Mary, la cuisinière de l’établissement, préfère rester à l’écart des fêtes. Elle vient compléter ce trio improbable..."
     }
 ]
-    </code>
-</pre>
+    </pre>  
+</code>
 </div>
 
 <div class="Section">
@@ -108,27 +108,27 @@
 
 
 
-<pre>
-    <code>
-    const express = require('express');
-    const app = express();
-    const port = process.env.PORT || 5000;
-    const movies = require('./movies.json');
+<code>
+    <pre>
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 5000;
+const movies = require('./movies.json');
 
-    app.get('/', (req, res) => {
-    res.send('Hello World!');
-    });
+app.get('/', (req, res) => {
+res.send('Hello World!');
+});
 
-    app.get('/movies', (req, res) => {
-    const data_movies = [...movies];
-    res.send(data_movies);
-    });
+app.get('/movies', (req, res) => {
+const data_movies = [...movies];
+res.send(data_movies);
+});
 
-    app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-    });
-    </code>
-</pre>
+app.listen(port, () => {
+console.log(`Server is running on http://localhost:${port}`);
+});
+</pre>  
+</code>
 </div>
 
 <div class="Section">
@@ -136,9 +136,9 @@
     <p>nodemon va nous permettre de redémarrer automatiquement le serveur dès qu'il y a un enregistrement de fichier. </p>
     <p>Si la commande <i>node server.js</i> est toujours en cours, tuez le processus avec un ctrl+c</p>
     <p>Pour l'installation de nodemon <ins>exécutez la commande :</p>
-        <pre>
-            <code>npm i nodemon -D</code>
-        </pre>
+        <code>
+            <pre>npm i nodemon -D</pre>  
+        </code>
 </div>
 
 <div class="Section">
@@ -147,30 +147,30 @@
 
 
 
-<pre>
-    <code>
-    {
-        ...
-        "scripts": {
-        "start": "nodemon server.js" // Ici
-        ...
-    },
-        "dependencies": {
-        ...
-    },
-        "devDependencies": {
-        ...
-    }
-    }
-    </code>
-</pre>
+<code>
+    <pre>
+{
+    ...
+    "scripts": {
+    "start": "nodemon server.js" // Ici
+    ...
+},
+    "dependencies": {
+    ...
+},
+    "devDependencies": {
+    ...
+}
+}
+</pre>  
+</code>
 </div>
 
 <div class="Section">
     <p>Enfin, vous pouvez <ins>exécuter votre serveur en exécutant cette commande</ins> : </p>
-    <pre>
-        <code>npm start</code>
-    </pre>
+<code>
+    <pre>npm start</pre>
+</code>
     <p>Vous pouvez maintenant <ins>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></ins></p>
 </div>
     
@@ -180,40 +180,40 @@
     <p>Nous allons utiliser un utilitaire : cURL.</p>
     <p>Nous allons modifier notre fichier d’entrée. Nous allons y déclarer un tableau qui contiendra tous les films, existants et ceux que nous allons ajouter.</p>
     <p>Nous fusionnons aussi le retour de la méthode GET, pour actualiser à chaque nouvel ajout.</p>
-    <p><ins>Remplacez le contenu du fichier server.js de sorte à avoir ce code</ins> :</p>
+    <p><ins>Remplacez le contenu du fichier <i>server.js</i> de sorte à avoir ce code</ins> :</p>
     
 
 
+<code>
     <pre>
-        <code>
-    const express = require('express');
-    const app = express();
-    const port = process.env.PORT || 5000;
-    const movies = require('./movies.json');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 5000;
+const movies = require('./movies.json');
 
-    let allMovies = [];
+let allMovies = [];
 
-    app.use(express.json());
+app.use(express.json());
 
-    app.get('/', (req, res) => {
-    res.send('Hello World!');
-    });
+app.get('/', (req, res) => {
+res.send('Hello World!');
+});
 
-    app.get('/movies', (req, res) => {
-    const data_movies = [...allMovies,...movies];
-    res.send(data_movies);
-    });
+app.get('/movies', (req, res) => {
+const data_movies = [...allMovies,...movies];
+res.send(data_movies);
+});
 
-    app.post('/movies/create', (req, res) => {
-    allMovies = [...allMovies, req.body];
-    res.send("New movie added successfully");
-    });
+app.post('/movies/create', (req, res) => {
+allMovies = [...allMovies, req.body];
+res.send("New movie added successfully");
+});
 
-    app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-    });
-        </code>
-    </pre>
+app.listen(port, () => {
+console.log(`Server is running on http://localhost:${port}`);
+});
+    </pre>  
+</code>
 </div>
 
 <div class="Section">
@@ -224,11 +224,11 @@
     <p>Ensuite l’option -H suivi de ‘Content-Type : application/json’ précise que le corps de la requête est du JSON.</p> 
     <p>Enfin l’option -d suivi d’un objet JSON correspond aux données fournies.</p>
     <br>
-    <p><ins>Tout en gardant le terminal courant avec npm start éxécuter, ouvrez un 2e terminal et saisissez la commande suivant</ins> : </p>
+    <p><ins>Tout en gardant le terminal courant avec npm start éxécuté, ouvrez un 2e terminal et saisissez la commande suivant</ins> : </p>
 
 
-<pre>
-    <code>
+<code>
+    <pre>
 curl -X POST \
     http://localhost:5000/movies/create \
     -H 'Content-Type: application/json' \
@@ -241,8 +241,8 @@ curl -X POST \
         "resume": "Neo, a computer hacker, learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."
         }
     ]'        
-    </code>
-</pre>
+    </pre>  
+</code>
 
 <p>Vous pouvez maintenant <ins>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></ins></p>
 </div>
@@ -252,6 +252,7 @@ curl -X POST \
     <p>Ce cours à été rédigé à l'origine par Boulanger Olivier, formateur développeur web chez l'organisme de formation Sofip situé à Verquigneul, durant la formation Titre pro Developpeur web et web mobile et durant la perdiode du 28/02/2024 au 04/10/2024</p>
     <p>Contact de M. Boulanger Olivier : Mail, Tel...</p>
 </div>
+
 
 </div>
 </div>
