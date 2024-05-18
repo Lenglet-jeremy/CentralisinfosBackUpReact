@@ -1,11 +1,17 @@
 import express from 'express';
 const app = express();
-const port = 3000;
+const data = require('./posts.json');
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
+});
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.get('/movies', (req, res) => {
+  const data_posts = [...data];
+  res.send(data_posts);
 });
