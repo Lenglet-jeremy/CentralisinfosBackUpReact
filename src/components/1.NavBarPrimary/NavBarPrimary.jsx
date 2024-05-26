@@ -48,7 +48,7 @@ export default function NavBar({ handleTheme }) {
               </ul>
             </li>
             <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>
-            <NavLink to="/register" className={"Register"}>Compte</NavLink>
+            <NavLink to="/account">Compte</NavLink>
           </ul>
       </nav>
     )

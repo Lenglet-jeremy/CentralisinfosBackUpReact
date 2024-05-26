@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./1.1.Register.css";
-import NavBarPrimary from '../../../components/1.NavBarPrimary/NavBarPrimary';
-import NavBarSecondary from '../../../components/2.NavBarSecondary/NavBarSecondary';
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -17,7 +15,7 @@ export default function Register() {
 
 
   useEffect(() => {
-      fetch('http://localhost:5000/api/user')
+      fetch('http://localhost:5000/api/register')
           .then(response => response.json())
           .then(data => setuser(data))
           .catch(error => console.error('Error fetching data: ', error));
@@ -33,7 +31,7 @@ export default function Register() {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:5000/api/user', {
+    fetch('http://localhost:5000/api/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -59,8 +57,6 @@ export default function Register() {
 
     return (
         <div className={`${bodyTheme}Register RegisterPage`}>
-          <NavBarPrimary handleTheme={handleTheme} />
-          <NavBarSecondary />
           <div className={`BodyRegister`}>
 
             <div className="Form">

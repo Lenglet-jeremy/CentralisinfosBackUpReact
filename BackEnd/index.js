@@ -27,14 +27,14 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('register', UserSchema);
 
-app.get('/api/user', async (req, res) => {
+app.get('/api/register', async (req, res) => {
   const user = await User.find();
   res.json(user);
 });
 
-app.post('/api/user', async (req, res) => {
+app.post('/api/register', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = new User({
@@ -48,6 +48,31 @@ app.post('/api/user', async (req, res) => {
     res.status(400).json({ message: `Erreur lors de la creation de l'utilisateur`, error: err.message });
   }
 });
+
+app.get('/api/login', async (req, res) => {
+  const user = await User.find();
+  res.json(user);
+});
+
+app.post('/api/login', async (req, res) => {
+  const user = await User.findOne({
+    email: req.body.email
+  });
+  if (user === null) {
+    return res.status(400).json({ message: 'Utilisateur non trouvé' });
+  }
+  try {
+    if (await bcrypt.compare(req.body.password, user.password)) {
+      res.json({ message: 'Connexion réussie' });
+    } else {
+      res.status(400).json({ message: 'Mot de passe incorrect' });
+    }
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur lors de la connexion', error: err.message });
+  }
+}
+);
+
 
 
 app.get('/', (req, res) => {

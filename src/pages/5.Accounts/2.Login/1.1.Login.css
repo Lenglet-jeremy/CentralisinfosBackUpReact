@@ -1,0 +1,19 @@
+*{
+    color: #FFFFFF;
+}
+
+.LoginPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+
+  div{
+    padding: 10px 0px;
+  }
+
+  button{
+    background-color: #000000;
+  }
+}
