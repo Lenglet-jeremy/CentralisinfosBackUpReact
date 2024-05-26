@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./1.1.Register.css";
 import NavBarPrimary from '../../../components/1.NavBarPrimary/NavBarPrimary';
 import NavBarSecondary from '../../../components/2.NavBarSecondary/NavBarSecondary';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Register() {
     
@@ -12,6 +12,8 @@ export default function Register() {
   const [userName, setUserName] = useState('');
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -42,8 +44,10 @@ export default function Register() {
             password: userPassword 
         })
     })
-    .then(response => response.json())
-    .then(data => setuser([...user, data]))
+    .then(response => response.json()).then(data => {
+      setuser([...user, data]);
+      navigate('/');
+    })
     .catch(error => console.error('Error posting data: ', error));
     setUserName('');
     setUserMail('');
@@ -63,7 +67,7 @@ export default function Register() {
               <div className="RegisterHomepage">
               <h2>Inscription</h2>
               <NavLink to="/"> Accueil</NavLink>
-              </div>
+            </div>
 
               <form onSubmit={handleSubmit}>
                 <div className="UserId">

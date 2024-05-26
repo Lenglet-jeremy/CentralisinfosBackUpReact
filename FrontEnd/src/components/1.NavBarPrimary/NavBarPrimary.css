@@ -15,12 +15,13 @@ p{
 
 .NavBarPrimary {
     background-color: #070025;
-    height: 60px;
+    min-height: 60px;
     line-height: 60px;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     width: 100%;
     

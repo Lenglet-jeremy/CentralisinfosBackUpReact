@@ -8,19 +8,19 @@ export default function NavBarSecondary() {
     <nav className={`${theme} NavBarSecondary`}>
         <div className={`LeftSide`}>
             <ul>
-                <li><a href="#">Sixieme</a></li>
-                <li><a href="#">Cinquieme</a></li>
-                <li><a href="#">Quatrieme</a></li>
-                <li><a href="#">Troisieme</a></li>
-                <li><a href="#">Seconde</a></li>
-                <li><a href="#">Premiere</a></li>
-                <li><a href="#">Terminale</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Sixieme</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Cinquieme</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Quatrieme</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Troisieme</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Seconde</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Premiere</a></li>
+                <li><a href="#" style={{ color: '#555555' }}>Terminale</a></li>
             </ul>
         </div>
         <div className={`RightSide`}>
             <ul>
-                <li><i><a href="#">Epingles</a></i></li>
-                <li><i><a href="#">Utilisateur</a></i></li>
+                <li><i><a href="#" style={{ color: '#555555' }}>Epingles</a></i></li>
+                <li><i><a href="#" style={{ color: '#555555' }}>Utilisateur</a></i></li>
             </ul>
         </div>
     </nav>

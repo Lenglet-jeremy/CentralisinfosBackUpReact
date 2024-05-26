@@ -10,14 +10,14 @@ export default function NavBar({ handleTheme }) {
         <nav className={`${theme} NavBarPrimary`}>
           <ul className={"LeftSide"}>
               <a href="#" className={`Logo`}/>
-                <li className={"Subjects"}><a href="#">Disciplines</a>
+                <li className={"Subjects"}><a href="#" style={{ color: '#555555' }}>Disciplines</a>
                     <ul className={"SubjectsDropDown"}>
                         <li><a href="#">Français</a></li>
                         <li><a href="#">Anglais</a></li>
                         <li><a href="#">Maths</a></li>
                     </ul>
                 </li>
-                <li className={"UniversityCourses"}><a href="#">Cursus Universitaires</a>
+                <li className={"UniversityCourses"}><a href="#" style={{ color: '#555555' }}>Cursus Universitaires</a>
                     <ul className={"UniversityCoursesDropDown"}>
                         <li><a href="#">Developpement Web</a></li>
                         <li><a href="#">Comptabilité et Gestion</a></li>
@@ -47,7 +47,7 @@ export default function NavBar({ handleTheme }) {
                 <li><a href="#">Faire mumuse avec Python et Excel</a></li>
               </ul>
             </li>
-            <li><a href="#">Forum</a></li>
+            <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>
             <NavLink to="/register" className={"Register"}>Compte</NavLink>
           </ul>
       </nav>
