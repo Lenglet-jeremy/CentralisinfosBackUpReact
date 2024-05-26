@@ -40,7 +40,7 @@ export default function NavBar({ handleTheme }) {
                 <img src='../../../../heart.png' alt="Coeur" />
                 Tu m'offres un café ?
             </a>
-            <li className="Tutos"><a href="#">Tutos</a>
+            <li className="Tutos"><a href="#" style={{ color: '#555555' }}>Tutos</a>
               <ul className="TutosDropdown">
                 <li><a href="src/pages/3.Tutos/1.WebDeveloppement/0.Annexes/0.Prologue.html">Developpement Web</a></li>
                 <li><a href="#">File Manager</a></li>
