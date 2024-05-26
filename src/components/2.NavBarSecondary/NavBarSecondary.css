@@ -1,0 +1,40 @@
+.NavBarSecondary{
+    background-color: #070025;
+    color: #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+
+    min-height: 29px;
+    line-height: 29px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    .LeftSide ul{
+        display: flex;
+        flex-direction: row;
+        margin-left: 15px;    
+        li{
+            margin-left: 15px;    
+        }
+    }
+
+    .RightSide ul{
+        display: flex;
+        flex-direction: row;
+        margin-right: 15px;
+        li{
+            margin-right: 15px;    
+        }
+    }
+}
+
+.DarkTheme{ 
+}
+  
+.LightTheme{
+    background-color: #333333;
+}
