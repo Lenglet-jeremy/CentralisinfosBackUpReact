@@ -1,33 +1,21 @@
-.RegisterPage{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.BodyRegister{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: start;
-    margin-top: 150px;
-
-    button{
-        background-color: #000000;
-    }
-
-    h1{
-        margin-top: 200px;
-        margin-bottom: 200px;
-    }
-}
-
 .Form{
     background-color: #140a3d;
-    width: 350px;
+
+    width: auto;
     padding: 15px;
+    border-radius: 30px;
+
     display: flex;
     flex-direction: column;
-    border-radius: 30px;
+
+    h2{
+        color: #FFFFFF;
+    }
+
+    label{
+        color: #FFFFFF;
+    }
+
     .UserId{
         display: flex;
         flex-direction: column;
@@ -59,16 +47,10 @@
 
 }
 
-.DarkBodyRegister{
-    background-color: #000000;
-    color: #FFFFFF;
-    min-height: 100vh;
-}
 
 .LightBodyRegister{
     background-color: #222222;
     color: #FFFFFF;
-    min-height: 100vh;
 }
 .RegisterHomepage{
     display: flex;
@@ -76,6 +58,6 @@
     justify-content: space-around;
 }
 
-.Contact{
-    margin-top: 100px;
+.PasswordConditions{
+    color: #FFFFFF;
 }

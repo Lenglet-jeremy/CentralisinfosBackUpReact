@@ -3,119 +3,145 @@ import "./1.1.Register.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Register() {
-    
-  const [theme, setTheme] = useState("DarkTheme");
-  
-  const [user, setuser] = useState([]);
+  const [user, setUser] = useState([]);
   const [userName, setUserName] = useState('');
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordConditions, setPasswordConditions] = useState([]);
+  const [error, setError] = useState('');
 
   const navigate = useNavigate();
 
-
   useEffect(() => {
-      fetch('http://localhost:5000/api/register')
-          .then(response => response.json())
-          .then(data => setuser(data))
-          .catch(error => console.error('Error fetching data: ', error));
+    fetch('http://localhost:5000/api/register')
+      .then(response => response.json())
+      .then(data => setUser(data))
+      .catch(error => console.error('Error fetching data: ', error));
   }, []);
 
-  function handleTheme() {
-    setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
-  }
 
-  function userInput(event) {
-    console.log(event.target.value);
-  }
-  
+  const handlePasswordConditions = (event) => {
+    const password = event.target.value;
+    const conditions = [];
+    if (password.length < 8) {
+      conditions.push('Le mot de passe doit contenir au moins 8 caractères');
+    }
+    if (!/\d/.test(password)) {
+      conditions.push('Le mot de passe doit contenir au moins un chiffre');
+    }
+    if (!/[A-Z]/.test(password)) {
+      conditions.push('Le mot de passe doit contenir au moins une majuscule');
+    }
+    setPasswordConditions(conditions);
+    setUserPassword(password);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (userPassword !== confirmPassword) {
+      setError('Les mots de passe ne correspondent pas');
+      return;
+    }
+
     fetch('http://localhost:5000/api/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-            name: userName,
-            email: userMail,
-            password: userPassword 
-        })
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: userName,
+        email: userMail,
+        password: userPassword
+      })
     })
-    .then(response => response.json()).then(data => {
-      setuser([...user, data]);
+    .then(response => response.json())
+    .then(data => {
+      setUser([...user, data]);
       navigate('/');
     })
     .catch(error => console.error('Error posting data: ', error));
+
     setUserName('');
     setUserMail('');
     setUserPassword('');
-};
+    setConfirmPassword('');
+  };
 
 
-  const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
-
-    return (
-        <div className={`${bodyTheme}Register RegisterPage`}>
-          <div className={`BodyRegister`}>
-
-            <div className="Form">
-              <div className="RegisterHomepage">
-              <h2>Inscription</h2>
-              <NavLink to="/"> Accueil</NavLink>
-            </div>
-
-              <form onSubmit={handleSubmit}>
-                <div className="UserId">
-                  <div>
-                    <p htmlFor="userId">Pseudo : </p>
-                    <input type="text"
-                           value={userName}
-                           onChange={(e) => setUserName(e.target.value)}
-                           placeholder="Pseudo"
-                />
-                  </div>
-                  
-                <div>
-                    <p htmlFor="userId">Mail : </p>
-                    <input type="text" 
-                          value={userMail}
-                          onChange={(e) => setUserMail(e.target.value)}
-                          placeholder="Mail" 
-                    />
-                </div>
-                  
-                <div className="PasswordArea">
-                    <p className="Password">Mot de passe : </p>
-                    <input type="text" 
-                          value={userPassword}
-                          onChange={(e) => setUserPassword(e.target.value)}
-                          placeholder="Mot de passe" 
-                    />
-
-                    <p className="Password">Confirmation Mot de passe : </p>
-                    <input type="text" placeholder="Confirmation Mot de passe" />
-                </div>
-
-
-                </div>
-
-                <br /><br />
-
-                <input type="checkbox" />
-                <label>J'accepte les Conditions Générales d'Utilisation...</label>
-
-                <br /><br />
-
-                <button>S'inscrire</button>
-
-              </form>
-            </div>
-
+  return (
+    <div className={` RegisterPage`}>
+      <div className="BodyRegister">
+        <div className="Form">
+          <div className="RegisterHomepage">
+            <h2>Inscription</h2>
+            <NavLink to="/"> Accueil</NavLink>
           </div>
-            <div className="Contact">
-              <p>Contact : centralisinfos.fondateur@gmail.com </p>
+
+          <form onSubmit={handleSubmit}>
+            <div className="UserId">
+              <div>
+                <p>Pseudo : </p>
+                <input 
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  placeholder="Pseudo"
+                />
+              </div>
+              <div>
+                <p>Mail : </p>
+                <input 
+                  type="text"
+                  value={userMail}
+                  onChange={(e) => setUserMail(e.target.value)}
+                  placeholder="Mail" 
+                />
+              </div>
+              <div className="PasswordArea">
+                <p>Mot de passe : </p>
+                <input 
+                  type="password"
+                  value={userPassword}
+                  onChange={handlePasswordConditions}
+                  placeholder="Mot de passe" 
+                />
+
+                  {passwordConditions.length > 0 && (
+                    <div className="PasswordConditions">
+                      <ul>
+                        {passwordConditions.map((condition, index) => (
+                          <li className="PasswordConditions" key={index}>
+                            {condition}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <br /><br />
+
+                <p>Confirmation : </p>
+                <input 
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Confirmation Mot de passe" 
+                />
+                  {error && <p className="Error">{error}</p>}
+              </div>
             </div>
+
+            <br />
+            <input type="checkbox" />
+            <label>J'accepte les Conditions Générales d'Utilisation...</label>
+
+
+            <br /><br />
+            <button type="submit">S'inscrire</button>
+          </form>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

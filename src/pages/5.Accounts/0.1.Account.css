@@ -1,0 +1,13 @@
+.AccountPage{
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.AccountBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    margin-top: 150px;
+
+}

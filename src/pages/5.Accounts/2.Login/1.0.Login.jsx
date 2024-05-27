@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./1.1.Login.css";
 
-
 export default function Login() {
     const [theme, setTheme] = useState("DarkTheme");
     const [user, setUser] = useState([]);
     const [userMail, setUserMail] = useState('');
     const [userPassword, setUserPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,27 +24,40 @@ export default function Login() {
     function userInput(event) {
         console.log(event.target.value);
     }
+    
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        fetch('http://localhost:5000/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                email: userMail,
-                password: userPassword
-            })
-        })
-            .then(response => response.json()).then(data => {
-                setUser([...user, data]);
-                navigate('/');
-            })
-            .catch(error => console.error('Error posting data: ', error));
-        setUserMail('');
-        setUserPassword('');
+
+        try {
+            const response = await fetch('http://localhost:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: userMail,
+                    password: userPassword
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Mail ou mot de passe incorrect');
+            }
+
+            const data = await response.json();
+            setUser(prevUser => [...prevUser, data]);
+            navigate('/');
+
+            setUserMail('');
+            setUserPassword('');
+            setError('');
+        } catch (error) {
+            setError('Mail ou mot de passe incorrect');
+            console.error('Mail ou mot de passe incorrect:', error);
+        }
     };
+    
 
     const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
@@ -67,7 +80,7 @@ export default function Login() {
 
                         <button type="submit">Connexion</button>
                     </form>
-                    <NavLink to="/register">Pas encore de compte ?</NavLink>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
                 </div>
             </div>
     );

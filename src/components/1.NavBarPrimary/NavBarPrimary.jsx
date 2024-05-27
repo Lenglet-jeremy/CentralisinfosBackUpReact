@@ -6,10 +6,11 @@ import { NavLink } from "react-router-dom";
 export default function NavBar({ handleTheme }) {
   const theme = useContext(ThemeContext);
 
+
     return(
         <nav className={`${theme} NavBarPrimary`}>
           <ul className={"LeftSide"}>
-              <a href="#" className={`Logo`}/>
+              <a href="/" className={`Logo`}/>
                 <li className={"Subjects"}><a href="#" style={{ color: '#555555' }}>Disciplines</a>
                     <ul className={"SubjectsDropDown"}>
                         <li><a href="#">Français</a></li>
