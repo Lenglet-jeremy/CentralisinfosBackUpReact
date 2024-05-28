@@ -9,4 +9,5 @@ Currently, two official plugins are available:
 
 
 ==================================
+
 NETLIFY : https://centralisinfos.netlify.app/ 
