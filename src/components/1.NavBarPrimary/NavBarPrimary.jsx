@@ -39,11 +39,11 @@ export default function NavBar({ handleTheme }) {
           <ul className={"RightSide"}>
             <a href="#" className={"Gift"}>
                 <img src='../../../../heart.png' alt="Coeur" />
-                Tu m'offres un café ?
+                Tu m'offres un café ? 
             </a>
             <li className="Tutos"><a href="#" style={{ color: '#555555' }}>Tutos</a>
               <ul className="TutosDropdown">
-                <li><a href="src/pages/3.Tutos/1.WebDeveloppement/0.Annexes/0.Prologue.html">Developpement Web</a></li>
+                <li><NavLink to={"WebDev"}>Developpement Web</NavLink></li>
                 <li><a href="#">File Manager</a></li>
                 <li><a href="#">Faire mumuse avec Python et Excel</a></li>
               </ul>

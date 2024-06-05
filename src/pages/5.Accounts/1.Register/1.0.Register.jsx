@@ -134,7 +134,7 @@ export default function Register() {
 
             <br />
             <input type="checkbox" />
-            <label>J'accepte les Conditions Générales d'Utilisation...</label>
+            <label>J'accepte les <NavLink to={'/GCU'}><i>Conditions Générales d'Utilisation</i></NavLink></label>
 
 
             <br /><br />
