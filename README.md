@@ -11,5 +11,4 @@ Currently, two official plugins are available:
 ==================================
 
 NETLIFY : https://centralisinfos.netlify.app/ 
-
 FIGMA : https://www.figma.com/design/uLTOrZfvqKSrONk7iqkGSs/Centralisinfos-V2?node-id=0-1&t=7PlQeG5KwQp9K4oc-0 
