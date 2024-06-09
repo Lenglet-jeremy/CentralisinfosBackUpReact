@@ -6,7 +6,7 @@
 .AccountBody{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: start;
     margin-top: 150px;
 

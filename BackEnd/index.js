@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -27,11 +28,11 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
-const User = mongoose.model('register', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 app.get('/api/register', async (req, res) => {
-  const user = await User.find();
-  res.json(user);
+  const users = await User.find();
+  res.json(users);
 });
 
 app.post('/api/register', async (req, res) => {
@@ -49,31 +50,38 @@ app.post('/api/register', async (req, res) => {
   }
 });
 
-app.get('/api/login', async (req, res) => {
-  const user = await User.find();
-  res.json(user);
-});
-
 app.post('/api/login', async (req, res) => {
-  const user = await User.findOne({
-    email: req.body.email
-  });
-  if (user === null) {
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
     return res.status(400).json({ message: 'Utilisateur non trouvé' });
   }
   try {
     if (await bcrypt.compare(req.body.password, user.password)) {
-      res.json({ message: 'Connexion réussie' });
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      res.json({ message: 'Connexion réussie', token });
     } else {
       res.status(400).json({ message: 'Mot de passe incorrect' });
     }
   } catch (err) {
     res.status(500).json({ message: 'Erreur lors de la connexion', error: err.message });
   }
-}
-);
+});
 
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token == null) return res.sendStatus(401);
 
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+};
+
+app.get('/api/protected', authenticateToken, (req, res) => {
+  res.json({ message: 'This is a protected route' });
+});
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

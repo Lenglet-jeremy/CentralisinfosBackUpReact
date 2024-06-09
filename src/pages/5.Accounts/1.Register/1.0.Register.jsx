@@ -3,23 +3,13 @@ import "./1.1.Register.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const [user, setUser] = useState([]);
   const [userName, setUserName] = useState('');
   const [userMail, setUserMail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordConditions, setPasswordConditions] = useState([]);
   const [error, setError] = useState('');
-
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetch('http://localhost:5000/api/register')
-      .then(response => response.json())
-      .then(data => setUser(data))
-      .catch(error => console.error('Error fetching data: ', error));
-  }, []);
-
 
   const handlePasswordConditions = (event) => {
     const password = event.target.value;
@@ -57,7 +47,7 @@ export default function Register() {
     })
     .then(response => response.json())
     .then(data => {
-      setUser([...user, data]);
+      localStorage.setItem('token', data.token);
       navigate('/');
     })
     .catch(error => console.error('Error posting data: ', error));
@@ -68,9 +58,8 @@ export default function Register() {
     setConfirmPassword('');
   };
 
-
   return (
-    <div className={` RegisterPage`}>
+    <div className={`RegisterPage`}>
       <div className="BodyRegister">
         <div className="Form">
           <div className="RegisterHomepage">
@@ -106,21 +95,18 @@ export default function Register() {
                   onChange={handlePasswordConditions}
                   placeholder="Mot de passe" 
                 />
-
-                  {passwordConditions.length > 0 && (
-                    <div className="PasswordConditions">
-                      <ul>
-                        {passwordConditions.map((condition, index) => (
-                          <li className="PasswordConditions" key={index}>
-                            {condition}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <br /><br />
-
+                {passwordConditions.length > 0 && (
+                  <div className="PasswordConditions">
+                    <ul>
+                      {passwordConditions.map((condition, index) => (
+                        <li className="PasswordConditions" key={index}>
+                          {condition}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <br /><br />
                 <p>Confirmation : </p>
                 <input 
                   type="password"
@@ -128,15 +114,12 @@ export default function Register() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirmation Mot de passe" 
                 />
-                  {error && <p className="Error">{error}</p>}
+                {error && <p className="Error">{error}</p>}
               </div>
             </div>
-
             <br />
             <input type="checkbox" />
             <label>J'accepte les <NavLink to={'/GCU'}><i>Conditions Générales d'Utilisation</i></NavLink></label>
-
-
             <br /><br />
             <button type="submit">S'inscrire</button>
           </form>

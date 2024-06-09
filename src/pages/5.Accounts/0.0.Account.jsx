@@ -2,16 +2,35 @@ import NavBarPrimary from "../../components/1.NavBarPrimary/NavBarPrimary";
 import NavBarSecondary from "../../components/2.NavBarSecondary/NavBarSecondary";
 import Register from "./1.Register/1.0.Register";
 import Login from "./2.Login/1.0.Login";
+import UserDashboard from "./3.UserDashboard/1.0.UserDashboard";
 import "./0.1.Account.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Account() {
     const [theme, setTheme] = useState("DarkTheme");
-  
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
+        }
+    }, []);
+
     function handleTheme() {
-      setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
+        setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
     }
-      const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
+
+    const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
+
+    if (isAuthenticated) {
+        return <UserDashboard />;
+    }
+
     return (
         <div className={`${bodyTheme} AccountPage`}>
             <div className="AccountNavBars">
@@ -22,9 +41,6 @@ export default function Account() {
                 <Register />
                 <Login />
             </div>
-            {/* Redéfinir le CSS de Register et Login de sorte à les faire apparaitre sur une seule page */}
-            {/* Pour fix les erreurs : Error fetching data:  SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data
-            Ré-adapter les POST envoyé par register et Login et adapter les POST de server.js */}
         </div>
     )
 }
