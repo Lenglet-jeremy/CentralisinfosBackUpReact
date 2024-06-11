@@ -41,7 +41,7 @@ export default function Login() {
     return (
         <div className="LoginPage">
             <div className="BodyLogin">
-                <div className="Form">
+                <div className="LoginForm">
                     <div className="LoginHomepage">
                         <h2>Connexion</h2>
                         <NavLink to="/"> Accueil</NavLink>

@@ -1,9 +1,9 @@
-.Form{
+.RegisterForm{
     background-color: #140a3d;
 
     width: auto;
     padding: 15px;
-    margin: 50px;
+    margin-right: 50px;
     border-radius: 30px;
 
     display: flex;
@@ -35,7 +35,6 @@
         .PasswordArea{
             display: flex;
             flex-direction: column;
-            margin-top: 30px;
             input{
                 width: 200px;
             }
@@ -61,4 +60,14 @@
 
 .PasswordConditions{
     color: #FFFFFF;
+}
+
+button{
+    background-color: #222222;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
 }

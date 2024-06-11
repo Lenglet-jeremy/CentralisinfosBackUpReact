@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../0.Annexes/1.StylingTutos.css">
-    <title>setRouter</title>
-</head>
-<body>
+import "../0.Annexes/1.StylingTutos.css";
+
+
+export default function SetRouter() {
+    return (
+        <>
 <h1>Architecturer le routeur</h1>
 
 <div class="CoursePage">
@@ -29,6 +26,6 @@
 
 </div>
 </div>
-    
-</body>
-</html>
+</>
+)
+}

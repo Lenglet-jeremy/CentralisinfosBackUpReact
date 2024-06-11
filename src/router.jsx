@@ -6,6 +6,10 @@ import Account from "./pages/5.Accounts/0.0.Account";
 import GCU from "./pages/0.1.CGU";
 import Privacy from "./pages/0.2.Privacy";
 import WebDev from "./pages/3.Tutos/1.WebDeveloppement/0.Annexes/0.0.WebDev";
+import BuildExpressServer from "./pages/3.Tutos/1.WebDeveloppement/2.JS/3.Express/1.0.BuildExpressServer";
+import SetRouter from "./pages/3.Tutos/1.WebDeveloppement/2.JS/4.Routes/SetRouter";
+import MongoDB from "./pages/3.Tutos/1.WebDeveloppement/2.JS/5.MongoDB/SetMongoDB";
+import Mongoose from "./pages/3.Tutos/1.WebDeveloppement/2.JS/6.Mongoose/Mongoose";
 
 
 export const router = createBrowserRouter([
@@ -32,7 +36,23 @@ export const router = createBrowserRouter([
         },
         {
             path : "WebDev",
-            element : <WebDev />
+            element : <WebDev />,
+        },
+        {
+            path : "WebDev/Express",
+            element : <BuildExpressServer />
+        },
+        {
+            path : "WebDev/Routes",
+            element : <SetRouter />
+        },
+        {
+            path : "WebDev/MongoDB",
+            element : <MongoDB />
+        },
+        {
+            path : "WebDev/Mongoose",
+            element : <Mongoose />
         }
         ]
     }

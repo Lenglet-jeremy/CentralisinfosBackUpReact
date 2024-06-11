@@ -61,7 +61,7 @@ export default function Register() {
   return (
     <div className={`RegisterPage`}>
       <div className="BodyRegister">
-        <div className="Form">
+        <div className="RegisterForm">
           <div className="RegisterHomepage">
             <h2>Inscription</h2>
             <NavLink to="/"> Accueil</NavLink>

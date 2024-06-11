@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../0.Annexes/1.StylingTutos.css">
-    <title>Express Server</title>
-</head>
-<body>
+import "../0.Annexes/1.StylingTutos.css";
+
+export default function BuildExpressServer() {
+    return (
+        <div>
 <h1>Créer un serveur Express</h1>
 
 <div class="CoursePage">
@@ -41,7 +37,7 @@
     <p>Après avoir installer Express, vous devez <ins>créer un fichier <i>server.js</i> en y ajoutant ce code</ins> :</p>
 
 <code>
-    <pre>
+    {/* <pre>{`
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -51,9 +47,9 @@ res.send('Hello World!');
 });
 
 app.listen(port, () => {
-console.log(`Server is running on http://localhost:${port}`);
-});
-    </pre>  
+console.log("Server is running on http://localhost:${port}");
+});`}
+    </pre>   */}
 </code>
 </div>
 
@@ -78,7 +74,7 @@ console.log(`Server is running on http://localhost:${port}`);
     <p><ins>Créer un fichier <i>movies.json</i> et ajouter ce code</ins> :</p>
 
 <code>
-    <pre>
+    {/* <pre>{`
 [
     {
         "title": "Oppenheimer",
@@ -96,8 +92,8 @@ console.log(`Server is running on http://localhost:${port}`);
         "title": "Winter Break",
         "content": "Hiver 1970 : Monsieur Hunham est professeur d’histoire ancienne dans un prestigieux lycée d’enseignement privé pour garçons de la Nouvelle-Angleterre. Pédant et bourru, il n’est apprécié ni de ses élèves ni de ses collègues. Alors que Noël approche, Monsieur Hunham est prié de rester sur le campus pour surveiller la poignée de pensionnaires consignés sur place. Il n’en restera bientôt qu’un : Angus, un élève de 1ère aussi doué qu’insubordonné. Trop récemment endeuillée par la mort de son fils au Vietnam, Mary, la cuisinière de l’établissement, préfère rester à l’écart des fêtes. Elle vient compléter ce trio improbable..."
     }
-]
-    </pre>  
+]`}
+    </pre>   */}
 </code>
 </div>
 
@@ -109,7 +105,7 @@ console.log(`Server is running on http://localhost:${port}`);
 
 
 <code>
-    <pre>
+    {/* <pre>{`
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -125,9 +121,9 @@ res.send(data_movies);
 });
 
 app.listen(port, () => {
-console.log(`Server is running on http://localhost:${port}`);
-});
-</pre>  
+console.log("Server is running on http://localhost:${port}");
+});`}
+</pre>   */}
 </code>
 </div>
 
@@ -135,7 +131,7 @@ console.log(`Server is running on http://localhost:${port}`);
     <p>Pour ne pas devoir relancer le serveur à chaque nouvelle modification nous allons installer un utilitaire : nodemon</p>
     <p>nodemon va nous permettre de redémarrer automatiquement le serveur dès qu'il y a un enregistrement de fichier. </p>
     <p>Si la commande <i>node server.js</i> est toujours en cours, tuez le processus avec un ctrl+c</p>
-    <p>Pour l'installation de nodemon <ins>exécutez la commande :</p>
+    <p>Pour l'installation de nodemon <ins/>exécutez la commande :</p>
         <code>
             <pre>npm i nodemon -D</pre>  
         </code>
@@ -148,7 +144,7 @@ console.log(`Server is running on http://localhost:${port}`);
 
 
 <code>
-    <pre>
+    {/* <pre>{`
 {
     ...
     "scripts": {
@@ -161,8 +157,8 @@ console.log(`Server is running on http://localhost:${port}`);
     "devDependencies": {
     ...
 }
-}
-</pre>  
+}`}
+</pre>   */}
 </code>
 </div>
 
@@ -185,7 +181,7 @@ console.log(`Server is running on http://localhost:${port}`);
 
 
 <code>
-    <pre>
+    {/* <pre>{`
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -210,25 +206,25 @@ res.send("New movie added successfully");
 });
 
 app.listen(port, () => {
-console.log(`Server is running on http://localhost:${port}`);
+console.log("Server is running on http://localhost:${port}");
 });
-    </pre>  
+    `}</pre>   */}
 </code>
 </div>
 
 <div class="Section">
     <p>Ajout de données avec cURL :</p>
-    <br>
+    <br/>
     <p>Nous allons utiliser le mot clé curl puis avec -X la méthode à savoir POST. </p>
     <p>Puis l’url qui contient notre route /movies/create.</p>
     <p>Ensuite l’option -H suivi de ‘Content-Type : application/json’ précise que le corps de la requête est du JSON.</p> 
     <p>Enfin l’option -d suivi d’un objet JSON correspond aux données fournies.</p>
-    <br>
+    <br/>
     <p><ins>Tout en gardant le terminal courant avec npm start éxécuté, ouvrez un 2e terminal et saisissez la commande suivant</ins> : </p>
 
 
 <code>
-    <pre>
+    {/* <pre>{`
 curl -X POST \
     http://localhost:5000/movies/create \
     -H 'Content-Type: application/json' \
@@ -240,8 +236,8 @@ curl -X POST \
         "title": "The Matrix",
         "resume": "Neo, a computer hacker, learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."
         }
-    ]'        
-    </pre>  
+    ]'       `} 
+    </pre>   */}
 </code>
 
 <p>Vous pouvez maintenant <ins>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></ins></p>
@@ -249,13 +245,13 @@ curl -X POST \
 <div class="Section">
     <h2>Post scriptum !</h2>
     <p>Ce tutos à été rédigé par Lenglet Jérémy le 16/05/2024 à 00:20</p>
-    <p>Ce cours à été rédigé à l'origine par Boulanger Olivier, formateur développeur web chez l'organisme de formation Sofip situé à Verquigneul, durant la formation Titre pro Developpeur web et web mobile et durant la perdiode du 28/02/2024 au 04/10/2024</p>
-    <p>Contact de M. Boulanger Olivier : Mail, Tel...</p>
+    <p>Ce cours à été rédigé à l'origine par ... </p>
+    <p>Contact de M. ... </p>
 </div>
 
 
 </div>
 </div>
-
-</body>
-</html>
+</div>
+    )
+}
