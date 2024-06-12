@@ -28,7 +28,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true }
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('AuthLog', UserSchema);
 
 app.get('/api/register', async (req, res) => {
   const users = await User.find();

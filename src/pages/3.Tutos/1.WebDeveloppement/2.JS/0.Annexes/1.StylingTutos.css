@@ -9,7 +9,7 @@ h1{
 }
 
 p{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 body {
@@ -27,28 +27,35 @@ body {
     .Sommary{
         background-color: #070025FF;
         border: 1px solid #FFFFFF;
-        width: 25%;
-        margin: 20px 20px;
-        border-radius: 20px;
+        width: 20%;
+        max-width: 400px;
+        margin: 20px 40px;
+        border-radius: 15px;
         text-align: center;
         padding-top: 20px;
+        p{
+            text-align: left;
+        }
     }
 
     .Section{
-        margin: 50px 0px;
+        margin: 25px 0px;
+        border: 1px solid #555555;
+        border-radius: 15px; 
         
     }
 
     .CourseBody{
-        width: 60%;
+        width: 50%;
     }
 
     pre{
         display: flex;
         align-items: start;
-        padding: 20px;
+        padding: 10px;
         overflow-x: scroll;
-        background-color: #222222;
+        background-color: #111111;
+        border-radius: 15px;
     }
     code{
         font-size: 15px;

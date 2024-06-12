@@ -9,6 +9,7 @@ export default function BuildExpressServer() {
 
 <div class="Sommary">
     <h2>Sommaire</h2>
+    <p>Héritage multiple et polymorphisme</p>
 </div>
 
 <div class="CourseBody">
