@@ -8,6 +8,14 @@
     display: flex;
     flex-direction: column;
   }
+  
+  input{
+    background-color: #e0e5ff00;
+    color: #e0e5ff;
+    border: #e0e5ff 1px solid;
+    margin-left: 10px;
+  }
+
 
   h1{
     color: #FFFFFF;

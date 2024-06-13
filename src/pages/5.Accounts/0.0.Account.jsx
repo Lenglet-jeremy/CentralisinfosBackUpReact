@@ -14,6 +14,7 @@ export default function Account() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
+
         if (token) {
             setIsAuthenticated(true);
         } else {

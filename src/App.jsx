@@ -14,7 +14,7 @@ function App() {
   return (
     <ThemeContext.Provider value={theme}>
       <div>
-        <Outlet /> {/* // Founir handleTheme à tous les enfants */}
+        <Outlet />
       </div>
     </ThemeContext.Provider>
   );

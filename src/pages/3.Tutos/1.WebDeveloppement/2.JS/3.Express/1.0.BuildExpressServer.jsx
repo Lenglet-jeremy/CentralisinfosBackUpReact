@@ -1,8 +1,21 @@
+import React, { useState } from "react";
+import NavBarPrimary from '../../../../../components/1.NavBarPrimary/NavBarPrimary';
+import NavBarSecondary from '../../../../../components/2.NavBarSecondary/NavBarSecondary';
 import "../0.Annexes/1.StylingTutos.css";
 
 export default function BuildExpressServer() {
+    
+  const [theme, setTheme] = useState("DarkTheme");
+
+  function handleTheme() {
+    setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
+  }
+    const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
     return (
-        <div>
+        <div className={`${bodyTheme} `}>
+            
+          <NavBarPrimary handleTheme={handleTheme} />
+          <NavBarSecondary />
 <h1>Créer un serveur Express</h1>
 
 <div class="CoursePage">
@@ -15,12 +28,12 @@ export default function BuildExpressServer() {
 <div class="CourseBody">
 
 <div class="Section">
-    <p>Vous devez commencez par <ins>installer <i>Node.js</i></ins> et npm sur votre machine.</p>
+    <p>Vous devez commencez par <i>installer <i>Node.js</i></i> et npm sur votre machine.</p>
     <p>Vous pouvez le faire en suivant ce <a href="https://nodejs.org/en/download/">lien</a>.</p>
 </div>
 
 <div class="Section">
-    <p>Ensuite, vous devez <ins>exécuter cette commande</ins> dans le terminal placé <ins>à la racine de votre projet</ins> : </p>
+    <p>Ensuite, vous devez <i>exécuter cette commande</i> dans le terminal placé <i>à la racine de votre projet</i> : </p>
     <code>
         <pre>npm init -y</pre>
     </code>
@@ -28,14 +41,14 @@ export default function BuildExpressServer() {
 </div>
 
 <div class="Section">
-    <p>Ensuite, vous devez <ins>installer Express en exécutant cette commande</ins> : </p>
+    <p>Ensuite, vous devez <i>installer Express en exécutant cette commande</i> : </p>
     <code>
         <pre>npm install express</pre>
     </code>
 </div>
 
 <div class="Section">
-    <p>Après avoir installer Express, vous devez <ins>créer un fichier <i>server.js</i> en y ajoutant ce code</ins> :</p>
+    <p>Après avoir installer Express, vous devez <i>créer un fichier <i>server.js</i> en y ajoutant ce code</i> :</p>
 
 <code>
     {/* <pre>{`
@@ -55,11 +68,11 @@ console.log("Server is running on http://localhost:${port}");
 </div>
 
 <div class="Section">
-    <p>Enfin, vous devez <ins>exécuter cette commande</ins> pour lancer votre serveur : </p>
+    <p>Enfin, vous devez <i>exécuter cette commande</i> pour lancer votre serveur : </p>
     <code>
         <pre>node server.js</pre>
     </code>
-    <p>Vous pouvez maintenant ouvrir votre navigateur et <ins>taper cette adresse</ins> : http://localhost:3000</p>
+    <p>Vous pouvez maintenant ouvrir votre navigateur et <i>taper cette adresse</i> : <a href="http://localhost:3000" target="_blanck">http://localhost:3000</a></p>
 </div>
 
 <div class="Section">
@@ -72,7 +85,7 @@ console.log("Server is running on http://localhost:${port}");
 <div class="Section">
     <p>Nous allons ajouter le fichier JSON qui contient quelques données de films (titre et résumé).
     Cela simule une récupération de données depuis une base de données.</p>
-    <p><ins>Créer un fichier <i>movies.json</i> et ajouter ce code</ins> :</p>
+    <p><i>Créer un fichier <i>movies.json</i> et ajouter ce code</i> :</p>
 
 <code>
     {/* <pre>{`
@@ -101,7 +114,7 @@ console.log("Server is running on http://localhost:${port}");
 <div class="Section">
 <p>Nous récupérons depuis notre fichier <i>index.js</i> ces données. Nous allons aussi modifier notre port pour l’écoute de requêtes http. </p>
 <p>Il utilisera la variable d’environnement, sinon, si elle n’est pas définie, grâce à l’opérateur ||, il utilisera le port 5000.</p>
-<p><ins>Remplacez le contenu du fichier <i>server.js</i> de sorte à avoir ce code</ins> :</p>
+<p><i>Remplacez le contenu du fichier <i>server.js</i> de sorte à avoir ce code</i> :</p>
 
 
 
@@ -139,7 +152,7 @@ console.log("Server is running on http://localhost:${port}");
 </div>
 
 <div class="Section">
-    <p>Une fois nodemon intallé, nous allons <ins>supprimer le script test au profit du script start dans le fichier <i>package.json</i></ins>.</p>
+    <p>Une fois nodemon intallé, nous allons <i>supprimer le script test au profit du script start dans le fichier <i>package.json</i></i>.</p>
     <p>Remplacez le contenu du fichier package.json de sorte à avoir ce code :</p>
 
 
@@ -164,11 +177,11 @@ console.log("Server is running on http://localhost:${port}");
 </div>
 
 <div class="Section">
-    <p>Enfin, vous pouvez <ins>exécuter votre serveur en exécutant cette commande</ins> : </p>
+    <p>Enfin, vous pouvez <i>exécuter votre serveur en exécutant cette commande</i> : </p>
 <code>
     <pre>npm start</pre>
 </code>
-    <p>Vous pouvez maintenant <ins>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></ins></p>
+    <p>Vous pouvez maintenant <i>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></i></p>
 </div>
     
 <div class="Section">
@@ -177,7 +190,7 @@ console.log("Server is running on http://localhost:${port}");
     <p>Nous allons utiliser un utilitaire : cURL.</p>
     <p>Nous allons modifier notre fichier d’entrée. Nous allons y déclarer un tableau qui contiendra tous les films, existants et ceux que nous allons ajouter.</p>
     <p>Nous fusionnons aussi le retour de la méthode GET, pour actualiser à chaque nouvel ajout.</p>
-    <p><ins>Remplacez le contenu du fichier <i>server.js</i> de sorte à avoir ce code</ins> :</p>
+    <p><i>Remplacez le contenu du fichier <i>server.js</i> de sorte à avoir ce code</i> :</p>
     
 
 
@@ -221,7 +234,7 @@ console.log("Server is running on http://localhost:${port}");
     <p>Ensuite l’option -H suivi de ‘Content-Type : application/json’ précise que le corps de la requête est du JSON.</p> 
     <p>Enfin l’option -d suivi d’un objet JSON correspond aux données fournies.</p>
     <br/>
-    <p><ins>Tout en gardant le terminal courant avec npm start éxécuté, ouvrez un 2e terminal et saisissez la commande suivant</ins> : </p>
+    <p><i>Tout en gardant le terminal courant avec npm start éxécuté, ouvrez un 2e terminal et saisissez la commande suivant</i> : </p>
 
 
 <code>
@@ -241,7 +254,7 @@ curl -X POST \
     </pre>   */}
 </code>
 
-<p>Vous pouvez maintenant <ins>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></ins></p>
+<p>Vous pouvez maintenant <i>ouvrir votre navigateur et taper cette adresse : <i>http://localhost:5000/movies</i></i></p>
 </div>
 <div class="Section">
     <h2>Post scriptum !</h2>

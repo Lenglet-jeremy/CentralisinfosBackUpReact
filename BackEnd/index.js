@@ -9,7 +9,11 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
@@ -48,6 +52,11 @@ app.post('/api/register', async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: `Erreur lors de la creation de l'utilisateur`, error: err.message });
   }
+});
+
+app.get('/api/login', async (req, res) => {
+  const users = await User.find();
+  res.json(users);
 });
 
 app.post('/api/login', async (req, res) => {
