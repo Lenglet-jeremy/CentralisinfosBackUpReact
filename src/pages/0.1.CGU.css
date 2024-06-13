@@ -1,0 +1,28 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #000000;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto 20px auto;
+    background: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    color: #888888;
+}
+p {
+    margin: 0.5em 0;
+}
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

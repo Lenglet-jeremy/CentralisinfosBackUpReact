@@ -1,0 +1,80 @@
+.RegisterForm{
+    background-color: #140a3d;
+    
+  input{
+    background-color: #e0e5ff00;
+    color: #e0e5ff;
+    border: #e0e5ff 1px solid;
+    margin-left: 10px;
+  }
+
+    width: auto;
+    padding: 15px;
+    margin-right: 50px;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        color: #FFFFFF;
+    }
+
+    label{
+        color: #FFFFFF;
+    }
+
+    .UserId{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        div{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            input{
+                width: fit-content;
+            }
+        }
+        
+        .PasswordArea{
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 200px;
+            }
+        }
+
+    }
+    label{
+        margin-left: 10px;
+    }
+
+}
+
+
+.LightBodyRegister{
+    background-color: #222222;
+    color: #FFFFFF;
+}
+.RegisterHomepage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.PasswordConditions{
+    color: #FFFFFF;
+}
+
+button{
+    background-color: #222222;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}

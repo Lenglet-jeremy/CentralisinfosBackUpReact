@@ -1,0 +1,240 @@
+li{
+    list-style-type: none;
+}
+
+a{
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    color: #FFFFFF;
+}
+
+
+.NavBarPrimary {
+    background-color: #070025;
+    min-height: 60px;
+    line-height: 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 100%;
+    
+
+    .LeftSide{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 15px;
+    }
+    .LeftSide > li{
+        margin-left: 15px;
+    }
+
+    .SkillsDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+
+    .Skills:hover .SkillsDropDown{
+        display: block;
+        width: 100px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+    .SubjectsDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+
+    .Subjects:hover .SubjectsDropDown{
+        display: block;
+        width: 100px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+    .UniversityCoursesDropDown {
+        display: none; 
+        position: absolute;
+        background-color: #070025; 
+    }
+    
+    .UniversityCourses:hover .UniversityCoursesDropDown{
+        display: block;
+        width: 200px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+
+
+    .NavBarPrimary ul li:hover {
+        display: block;
+        background-color: #5A0026;
+    }
+
+    .NavBarPrimary li ul li:hover {
+        display: block;
+        background-color: #5A0026;
+    }
+
+
+    .RightSide{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 15px;
+
+        > li{
+            margin-right: 15px;
+        }
+
+        .Gift{
+            background-color: #999999;
+            color: #000000;
+
+
+            height: 30px;
+            line-height: 30px;
+            width: 210px;
+
+            display: flex;
+            flex-direction: row;
+
+            margin-right: 20px;
+
+            border: 2px solid #000000;
+            border-radius: 15px;
+
+            img{
+                margin: 0px 10px;
+            }
+
+        }
+    }
+
+    
+    .DarkLightThemeToggle{
+        background-color: #FFFFFF30;
+
+        width: 50px;
+        height: 24px;
+
+        border-radius: 12px;
+        margin-left: 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        input {
+            visibility: hidden;
+        }
+        
+        .DarkLightThemeSlider {
+            position: relative;
+            left: 13px;
+            bottom: 10px;
+        }
+
+        ::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #000000;
+            transition: transform 0.3s ease;
+        }
+
+        input:checked + .DarkLightThemeSlider::before {
+            transform: translateX(-24px);
+        }
+    }
+    .SearchBarContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .SearchBar{
+        background-color: #FFFFFF;
+        color: #000000;
+        width: 150px;
+        height: 30px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 10px;
+
+        input{
+            border: none;
+            width: 100%;
+            height: 100%;
+            color: #000000;
+            border-radius: 15px;
+            padding-left: 10px;
+
+        }
+        input:focus{
+            outline: none;
+        }
+
+        img{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .TutosDropdown{
+        display: none;
+        position: absolute;
+        background-color: #070025;
+
+    }
+    .Tutos:hover .TutosDropdown{
+        display: block;
+        width: 150px;
+        li {
+            line-height: 50px;
+            border: 1px solid #000000;
+        }
+    }
+}
+
+.DarkTheme{
+    .Logo{
+        width: 120px;
+        height: 100%;
+        background-image: url('../LogoCentralisinfos/300ppi/LOGO3.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+  
+.LightTheme{
+    background-color: #333333;
+    .Logo{
+        width: 120px;
+        height: 100%;
+        background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+  
