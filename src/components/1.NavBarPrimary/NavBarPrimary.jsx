@@ -42,11 +42,12 @@ export default function NavBar({ handleTheme }) {
           Tu m'offres un café ?
         </a>
         <li className="Tutos">
-          <a href="#" style={{ color: '#555555' }}>Tutos</a>
+        <NavLink to={"/Tutos"}>Tutos</NavLink>
           <ul className="TutosDropdown">
-            <li><NavLink to={"WebDev"}>Developpement Web</NavLink></li>
+            <li><NavLink to={"/Tutos/WebDev"}>Developpement Web</NavLink></li>
+            <li><NavLink to={"/Tutos/OpenPyXl"}>Faire mumuse avec OpenPyXl</NavLink></li>
             <li><a href="#">File Manager</a></li>
-            <li><a href="#">Faire mumuse avec Python et Excel</a></li>
+            {/* <li><NavLink to={}>Faire mumuse avec OpenPyXl</NavLink></li> */}
           </ul>
         </li>
         <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>

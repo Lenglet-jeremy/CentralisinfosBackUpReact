@@ -10,6 +10,8 @@ import BuildExpressServer from "./pages/3.Tutos/1.WebDeveloppement/2.JS/3.Expres
 import SetRouter from "./pages/3.Tutos/1.WebDeveloppement/2.JS/4.Routes/SetRouter";
 import MongoDB from "./pages/3.Tutos/1.WebDeveloppement/2.JS/5.MongoDB/SetMongoDB";
 import Mongoose from "./pages/3.Tutos/1.WebDeveloppement/2.JS/6.Mongoose/Mongoose";
+import Tutos from "./pages/3.Tutos/0.0.Tutos";
+import OpenPyXl from "./pages/3.Tutos/2.OpenPyXl/1.0.OpenPyXl";
 
 
 export const router = createBrowserRouter([
@@ -35,23 +37,31 @@ export const router = createBrowserRouter([
             element : <Privacy />
         },
         {
-            path : "WebDev",
+            path : "Tutos",
+            element : <Tutos />
+        },
+        {
+            path : "Tutos/WebDev",
             element : <WebDev />,
         },
         {
-            path : "WebDev/Express",
+            path : "Tutos/OpenPyXl",
+            element : <OpenPyXl />,
+        },
+        {
+            path : "Tutos/WebDev/Express",
             element : <BuildExpressServer />
         },
         {
-            path : "WebDev/Routes",
+            path : "Tutos/WebDev/Routes",
             element : <SetRouter />
         },
         {
-            path : "WebDev/MongoDB",
+            path : "Tutos/WebDev/MongoDB",
             element : <MongoDB />
         },
         {
-            path : "WebDev/Mongoose",
+            path : "Tutos/WebDev/Mongoose",
             element : <Mongoose />
         }
         ]
