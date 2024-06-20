@@ -1,0 +1,17 @@
+.Body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    .Title{
+        width: 100%;
+    }
+
+    .Sommary{
+        background-color: #070025;
+        margin: 10px;
+        border: 1px #3f3f3f solid;
+        border-radius: 15px;
+    }
+}

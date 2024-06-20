@@ -4,13 +4,12 @@
     align-items: center;
 
     h1{
-        margin-top: 200px;
-        margin-bottom: 200px;
+        margin : 20px;
+        
     }
 
     p{
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin: 10px;
     
     }
 

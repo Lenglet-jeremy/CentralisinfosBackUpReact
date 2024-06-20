@@ -10,7 +10,7 @@ export default function NavBarSecondary() {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        setIsAuthenticated(!!token);
+        setIsAuthenticated(!token);
     }, []);
 
     const handleLogout = () => {
