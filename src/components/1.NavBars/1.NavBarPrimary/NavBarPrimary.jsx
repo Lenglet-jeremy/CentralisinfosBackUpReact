@@ -1,10 +1,10 @@
-import "./NavBarPrimary.css";
-import { ThemeContext } from "../../ThemeContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../ThemeContext";
 import { NavLink } from "react-router-dom";
+import "./NavBarPrimary.css";
 
-export default function NavBar({ handleTheme }) {
-  const theme = useContext(ThemeContext);
+export default function NavBarPrimary({ handleTheme }) {
+  const { theme } = useContext(ThemeContext);
 
   return (
     <nav className={`${theme} NavBarPrimary`}>
@@ -42,12 +42,11 @@ export default function NavBar({ handleTheme }) {
           Tu m'offres un café ?
         </a>
         <li className="Tutos">
-        <NavLink to={"/Tutos"}>Tutos</NavLink>
+          <NavLink to={"/Tutos"}>Tutos</NavLink>
           <ul className="TutosDropdown">
             <li><NavLink to={"/Tutos/WebDev"}>Developpement Web</NavLink></li>
             <li><NavLink to={"/Tutos/OpenPyXl"}>Faire mumuse avec OpenPyXl</NavLink></li>
             <li><a href="#">File Manager</a></li>
-            {/* <li><NavLink to={}>Faire mumuse avec OpenPyXl</NavLink></li> */}
           </ul>
         </li>
         <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>

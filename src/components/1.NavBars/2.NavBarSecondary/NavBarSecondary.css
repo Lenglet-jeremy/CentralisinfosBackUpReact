@@ -1,5 +1,4 @@
 .NavBarSecondary{
-    background-color: #070025;
     color: #FFFFFF;
     border-top: 1px solid #FFFFFF;
 
@@ -30,11 +29,4 @@
             margin-right: 15px;    
         }
     }
-}
-
-.DarkTheme{ 
-}
-  
-.LightTheme{
-    background-color: #333333;
 }

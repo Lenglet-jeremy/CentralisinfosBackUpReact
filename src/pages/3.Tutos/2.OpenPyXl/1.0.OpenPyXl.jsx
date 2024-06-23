@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NavBarPrimary from "../../../components/1.NavBarPrimary/NavBarPrimary";
-import NavBarSecondary from "../../../components/2.NavBarSecondary/NavBarSecondary";
+import NavBarPrimary from "../../../components/1.NavBars/1.NavBarPrimary/NavBarPrimary";
+import NavBarSecondary from "../../../components/1.NavBars/2.NavBarSecondary/NavBarSecondary";
 import { NavLink } from "react-router-dom";
 import "./1.0.OpenPyXl.css"
 

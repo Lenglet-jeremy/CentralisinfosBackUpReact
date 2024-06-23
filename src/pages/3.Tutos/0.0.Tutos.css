@@ -1,3 +1,10 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
 .Body{
     display: flex;
     flex-direction: column;

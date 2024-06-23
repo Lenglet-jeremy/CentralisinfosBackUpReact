@@ -14,7 +14,6 @@ p{
 
 
 .NavBarPrimary {
-    background-color: #070025;
     min-height: 60px;
     line-height: 60px;
 
@@ -199,9 +198,8 @@ p{
             border: 1px solid #3b3b3b;
         }
     }
-}
-
-.DarkTheme{
+}.DarkTheme{
+    background-color: #070025;
     .Logo{
         width: 120px;
         height: 100%;

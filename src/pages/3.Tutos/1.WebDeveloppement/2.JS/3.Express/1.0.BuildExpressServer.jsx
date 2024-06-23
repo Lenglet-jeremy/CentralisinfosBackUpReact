@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import NavBarPrimary from '../../../../../components/1.NavBarPrimary/NavBarPrimary';
-import NavBarSecondary from '../../../../../components/2.NavBarSecondary/NavBarSecondary';
+import React, { useContext } from "react";
+import NavBarPrimary from '../../../../../components/1.NavBars/1.NavBarPrimary/NavBarPrimary';
+import NavBarSecondary from '../../../../../components/1.NavBars/2.NavBarSecondary/NavBarSecondary';
 import "../0.Annexes/1.StylingTutos.css";
+import { ThemeContext } from "../../../../../ThemeContext";
 
 export default function BuildExpressServer() {
     
-  const [theme, setTheme] = useState("DarkTheme");
-
-  function handleTheme() {
-    setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
-  }
-    const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
+    const { theme, toggleTheme } = useContext(ThemeContext);
+      const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
     return (
         <div className={`${bodyTheme} `}>
             
-            <NavBarPrimary handleTheme={handleTheme} />
+            <NavBarPrimary handleTheme={toggleTheme} />
             <NavBarSecondary />
             <h1>Créer un serveur Express</h1>
 

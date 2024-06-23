@@ -1,22 +1,14 @@
-import { useState } from 'react';
-import './App.css';
-import { ThemeContext } from "./ThemeContext";
+import { ThemeProvider } from "./ThemeContext";
 import { Outlet } from "react-router-dom";
-
+import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState("DarkTheme");
-
-  function handleTheme() {
-    setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
-  }
-
   return (
-    <ThemeContext.Provider value={theme}>
+    <ThemeProvider>
       <div>
         <Outlet />
       </div>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 }
 
