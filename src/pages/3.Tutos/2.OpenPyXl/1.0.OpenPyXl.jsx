@@ -27,7 +27,7 @@ export default function OpenPyXl() {
                       </div>
                       <div className='BodyCourses'>
                           <p>Bonjour à tous ! Dans le cours qui suis nous allons apprendre à créer le fichier Excel qui suis : </p>
-                          <p><ins>Fichier Excel compta</ins></p>
+                          <iframe src="https://onedrive.live.com/embed?resid=F7CF7201558D3C58%211180&authkey=!ANarTfY9xSHXBCw&em=2" width="402" height="346" frameborder="0" scrolling="no"></iframe>
                       </div>
                   </div>
           </div>
