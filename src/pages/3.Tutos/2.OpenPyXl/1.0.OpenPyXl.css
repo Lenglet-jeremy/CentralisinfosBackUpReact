@@ -13,5 +13,14 @@
         margin: 10px;
         border: 1px #3f3f3f solid;
         border-radius: 15px;
+        max-width: 300px;
+    }
+    .BodyCourses{
+
+        width: 70vw;
+        iframe{
+            width: 100%;
+        min-height: 500px;
+        }
     }
 }

@@ -21,15 +21,17 @@ export default function OpenPyXl() {
           <div className="Title">
             <h1>OpenPyXl</h1>
           </div>
-                  <div className='CoursesArea'>
-                      <div className="Sommary">
-                          <NavLink to={"/Tutos/WebDev"} >Instalation de l'environnement de developpement</NavLink>
-                      </div>
-                      <div className='BodyCourses'>
-                          <p>Bonjour à tous ! Dans le cours qui suis nous allons apprendre à créer le fichier Excel qui suis : </p>
-                          <iframe src="https://onedrive.live.com/embed?resid=F7CF7201558D3C58%211180&authkey=!ANarTfY9xSHXBCw&em=2" width="402" height="346" frameborder="0" scrolling="no"></iframe>
-                      </div>
+              <div className='CoursesArea'>
+                  <div className="Sommary">
+                      <NavLink to={"/Tutos/WebDev"} >Instalation de l'environnement de developpement</NavLink>
                   </div>
+                  
+                  <div className='BodyCourses Section '>
+                      <p>Bonjour à tous ! Dans le cours qui suis nous allons apprendre à créer le fichier Excel qui suis : </p>
+                      <iframe src="https://onedrive.live.com/embed?resid=F7CF7201558D3C58%211180&authkey=!ANarTfY9xSHXBCw&em=2" width="402" height="346" frameborder="0" scrolling="no"></iframe>
+                  </div>
+
+              </div>
           </div>
         </div>
     )

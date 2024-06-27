@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./1.1.Register.css";
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -64,7 +64,6 @@ export default function Register() {
         <div className="RegisterForm">
           <div className="RegisterHomepage">
             <h2>Inscription</h2>
-            <NavLink to="/"> Accueil</NavLink>
           </div>
 
           <form onSubmit={handleSubmit}>

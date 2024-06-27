@@ -44,7 +44,6 @@ export default function Login() {
                 <div className="LoginForm">
                     <div className="LoginHomepage">
                         <h2>Connexion</h2>
-                        <NavLink to="/"> Accueil</NavLink>
                     </div>
 
                     <form onSubmit={handleSubmit}>
