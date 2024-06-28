@@ -22,5 +22,13 @@
             width: 100%;
         min-height: 500px;
         }
+    }    
+
+    .Section{
+        margin: 25px 0px;
+        width: 100%;
+        border: 1px solid #555555;
+        border-radius: 15px; 
+        
     }
 }
