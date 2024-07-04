@@ -194,7 +194,7 @@ p{
         display: block;
         width: 150px;
         li {
-            line-height: 50px;
+            line-height: 30px;
             border: 1px solid #3b3b3b;
         }
     }

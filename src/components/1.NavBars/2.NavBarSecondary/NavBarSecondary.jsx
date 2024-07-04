@@ -5,9 +5,7 @@ import "./NavBarSecondary.css";
 
 export default function NavBarSecondary() {
   const navigate = useNavigate();
-
   const { theme } = useContext(ThemeContext);
-  
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -39,7 +37,7 @@ export default function NavBarSecondary() {
           <li><i><a href="#" style={{ color: '#555555' }}>Epingles</a></i></li>
           <li><i><a href="#" style={{ color: '#555555' }}>Utilisateur</a></i></li>
           {isAuthenticated && (
-            <li><i><a href="#" onClick={handleLogout}>Logout</a></i></li>
+            <li><i><a href="#" onClick={handleLogout}>Se deconnecter</a></i></li>
           )}
         </ul>
       </div>

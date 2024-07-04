@@ -1,22 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import NavBarPrimary from "../../../components/1.NavBars/1.NavBarPrimary/NavBarPrimary";
 import NavBarSecondary from "../../../components/1.NavBars/2.NavBarSecondary/NavBarSecondary";
 import { NavLink } from "react-router-dom";
 import "./1.0.OpenPyXl.css"
 import "../1.WebDeveloppement/2.JS/0.Annexes/1.StylingTutos.css"
+import { ThemeContext } from "../../../ThemeContext";
 
 export default function OpenPyXl() {
-    const [theme, setTheme] = useState("DarkTheme");
-  
-    function handleTheme() {
-      setTheme(theme === "DarkTheme" ? "LightTheme" : "DarkTheme");
-    }
+      const { theme, toggleTheme } = useContext(ThemeContext);
 
       const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
     return (
         <div>
-        <NavBarPrimary handleTheme={handleTheme} />
+        <NavBarPrimary handleTheme={toggleTheme} />
         <NavBarSecondary />
         <div className={`${bodyTheme} Body`}>
           <div className="Title">

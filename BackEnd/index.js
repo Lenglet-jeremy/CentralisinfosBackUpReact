@@ -4,27 +4,18 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { type } = require("@testing-library/user-event/dist/cjs/utility/type.js");
 const port = process.env.PORT || 5000;
 
 const app = express();
 
 app.use(express.json());
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
-        .then(() => {
-          app.listen(port, () => {
-            console.log(`DB connected on port ${port}`);
-          });
-        })
-        .catch(err => {
-          console.error('Erreur de connection à MongoDB :', err);
-        });
+  .then(() => { app.listen(port, () => {
+                  console.log(`DB connected on port ${port}`);});
+  })
+  .catch(err => {console.error('Erreur de connexion à MongoDB :', err);});
 
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -33,7 +24,7 @@ const UserSchema = new mongoose.Schema({
   RGPD: { type: String, required: true }
 });
 
-const User = mongoose.model('AuthLog', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 app.get('/api/register', async (req, res) => {
   const users = await User.find();
@@ -47,12 +38,12 @@ app.post('/api/register', async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
-      RGPD: req.body.RGPD 
-   });
+      RGPD: req.body.RGPD
+    });
     await newUser.save();
     res.status(201).json(newUser);
   } catch (err) {
-    res.status(400).json({ message: `Erreur lors de la creation de l'utilisateur`, error: err.message });
+    res.status(400).json({ message: `Erreur lors de la création de l'utilisateur`, error: err.message });
   }
 });
 
