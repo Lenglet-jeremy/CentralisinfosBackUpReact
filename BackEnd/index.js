@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { type } = require("@testing-library/user-event/dist/cjs/utility/type.js");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -14,7 +15,6 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
 
 mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
         .then(() => {
@@ -29,7 +29,8 @@ mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  RGPD: { type: String, required: true }
 });
 
 const User = mongoose.model('AuthLog', UserSchema);
@@ -45,8 +46,9 @@ app.post('/api/register', async (req, res) => {
     const newUser = new User({
       name: req.body.name,
       email: req.body.email,
-      password: hashedPassword
-    });
+      password: hashedPassword,
+      RGPD: req.body.RGPD 
+   });
     await newUser.save();
     res.status(201).json(newUser);
   } catch (err) {

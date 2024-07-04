@@ -8,8 +8,13 @@ export default function Register() {
   const [userPassword, setUserPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordConditions, setPasswordConditions] = useState([]);
+  const [checked, setChecked] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const handleChecked = (event) => {
+    setChecked(event.target.checked);
+  };
 
   const handlePasswordConditions = (event) => {
     const password = event.target.value;
@@ -33,6 +38,10 @@ export default function Register() {
       setError('Les mots de passe ne correspondent pas');
       return;
     }
+    if (!checked) {
+      setError('Vous devez accepter les conditions générales');
+      return;
+    }
 
     fetch('http://localhost:5000/api/register', {
       method: 'POST',
@@ -42,7 +51,8 @@ export default function Register() {
       body: JSON.stringify({
         name: userName,
         email: userMail,
-        password: userPassword
+        password: userPassword,
+        RGPD: checked 
       })
     })
     .then(response => response.json())
@@ -56,6 +66,7 @@ export default function Register() {
     setUserMail('');
     setUserPassword('');
     setConfirmPassword('');
+    setChecked(false);
   };
 
   return (
@@ -117,7 +128,9 @@ export default function Register() {
               </div>
             </div>
             <br />
-            <input type="checkbox" />
+            <input type="checkbox"
+                   defaultChecked={false}
+                   onChange={handleChecked} />
             <label>J'accepte les <NavLink to={'/GCU'}><i>Conditions Générales d'Utilisation</i></NavLink></label>
             <br /><br />
             <button type="submit">S'inscrire</button>
