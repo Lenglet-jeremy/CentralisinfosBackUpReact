@@ -39,7 +39,6 @@ export default function NavBarSecondary() {
 
       <div className="RightSide">
         <ul>
-          <li><i><a href="#" style={{ color: '#555555' }} className="FirstElement">Epingles</a></i></li>
           <li><i><a href="#" style={{ color: '#555555' }}>Epingles1</a></i></li>
           <li><i><a href="#" style={{ color: '#555555' }}>Epingles2</a></i></li>
           <li><i><a href="#" style={{ color: '#555555' }}>Epingles3</a></i></li>
