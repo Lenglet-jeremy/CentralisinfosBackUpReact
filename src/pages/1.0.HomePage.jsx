@@ -9,12 +9,14 @@ export default function HomePage() {
   const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
   return (
-    <div className={`${bodyTheme} Body`}>
+    <div className={`${bodyTheme} `}>
       <NavBarPrimary handleTheme={toggleTheme} />
       <NavBarSecondary />
+      <div className="HomePageBody">
       <h1>CE SITE EST EN PLEIN DEVELOPPEMENT !</h1>
       <h2>Centralisinfos : Pour l'Unification de la Culture et de la Connaissance</h2>
       <p>Bonjour à tous, ce site sera dédié à la centralisation des cours du début collége jusqu'a BAC + X de tous Cursus</p>
+      </div>
     </div>
   );
 }

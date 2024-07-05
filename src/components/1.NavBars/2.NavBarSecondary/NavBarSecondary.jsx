@@ -32,12 +32,21 @@ export default function NavBarSecondary() {
           <li><a href="#" style={{ color: '#555555' }}>Terminale</a></li>
         </ul>
       </div>
+
+    <div className="Widgets Center">
+      <button>Widgets</button>
+    </div>
+
       <div className="RightSide">
         <ul>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingles</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Utilisateur</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }} className="FirstElement">Epingles</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingles1</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingles2</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingles3</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingles4</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingles5</a></i></li>
           {isAuthenticated && (
-            <li><i><a href="#" onClick={handleLogout}>Se deconnecter</a></i></li>
+            <li><i><a href="#" onClick={handleLogout}>Deconnexion</a></i></li>
           )}
         </ul>
       </div>
