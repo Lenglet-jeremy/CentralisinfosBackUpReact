@@ -30,17 +30,30 @@ export default function NavBarPrimary({ handleTheme }) {
           <span className="DarkLightThemeSlider"></span>
         </label>
       </ul>
+
       <div className="SearchBarContainer">
         <label className="SearchBar">
           <img src="../../../../searchIcon.svg" alt="" />
           <input placeholder="Recherche" />
         </label>
       </div>
+      <div className="SearchBarContainerResponsive">
+        <button className="SearchBarResponsive">
+          <img src="../../../../searchIcon.svg" alt="" />
+          <input />
+        </button>
+      </div>
+
       <ul className="RightSide">
+
         <a href="#" className="Gift">
           <img src='../../../../heart.png' alt="Coeur" />
           Tu m'offres un café ?
         </a>
+        <a href="#" className="GiftResponsive">
+          <img src='../../../../heart.png' alt="Coeur" />
+        </a>
+
         <li className="Tutos">
           <NavLink to={"/Tutos"}>Tutos</NavLink>
           <ul className="TutosDropdown">

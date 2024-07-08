@@ -1,4 +1,9 @@
 
+
+    .Responsive1{
+        display: none;
+    }
+
     .NavBarSecondary{
     
 
@@ -52,3 +57,18 @@
         }
     }
 }    
+
+
+@media (max-width : 1200px) {
+    .LeftSide ul li{
+        display: none;
+    }
+    .RightSide ul li{
+        display: none;
+    }
+    .Responsive1{
+        display: flex;
+        padding: 0px 30px;
+    }
+    
+}
