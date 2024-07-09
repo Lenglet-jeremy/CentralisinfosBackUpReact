@@ -20,11 +20,9 @@
 .DarkBody{
     background-color: #000000;
     color: #FFFFFF;
-    min-height: 100vh;
 }
 
 .LightBody{
     background-color: #222222;
     color: #FFFFFF;
-    min-height: 100vh;
 }

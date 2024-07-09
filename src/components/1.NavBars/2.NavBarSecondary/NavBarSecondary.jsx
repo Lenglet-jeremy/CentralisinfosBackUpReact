@@ -46,11 +46,11 @@ export default function NavBarSecondary() {
         <li><a href="#" style={{ color: '#555555' }} className="Responsive">Favoris</a></li>  
       </div>
       <ul>
-          <li><i><a href="#" style={{ color: '#555555' }}>Favori1</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Favori2</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Favori3</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Favori4</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Favori5</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 1</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 2</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 3</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 4</a></i></li>
+          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 5</a></i></li>
           {isAuthenticated && (
             <li><i><a href="#" onClick={handleLogout}>Deconnexion</a></i></li>
           )}
