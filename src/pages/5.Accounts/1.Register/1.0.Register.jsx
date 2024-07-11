@@ -124,7 +124,6 @@ export default function Register() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirmation Mot de passe" 
                 />
-                {error && <p className="Error">{error}</p>}
               </div>
             </div>
             <br />
@@ -132,6 +131,7 @@ export default function Register() {
                    defaultChecked={false}
                    onChange={handleChecked} />
             <label>J'accepte les <NavLink to={'/GCU'}><i>Conditions Générales d'Utilisation</i></NavLink></label>
+            {error && <p className="Error">{error}</p>}
             <br /><br />
             <button type="submit">S'inscrire</button>
           </form>

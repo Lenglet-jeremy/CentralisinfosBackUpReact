@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
             element : <Mongoose />
         },
         {
-            path : "fondator",
+            path : "Account/Fondator",
             element : <Fondator/>
         },
         ]

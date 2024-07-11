@@ -1,0 +1,56 @@
+
+@media (min-width : 1201px) {
+         
+    .StatusBar{
+        background-color: #282536;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        gap: 10px;
+
+        position: sticky;
+        bottom: 0px;
+
+
+        p{
+            font-size: 15px;
+        }
+
+        .Left{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .Center{
+
+        }
+
+        .Right{
+            display: flex;
+            flex-direction: row;
+        }   
+    }
+}
+    @media (max-width : 1200px) {
+        .StatusBar{
+            display: none;
+
+            .Left{
+                display: none;
+            }
+            .Center{
+                display: none;
+            }
+            .Right{
+                display: none;
+            }
+        }
+}
+
+@media (max-width: 1000px) {
+.Left {
+    display: block;
+}
+}

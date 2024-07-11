@@ -52,7 +52,7 @@ export default function NavBarSecondary() {
           <li><i><a href="#" style={{ color: '#555555' }}>Epingle 4</a></i></li>
           <li><i><a href="#" style={{ color: '#555555' }}>Epingle 5</a></i></li>
           {isAuthenticated && (
-            <li><i><a href="#" onClick={handleLogout}>Deconnexion</a></i></li>
+            <li><i><a href="#"  onClick={handleLogout}>Deconnexion</a></i></li>
           )}
         </ul>
       </div>

@@ -14,13 +14,15 @@ p{
 
 
 .NavBarPrimary {
+    position: sticky;
+    top: 0px;
+
     min-height: 60px;
     line-height: 60px;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     width: 100%;
     
@@ -29,7 +31,7 @@ p{
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-left: 15px;
+        margin-left: 10px;
     }
     .LeftSide > li{
         margin-left: 15px;
@@ -83,7 +85,7 @@ p{
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin-right: 15px;
+        margin-right: 10px;
 
         > li{
             margin-right: 15px;
@@ -126,7 +128,7 @@ p{
         height: 24px;
 
         border-radius: 12px;
-        margin-left: 20px;
+        margin-left: 10px;
 
         display: flex;
         flex-direction: row;
@@ -299,7 +301,7 @@ p{
 .DarkTheme{
     background-color: #070025;
     .Logo{
-        width: 120px;
+        width: 80px;
         height: 100%;
         background-image: url('../LogoCentralisinfos/300ppi/LOGO6.png');
         background-size: contain;
@@ -313,7 +315,7 @@ p{
     .Logo{
         width: 120px;
         height: 100%;
-        background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
+        background-image: url('../LogoCentralisinfos/300ppi/LOGO4.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
