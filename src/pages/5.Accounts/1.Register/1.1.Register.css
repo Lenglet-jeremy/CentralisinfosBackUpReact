@@ -10,8 +10,8 @@
 
     width: auto;
     padding: 15px;
-    margin-right: 50px;
     border-radius: 30px;
+    margin-top: 50px;
 
     display: flex;
     flex-direction: column;

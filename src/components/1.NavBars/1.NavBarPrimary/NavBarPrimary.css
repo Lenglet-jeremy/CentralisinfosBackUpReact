@@ -41,20 +41,6 @@ p{
     }
 
 
-    .SubjectsDropDown {
-        display: none; 
-        position: absolute;
-        background-color: #070025; 
-    }
-
-    .Subjects:hover .SubjectsDropDown{
-        display: block;
-        width: 100px;
-        li {
-            line-height: 50px;
-            border: 1px solid #3b3b3b;
-        }
-    }
 
     .UniversityCoursesDropDown {
         display: none; 
@@ -164,20 +150,7 @@ p{
     }
     
 }
-    .TutosDropdown{
-        display: none;
-        position: absolute;
-        background-color: #070025;
 
-    }
-    .Tutos:hover .TutosDropdown{
-        display: block;
-        width: 150px;
-        li {
-            line-height: 30px;
-            border: 1px solid #3b3b3b;
-        }
-    }
 }
 
 .DarkTheme{

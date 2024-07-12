@@ -13,11 +13,6 @@ export default function NavBarPrimary({ handleTheme }) {
         <a href="/" className="Logo" />
         <li className="Subjects">
           <a href="#" style={{ color: '#555555' }}>Disciplines</a>
-          <ul className="SubjectsDropDown">
-            <li><a href="#">Français</a></li>
-            <li><a href="#">Anglais</a></li>
-            <li><a href="#">Maths</a></li>
-          </ul>
         </li>
         <li className="UniversityCourses">
           <a href="#" style={{ color: '#555555' }}>Cursus Universitaires</a>
@@ -59,11 +54,6 @@ export default function NavBarPrimary({ handleTheme }) {
 
         <li className="Tutos">
           <NavLink to={"/Tutos"}>Tutos</NavLink>
-          <ul className="TutosDropdown">
-            <li><NavLink to={"/Tutos/WebDev"}>Developpement Web</NavLink></li>
-            <li><NavLink to={"/Tutos/OpenPyXl"}>Faire mumuse avec OpenPyXl</NavLink></li>
-            <li><a href="#">File Manager</a></li>
-          </ul>
         </li>
         <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>
         <NavLink to="/account">Compte</NavLink>

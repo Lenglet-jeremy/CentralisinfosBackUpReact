@@ -14,6 +14,8 @@ import Tutos from "./pages/3.Tutos/0.0.Tutos";
 import OpenPyXl from "./pages/3.Tutos/2.OpenPyXl/1.0.OpenPyXl";
 import Fondator from "./pages/0.Admin/0.Fondator/0.0.Fondator";
 import WritingCourses from "./pages/5.Accounts/4.WritingCourses/1.0.WritingCourses";
+import Register from "./pages/5.Accounts/1.Register/1.0.Register";
+import Login from "./pages/5.Accounts/2.Login/1.0.Login";
 
 
 export const router = createBrowserRouter([
@@ -31,10 +33,6 @@ export const router = createBrowserRouter([
             element : <Account />
         },
         {
-            path : "account/writingcourses",
-            element : <WritingCourses />
-        },
-        {
             path : "GCU",
             element : <GCU />
         },
@@ -43,8 +41,20 @@ export const router = createBrowserRouter([
             element : <Privacy />
         },
         {
+            path : "register",
+            element : <Register/>
+        },
+        {
+            path : "login",
+            element : <Login />
+        },
+        {
+            path : "account/writingcourses",
+            element : <WritingCourses />
+        },
+        {
             path : "Tutos",
-            element : <Tutos />
+            element : <Tutos />,
         },
         {
             path : "Tutos/WebDev",

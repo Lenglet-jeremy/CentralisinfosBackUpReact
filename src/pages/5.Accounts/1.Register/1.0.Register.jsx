@@ -130,7 +130,7 @@ export default function Register() {
             <input type="checkbox"
                    defaultChecked={false}
                    onChange={handleChecked} />
-            <label>J'accepte les <NavLink to={'/GCU'}><i>Conditions Générales d'Utilisation</i></NavLink></label>
+            <label>J'accepte les <NavLink to={'/GCU'}><i>CGUs</i></NavLink></label>
             {error && <p className="Error">{error}</p>}
             <br /><br />
             <button type="submit">S'inscrire</button>
