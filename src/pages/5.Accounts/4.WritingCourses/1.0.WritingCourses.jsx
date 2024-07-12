@@ -25,7 +25,6 @@ export default function WritingCourses() {
             <p>Contenu du menu Fichier</p>
         )
     }
-
     const renderToolsBarContent = () => {
         switch (selectedMenu) {
             case "Fichier":
@@ -92,7 +91,7 @@ export default function WritingCourses() {
 
                 <div className="ContentArea">
                     <div className="Content">
-                        <p>Hello world ! </p>
+                        <input type="text" />
                     </div>
                 </div>
 

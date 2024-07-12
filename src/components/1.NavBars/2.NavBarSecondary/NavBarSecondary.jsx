@@ -21,6 +21,7 @@ export default function NavBarSecondary() {
 
   return (
     <nav className={`${theme} NavBarSecondary`}>
+      {/* Coter gauche de la NavBar secondaire */}
       <div className="LeftSide">
         <ul>
           <li><a href="#" style={{ color: '#555555' }}>Sixieme</a></li>
@@ -36,10 +37,12 @@ export default function NavBarSecondary() {
         </div>
       </div>
 
+    {/* Centre de la NavBar secondaire */}
     <div className="Widgets Center">
       <button>Widgets</button>
     </div>
 
+      {/* Coter droit de la NavBar secondaire */}
       <div className="RightSide">
         
       <div className="Responsive1">

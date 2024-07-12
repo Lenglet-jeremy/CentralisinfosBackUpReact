@@ -2,7 +2,7 @@
 .ToolsBar{
     position: sticky;
     top: 157px;
-    background-color: #04001E;
+    background-color: #090042;
 
     width: 100%;
     height: 100px;
@@ -10,4 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    
+
 }

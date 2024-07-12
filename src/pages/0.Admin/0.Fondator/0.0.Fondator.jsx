@@ -12,9 +12,12 @@ export default function Fondator(){
     return (
         
         <div className="FondatorPage">
+
             <NavBarPrimary handleTheme={toggleTheme} />
             <NavBarSecondary />
+
             <div className={`${bodyTheme} FondatorBody`} >
+                {/* Pannel de Gauche */}
                 <div className="NavPanel">
                     <ul>
                         <li>Tableau de bord</li>
@@ -25,6 +28,8 @@ export default function Fondator(){
                         <li>Logs</li>
                     </ul>
                 </div>
+
+                {/* Panel de droite */}
                 <div className="ViewPanel">
                     <div className="GlobalDatas">
                         

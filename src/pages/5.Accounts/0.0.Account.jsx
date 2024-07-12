@@ -9,14 +9,14 @@ import "./0.1.Account.css";
 
 export default function Account() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsAuthenticated(!!token);
   }, []);
 
-  const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
   return (
     <div className={`${bodyTheme} AccountPage`}>

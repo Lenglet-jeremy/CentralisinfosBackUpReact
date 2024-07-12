@@ -8,6 +8,7 @@ export default function NavBarPrimary({ handleTheme }) {
 
   return (
     <nav className={`${theme} NavBarPrimary`}>
+      {/* Coter Gauche de la NavBar primaire */}
       <ul className="LeftSide">
         <a href="/" className="Logo" />
         <li className="Subjects">
@@ -31,6 +32,7 @@ export default function NavBarPrimary({ handleTheme }) {
         </label>
       </ul>
 
+      {/* Centre de la NavBar primaire */}
       <div className="SearchBarContainer">
         <label className="SearchBar">
           <img src="../../../../searchIcon.svg" alt="" />
@@ -44,6 +46,7 @@ export default function NavBarPrimary({ handleTheme }) {
         </button>
       </div>
 
+      {/* Coter Droit de la NavBar Primaire */}
       <ul className="RightSide">
 
         <a href="#" className="Gift">
