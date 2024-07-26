@@ -32,13 +32,26 @@ app.get('/api/register', async (req, res) => {
 });
 
 app.post('/api/register', async (req, res) => {
+  const { name, email, password, RGPD } = req.body;
+
+  // Vérifier que tous les champs nécessaires sont remplis
+  if (!name || !email || !password || !RGPD) {
+    return res.status(400).json({ message: 'Tous les champs sont requis.' });
+  }
+
   try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    // Vérifier si l'e-mail existe déjà
+    const existingUser = await User.findOne({ email: email });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Cet e-mail est déjà utilisé.' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({
-      name: req.body.name,
-      email: req.body.email,
+      name: name,
+      email: email,
       password: hashedPassword,
-      RGPD: req.body.RGPD
+      RGPD: RGPD
     });
     await newUser.save();
     res.status(201).json(newUser);

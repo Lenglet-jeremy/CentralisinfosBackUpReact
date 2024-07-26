@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./1.1.Login.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -68,7 +68,9 @@ export default function Login() {
                                 {error && <p className="Error">{error}</p>}
                             </div>
                         </div>
-
+                        <div className="NavLink">
+                            <NavLink to="/register"> Vous n'avez pas de compte ?</NavLink>
+                        </div>
                         <br />
                         <button type="submit">Se connecter</button>
                     </form>

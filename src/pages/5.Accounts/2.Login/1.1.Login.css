@@ -1,13 +1,20 @@
 .BodyLogin {
-  background-color: #140a3d;
-  
+  min-height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   border-radius: 30px;
 
   .LoginForm {
-    padding: 15px;
+    background-color: #140a3d;
+
     display: flex;
     flex-direction: column;
+
+    padding: 15px;
+    border-radius: 15px;
   }
   
   input{
@@ -28,6 +35,18 @@
   .ErrorLogin {
     color: #FF0000;
     display: none;
+  }
+
+  .PasswordArea{
+    margin: 20px 0px;
+  }
+
+  .NavLink{
+    margin-top: 10px;
+  }
+
+  button{
+    margin-left: 60px;
   }
 
   .LoginHomepage {

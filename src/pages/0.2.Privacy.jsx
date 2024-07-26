@@ -27,7 +27,7 @@ export default function Privacy() {
             <h2>1. Informations que Nous Collectons</h2>
             <p>Nous collectons les informations suivantes :</p>
             <ul>
-                <li><strong>Informations d'inscription :</strong> adresse e-mail, mot de passe.</li>
+                <li><strong>Informations d'inscription :</strong> pseudo, adresse e-mail, mot de passe.</li>
                 <li><strong>Informations d'utilisation :</strong> données de navigation, adresses IP, préférences utilisateur.</li>
                 <li><strong>Contenu utilisateur :</strong> cours téléchargés, commentaires, messages sur le forum.</li>
             </ul>

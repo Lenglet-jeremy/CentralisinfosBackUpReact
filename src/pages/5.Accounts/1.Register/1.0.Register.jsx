@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./1.1.Register.css";
 import { NavLink, useNavigate } from "react-router-dom";
+import NavBarPrimary from "../../../components/1.NavBars/1.NavBarPrimary/NavBarPrimary";
+import NavBarSecondary from "../../../components/1.NavBars/2.NavBarSecondary/NavBarSecondary";
+import { ThemeContext } from "../../../ThemeContext";
 
 export default function Register() {
   const [userName, setUserName] = useState('');
@@ -11,6 +14,9 @@ export default function Register() {
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
   const handleChecked = (event) => {
     setChecked(event.target.checked);
@@ -55,22 +61,35 @@ export default function Register() {
         RGPD: checked 
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(data => { throw new Error(data.message) });
+      }
+      return response.json();
+    })
     .then(data => {
       localStorage.setItem('token', data.token);
       navigate('/');
     })
-    .catch(error => console.error('Error posting data: ', error));
+    .catch(error => {
+      setError(error.message);
+      if (error.message === 'Cet e-mail est déjà utilisé.') {
+        setChecked(false); // Décocher la checkbox des CGUs
+      }
+    });
 
     setUserName('');
     setUserMail('');
     setUserPassword('');
     setConfirmPassword('');
-    setChecked(false);
   };
 
   return (
-    <div className={`RegisterPage`}>
+    <div className={`${bodyTheme} RegisterPage`}>
+      <div className="AccountNavBars">
+        <NavBarPrimary handleTheme={toggleTheme} />
+        <NavBarSecondary />
+      </div>
       <div className="BodyRegister">
         <div className="RegisterForm">
           <div className="RegisterHomepage">
@@ -128,7 +147,7 @@ export default function Register() {
             </div>
             <br />
             <input type="checkbox"
-                   defaultChecked={false}
+                   checked={checked}
                    onChange={handleChecked} />
             <label>J'accepte les <NavLink to={'/GCU'}><i>CGUs</i></NavLink></label>
             {error && <p className="Error">{error}</p>}

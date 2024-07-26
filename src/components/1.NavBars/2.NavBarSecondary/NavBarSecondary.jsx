@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../../ThemeContext";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./NavBarSecondary.css";
 
 export default function NavBarSecondary() {
@@ -21,41 +21,40 @@ export default function NavBarSecondary() {
 
   return (
     <nav className={`${theme} NavBarSecondary`}>
-      {/* Coter gauche de la NavBar secondaire */}
+      {/* Côté gauche de la NavBar secondaire */}
       <div className="LeftSide">
         <ul>
-          <li><a href="#" style={{ color: '#555555' }}>Sixieme</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Cinquieme</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Quatrieme</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Troisieme</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Seconde</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Premiere</a></li>
-          <li><a href="#" style={{ color: '#555555' }}>Terminale</a></li>
+          <li><NavLink to="#" className="NavLink">Sixième</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Cinquième</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Quatrième</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Troisième</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Seconde</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Première</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Terminale</NavLink></li>
         </ul>
         <div className="Responsive1">
-          <li><a href="#" style={{ color: '#555555' }} className="Responsive">Niveaux</a></li>  
+          <li><NavLink to="#" className="NavLink Responsive">Niveaux</NavLink></li>  
         </div>
       </div>
 
-    {/* Centre de la NavBar secondaire */}
-    <div className="Widgets Center">
-      <button>Widgets</button>
-    </div>
-
-      {/* Coter droit de la NavBar secondaire */}
-      <div className="RightSide">
-        
-      <div className="Responsive1">
-        <li><a href="#" style={{ color: '#555555' }} className="Responsive">Favoris</a></li>  
+      {/* Centre de la NavBar secondaire */}
+      <div className="Widgets Center">
+        <button>Widgets</button>
       </div>
-      <ul>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 1</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 2</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 3</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 4</a></i></li>
-          <li><i><a href="#" style={{ color: '#555555' }}>Epingle 5</a></i></li>
+
+      {/* Côté droit de la NavBar secondaire */}
+      <div className="RightSide">
+        <div className="Responsive1">
+          <li><NavLink to="#" className="NavLink Responsive">Favoris</NavLink></li>  
+        </div>
+        <ul>
+          <li><NavLink to="#" className="NavLink">Épingle 1</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Épingle 2</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Épingle 3</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Épingle 4</NavLink></li>
+          <li><NavLink to="#" className="NavLink">Épingle 5</NavLink></li>
           {isAuthenticated && (
-            <li><i><a href="#"  onClick={handleLogout}>Deconnexion</a></i></li>
+            <li><NavLink to="#" className="NavLink" onClick={handleLogout}>Déconnexion</NavLink></li>
           )}
         </ul>
       </div>

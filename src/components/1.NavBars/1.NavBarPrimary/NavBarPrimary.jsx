@@ -8,17 +8,17 @@ export default function NavBarPrimary({ handleTheme }) {
 
   return (
     <nav className={`${theme} NavBarPrimary`}>
-      {/* Coter Gauche de la NavBar primaire */}
+      {/* Côté gauche de la NavBar primaire */}
       <ul className="LeftSide">
-        <a href="/" className="Logo" />
+        <NavLink to="/" className="Logo" />
         <li className="Subjects">
-          <a href="#" style={{ color: '#555555' }}>Disciplines</a>
+          <NavLink to="#" className="NavLink">Disciplines</NavLink>
         </li>
         <li className="UniversityCourses">
-          <a href="#" style={{ color: '#555555' }}>Cursus Universitaires</a>
+          <NavLink to="#" className="NavLink">Cursus Universitaires</NavLink>
           <ul className="UniversityCoursesDropDown">
-            <li><a href="#">Developpement Web</a></li>
-            <li><a href="#">Comptabilité et Gestion</a></li>
+            <li><NavLink to="#">Développement Web</NavLink></li>
+            <li><NavLink to="#">Comptabilité et Gestion</NavLink></li>
           </ul>
         </li>
         <label className="DarkLightThemeToggle">
@@ -41,21 +41,19 @@ export default function NavBarPrimary({ handleTheme }) {
         </button>
       </div>
 
-      {/* Coter Droit de la NavBar Primaire */}
+      {/* Côté droit de la NavBar Primaire */}
       <ul className="RightSide">
-
-        <a href="#" className="Gift">
+        <NavLink to="#" className="Gift">
           <img src='../../../../heart.png' alt="Coeur" />
           Tu m'offres un café ?
-        </a>
-        <a href="#" className="GiftResponsive">
+        </NavLink>
+        <NavLink to="#" className="GiftResponsive">
           <img src='../../../../heart.png' alt="Coeur" />
-        </a>
-
+        </NavLink>
         <li className="Tutos">
-          <NavLink to={"/Tutos"}>Tutos</NavLink>
+          <NavLink to="/Tutos">Tutos</NavLink>
         </li>
-        <li><a href="#" style={{ color: '#555555' }}>Forum</a></li>
+        <li><NavLink to="#" className="NavLink">Forum</NavLink></li>
         <NavLink to="/account">Compte</NavLink>
       </ul>
     </nav>
