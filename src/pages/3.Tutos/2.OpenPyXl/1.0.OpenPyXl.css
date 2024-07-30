@@ -1,0 +1,96 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .tooltip-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-container:hover .tooltip-text,
+  .tooltip-container:focus .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+.Body{
+  min-height: calc(100vh - 102px);
+
+    pre{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .Title{
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .CoursesArea{
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+
+        NavLink{
+            color: #000080;
+        }
+        .Sommary{
+          position: absolute;
+          left: 10px;
+        }
+
+        .BodyCourses{
+
+            .ProjectDisplay{
+            
+            }
+    
+            .Section{
+                margin: 25px 0px;
+                width: 100%;
+                border: 1px solid #555555;
+                border-radius: 15px;         
+            }
+
+            .PreviousNext{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            }
+
+        }
+        
+    }
+}
+

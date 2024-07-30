@@ -1,0 +1,47 @@
+
+.MenuBar {
+    position: sticky;
+    top: 101px;
+
+    background-color: #090042;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 10px 10px;
+
+    border-bottom: 1px solid #000000;
+
+    button{
+        margin-top: 0px;
+        background-color: #00000000;
+    }
+
+    .Left {
+        ul {
+            .MenusResponsive {
+                display: none;
+            }
+
+            display: flex;
+
+            @media (max-width: 1000px) {
+                .MenusResponsive {
+                    display: block;
+                }
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1400px) {
+        .ContextMenus {
+            display: none;
+        }
+    }
+
+}

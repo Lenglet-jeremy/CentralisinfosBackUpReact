@@ -1,0 +1,58 @@
+.BodyLogin {
+  min-height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 30px;
+
+  .LoginForm {
+    background-color: #140a3d;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  input{
+    background-color: #e0e5ff00;
+    color: #e0e5ff;
+    border: #e0e5ff 1px solid;
+    margin-left: 10px;
+  }
+
+
+  h1{
+    color: #FFFFFF;
+  }
+  label {
+    color: #FFFFFF;
+  }
+
+  .ErrorLogin {
+    color: #FF0000;
+    display: none;
+  }
+
+  .PasswordArea{
+    margin: 20px 0px;
+  }
+
+  .NavLink{
+    margin-top: 10px;
+  }
+
+  button{
+    margin-left: 60px;
+  }
+
+  .LoginHomepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

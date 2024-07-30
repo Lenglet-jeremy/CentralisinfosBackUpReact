@@ -1,0 +1,19 @@
+.AccountPage{
+    min-height: calc(100vh - 102px);
+    width: 100%;
+}
+
+.AccountBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+
+
+    /* margin-top: 150px; */
+
+}
