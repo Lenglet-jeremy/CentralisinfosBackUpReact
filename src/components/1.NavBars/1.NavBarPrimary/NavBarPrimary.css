@@ -154,7 +154,7 @@ p{
 }
 
 .DarkTheme{
-    background-color: #121212;
+    background-color: #000000;
     .DarkLightThemeToggle{
         background-color: #FFFFFF30;
 
@@ -316,7 +316,7 @@ p{
     }
     
 .DarkTheme{
-    background-color: #121212;
+    background-color: #000000;
     .Logo{
         width: 80px;
         height: 100%;
