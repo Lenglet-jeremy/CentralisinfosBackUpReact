@@ -41,7 +41,6 @@ p{
     }
 
 
-
     .UniversityCoursesDropDown {
         display: none; 
         position: absolute;
@@ -196,7 +195,7 @@ p{
     .Logo{
         width: 120px;
         height: 100%;
-        background-image: url('../LogoCentralisinfos/300ppi/LOGO3.png');
+        background-image: url('/LogoCentralisinfos/300ppi/LOGO3.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -246,7 +245,7 @@ p{
     .Logo{
         width: 120px;
         height: 100%;
-        background-image: url('../LogoCentralisinfos/300ppi/LOGO1.png');
+        background-image: url('/LogoCentralisinfos/300ppi/LOGO1.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -320,7 +319,7 @@ p{
     .Logo{
         width: 80px;
         height: 100%;
-        background-image: url('../LogoCentralisinfos/300ppi/LOGO6.png');
+        background-image: url('/LogoCentralisinfos/300ppi/LOGO6.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -332,11 +331,13 @@ p{
     .Logo{
         width: 120px;
         height: 100%;
-        background-image: url('../LogoCentralisinfos/300ppi/LOGO4.png');
+        background-image: url('/LogoCentralisinfos/300ppi/LOGO4.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
     }
 }
+
+        
 
 }

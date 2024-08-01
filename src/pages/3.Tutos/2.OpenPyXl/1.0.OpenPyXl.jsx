@@ -52,6 +52,9 @@ export default function OpenPyXl() {
                         <p>    Implemeter un theme Jour/Nuit pour ceux qui bossens le soir.</p>
                       </pre>
                     </div>
+                    <div className="Section">
+                      <p>Pour cela nous allons devoir commencer par l'<NavLink to={"ExcelInstall"}>Installation d'Excel</NavLink></p>
+                    </div>
                   <div className="PreviousNext">
                     <div className="Previous">
 

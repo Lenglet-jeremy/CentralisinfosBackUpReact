@@ -3,31 +3,40 @@ import { ThemeContext } from "../../../ThemeContext";
 import { NavLink } from "react-router-dom";
 import "./NavBarPrimary.css";
 
-export default function NavBarPrimary({ handleTheme }) {
+const NavBarPrimary = ({ handleTheme }) => {
   const { theme } = useContext(ThemeContext);
+  const navItems = [
+    { to: "#", label: "Disciplines" },
+    { to: "#", label: "Cursus Universitaires", dropdown: [
+        { to: "#", label: "Développement Web" },
+        { to: "#", label: "Comptabilité et Gestion" }
+      ] 
+    }
+  ];
+
+  const renderDropdown = (dropdown) => (
+    <ul className="UniversityCoursesDropDown">
+      {dropdown.map((item, index) => (
+        <li key={index}><NavLink to={item.to}>{item.label}</NavLink></li>
+      ))}
+    </ul>
+  );
 
   return (
     <nav className={`${theme} NavBarPrimary`}>
-      {/* Côté gauche de la NavBar primaire */}
       <ul className="LeftSide">
         <NavLink to="/" className="Logo" />
-        <li className="Subjects">
-          <NavLink to="#" className="NavLink">Disciplines</NavLink>
-        </li>
-        <li className="UniversityCourses">
-          <NavLink to="#" className="NavLink">Cursus Universitaires</NavLink>
-          <ul className="UniversityCoursesDropDown">
-            <li><NavLink to="#">Développement Web</NavLink></li>
-            <li><NavLink to="#">Comptabilité et Gestion</NavLink></li>
-          </ul>
-        </li>
+        {navItems.map((item, index) => (
+          <li key={index} className={item.dropdown ? "UniversityCourses" : "Subjects"}>
+            <NavLink to={item.to} className="NavLink">{item.label}</NavLink>
+            {item.dropdown && renderDropdown(item.dropdown)}
+          </li>
+        ))}
         <label className="DarkLightThemeToggle">
           <input type="checkbox" onChange={handleTheme} />
           <span className="DarkLightThemeSlider"></span>
         </label>
       </ul>
-
-      {/* Centre de la NavBar primaire */}
       <div className="SearchBarContainer">
         <label className="SearchBar">
           <img src="../../../../searchIcon.svg" alt="" />
@@ -40,8 +49,6 @@ export default function NavBarPrimary({ handleTheme }) {
           <input />
         </button>
       </div>
-
-      {/* Côté droit de la NavBar Primaire */}
       <ul className="RightSide">
         <NavLink to="#" className="Gift">
           <img src='../../../../heart.png' alt="Coeur" />
@@ -50,12 +57,12 @@ export default function NavBarPrimary({ handleTheme }) {
         <NavLink to="#" className="GiftResponsive">
           <img src='../../../../heart.png' alt="Coeur" />
         </NavLink>
-        <li className="Tutos">
-          <NavLink to="/Tutos">Tutos</NavLink>
-        </li>
+        <li><NavLink to="/Tutos">Tutos</NavLink></li>
         <li><NavLink to="#" className="NavLink">Forum</NavLink></li>
         <NavLink to="/account">Compte</NavLink>
       </ul>
     </nav>
   );
-}
+};
+
+export default NavBarPrimary;

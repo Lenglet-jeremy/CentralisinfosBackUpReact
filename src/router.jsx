@@ -20,6 +20,7 @@ import OpenPyXl from "./pages/3.Tutos/2.OpenPyXl/1.0.OpenPyXl";
 import Fondator from "./pages/0.Admin/0.Fondator/0.0.Fondator";
 
 import Register from "./pages/5.Accounts/1.Register/1.0.Register";
+import ExcelInstall from "./pages/3.Tutos/2.OpenPyXl/2.0.ExcelInstall";
 
 
 export const router = createBrowserRouter([
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
         { path : "Tutos", element : <Tutos />, },
         { path : "Tutos/WebDev", element : <WebDev />, },
         { path : "Tutos/OpenPyXl", element : <OpenPyXl />, },
+        { path : "Tutos/OpenPyXl/ExcelInstall", element : <ExcelInstall />, },
 
         { path : "Tutos/WebDev/Express", element : <BuildExpressServer /> },
         { path : "Tutos/WebDev/Routes", element : <SetRouter /> },
