@@ -1,5 +1,15 @@
+
+
 .Body{
     min-height: calc(100vh - 102px);
+
+    p{
+        color: #A0AEC0;
+    }
+
+    a{
+        color: #75b1ff;
+    }
 
     .ExcelInstallArea{
         width: 100%;
@@ -8,9 +18,19 @@
         flex-direction: row;
         justify-content: center;
 
-        .Sommary{
-            position: absolute;
-            left: 10px;
+        .ExcelInstallBody{
+            display: flex;
+            flex-direction: column;
+            .Sommary{
+                position: absolute;
+                left: 10px;
+            }
+
+            .PreviousNext{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
           }
     }
 }

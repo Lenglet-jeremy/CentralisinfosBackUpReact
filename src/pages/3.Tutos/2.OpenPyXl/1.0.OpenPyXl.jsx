@@ -37,7 +37,7 @@ export default function OpenPyXl() {
                       <p>Résultat attendu : </p>
                       <p>    L'idée est de pouvoir mettre à jour : </p>
                         <p>        Les jours de l'année ;</p>
-                        <p>        La prise en compte des années bisextiles ;</p>
+                        <p>        La prise en compte des années bissextiles ;</p>
                         <p>        La mise à jour du contenu des cellules "vides" du calendrier ;</p>
                         <br />
                         <p>    Donner la possibilité à l'utilisateur : </p>
