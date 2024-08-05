@@ -60,7 +60,7 @@ export default function ExcelCalendInit() {
 
                         {detailsLevel !== 'faible' && (
                             <div>
-                                <p>Commencer par paramétrer la colonne B d'une largeur de 2 unités (19 pixels),la colonne C d'une largeur de 4,14 unités (34 pixels) et la colonne D à 12,57 unités (93 pixels)</p>
+                                <p>Commencez par paramétrer la colonne B d'une largeur de 2 unités (19 pixels),la colonne C d'une largeur de 4,14 unités (34 pixels) et la colonne D à 12,57 unités (93 pixels)</p>
                                 <p>Ensuite, cliquer sur la colonne B et tout en restant appuyé allez jusqu'a la colonne D, cliquez sur "Reproduire la mise en forme" puis selectionné la plage de colonne E:AK</p>
                                 <iframe src="https://onedrive.live.com/embed?resid=F7CF7201558D3C58%211184&authkey=!AOgbGlgeeAqeYCM" width="1080" height="320" frameborder="0" scrolling="no" allowfullscreen></iframe>
                             </div>

@@ -20,17 +20,50 @@ export default function WritingCourses() {
         setSelectedMenu(menu);
     };
 
-    function FileMenu() {
+
+    function HomeMenu(){
         return(
-            <p>Contenu du menu Fichier</p>
-        )
+            <div className="HomeMenu">
+                <div className="Left">
+                    <label className="New">
+                        {/* <img src="" alt="" /> */}
+                        <p>Nouveau</p>
+                    </label>
+                    
+                    <label className="Open">
+                        {/* <img src="" alt="" /> */}
+                        <p>Ouvrir</p>
+                    </label>
+                    
+                    <label className="ClipBoard">
+                        {/* <img src="" alt="" /> */}
+                        <p>Presse-Papier</p>
+                    </label>
+                </div>
+                <div className="Right">
+                    <label className="Save">
+                        {/* <img src="" alt="" /> */}
+                        <p>Enregistrer</p>
+                    </label>
+                    
+                    <label className="SaveAs">
+                        {/* <img src="" alt="" /> */}
+                        <p>Enregistrer sous</p>
+                    </label>
+                    
+                    <label className="FormatPainter">
+                        {/* <img src="" alt="" /> */}
+                        <p>Reproduire la mise en forme</p>
+                    </label>
+                </div>
+        </div>
+    )
     }
+
     const renderToolsBarContent = () => {
         switch (selectedMenu) {
-            case "Fichier":
-                return FileMenu();
             case "Accueil":
-                return <p>Contenu du menu Accueil</p>;
+                return HomeMenu();
             case "Insertion":
                 return <p>Contenu du menu Insertion</p>;
             case "Dessin":
