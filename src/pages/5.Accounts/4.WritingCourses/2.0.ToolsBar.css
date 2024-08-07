@@ -1,0 +1,64 @@
+.WritingCoursesPage {
+    .ToolsBar {
+        background-color: #242435;
+        color: white;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .HomeMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .HomeMenu .Left,
+    .HomeMenu .Right {
+        display: flex;
+    }
+
+    .HomeMenu label {
+        padding: 10px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .HomeMenu label:hover {
+        background-color: #5a5a5a;
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .TextFormatToolbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .ColorPicker {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .ColorPickerDropdown {
+            margin-left: 10px;
+        }
+
+        .ApplyColorButton {
+            margin-left: 10px;
+            background-color: #5a5a5a;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .ApplyColorButton:hover {
+            background-color: #7a7a7a;
+        }
+    }
+}

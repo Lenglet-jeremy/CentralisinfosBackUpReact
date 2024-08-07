@@ -13,7 +13,7 @@ import SetRouter from "./pages/3.Tutos/1.WebDeveloppement/2.JS/4.Routes/SetRoute
 import MongoDB from "./pages/3.Tutos/1.WebDeveloppement/2.JS/5.MongoDB/SetMongoDB";
 import Mongoose from "./pages/3.Tutos/1.WebDeveloppement/2.JS/6.Mongoose/Mongoose";
 
-import WritingCourses from "./pages/5.Accounts/4.WritingCourses/1.0.WritingCourses";
+import WritingCourses from "./pages/5.Accounts/4.WritingCourses/0.0.WritingCourses";
 import Tutos from "./pages/3.Tutos/0.0.Tutos";
 import OpenPyXl from "./pages/3.Tutos/2.OpenPyXl/1.0.OpenPyXl";
 

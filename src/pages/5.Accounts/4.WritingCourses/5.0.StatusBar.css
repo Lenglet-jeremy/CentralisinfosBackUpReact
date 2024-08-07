@@ -1,0 +1,46 @@
+.WritingCoursesPage {
+    .StatusBar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: #1a1a2e;
+        color: white;
+        font-size: 12px;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .StatusBar .Left,
+    .StatusBar .Center,
+    .StatusBar .Right {
+        display: flex;
+    }
+
+    .StatusBar p {
+        margin: 0 10px;
+    }
+
+    .StatusBar .Left p,
+    .StatusBar .Right p {
+        cursor: pointer;
+    }
+
+    .StatusBar .Left p:hover,
+    .StatusBar .Right p:hover {
+        text-decoration: underline;
+    }
+
+    /* Ajout de la règle @media pour cacher certains éléments sur les petits écrans */
+    @media (max-width: 1350px) {
+        .StatusBar .Left p:nth-child(3),  /* Langue : Français */
+        .StatusBar .Left p:nth-child(4),  /* Autocompletion : Activé */
+        .StatusBar .Left p:nth-child(5),  /* Macros */
+        .StatusBar .Right p:nth-child(1), /* ModeAffichage1 */
+        .StatusBar .Right p:nth-child(2), /* ModeAffichage2 */
+        .StatusBar .Right p:nth-child(3)  /* ModeAffichage3 */ {
+            display: none;
+        }
+    }
+}
+
+

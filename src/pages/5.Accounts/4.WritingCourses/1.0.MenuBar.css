@@ -1,0 +1,57 @@
+.WritingCoursesPage {
+    .MenuBar {
+        display: flex;
+        justify-content: space-between;
+        background-color: #1a1a2e;
+        color: white;
+        padding: 5px 10px;
+        overflow-x: auto; /* Barre de défilement uniquement si nécessaire */
+        white-space: nowrap; /* Empêche le contenu de se mettre sur plusieurs lignes */
+    }
+
+    .MenuBar .Left ul,
+    .MenuBar .Right ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .MenuBar .Left ul button,
+    .MenuBar .Right ul button {
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        white-space: nowrap; /* Empêche les boutons de se mettre sur plusieurs lignes */
+    }
+
+    .MenuBar .Left ul button:hover,
+    .MenuBar .Right ul button:hover {
+        background-color: #444;
+    }
+
+    .ContextMenus button {
+        background: none;
+        border: none;
+        color: #555555;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 14px;
+        white-space: nowrap; /* Empêche les boutons de se mettre sur plusieurs lignes */
+    }
+
+    .ContextMenus button:hover {
+        background-color: #444;
+    }
+
+    @media (max-width: 1500px) {
+        .ContextMenus {
+            display: none;
+        }
+    }
+}
+
+

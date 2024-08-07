@@ -1,0 +1,50 @@
+.WritingCoursesPage {
+    .ContentArea {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        min-height: 82.6vh;
+        background-color: #000000; /* Couleur de fond */
+    }
+
+    .Content {
+        background-color: #ffffff; /* Couleur de fond du document */
+        width: 595px; /* Largeur du format A4 */
+        height: 842px; /* Hauteur du format A4 */
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center; /* Centrage horizontal de la zone EditableContent */
+        margin: 50px 0; /* Espacement autour du document */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre autour du document */
+        overflow: hidden; /* Évite les débordements */
+    }
+
+    .EditableContent {
+        width: 100%; /* Occupe toute la largeur disponible dans .Content */
+        height: 100%;
+        overflow-y: auto;
+        word-wrap: break-word; /* Le texte passe à la ligne automatiquement */
+        white-space: pre-wrap; /* Conserve les espaces et les sauts de ligne */
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: Arial, sans-serif;
+        border: none; /* Supprime les bordures */
+        text-align: left; /* Aligne le texte à gauche pour les langues LTR */
+        direction: ltr; /* Spécifie la direction de texte gauche à droite */
+    }
+
+    /* Style pour le mode sombre */
+    .DarkBody .Content {
+        background-color: #29292b; /* Couleur de fond du document en mode sombre */
+    }
+
+    .DarkBody .EditableContent {
+        color: #ffffff; /* Couleur du texte en mode sombre */
+    }
+}
+
+
