@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import "./4.0.ContentArea.css";
 
 export default function ContentArea({ tabs, activeTab, handleContentChange }) {
     const contentRef = useRef(null);
@@ -35,5 +36,3 @@ export default function ContentArea({ tabs, activeTab, handleContentChange }) {
         </div>
     );
 }
-
-

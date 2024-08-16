@@ -1,3 +1,4 @@
+/* Styles généraux */
 a {
   text-decoration: none;
   color: #7289DA;
@@ -8,6 +9,14 @@ a:visited {
 }
 
 .Responsive1 {
+  display: none;
+}
+
+.NiveauxResponsive {
+  display: none;
+}
+
+.EpinglesResponsive {
   display: none;
 }
 
@@ -43,16 +52,14 @@ a:visited {
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-  button{
-    height: 30px;
+}
 
-    background-color: #000000;
-
-    margin-top: 0px;
-    padding-top: 6px;
-
-    border: 1px solid #FFFFFF;
-  }
+.Center button {
+  height: 30px;
+  background-color: #000000;
+  margin-top: 0px;
+  padding-top: 6px;
+  border: 1px solid #FFFFFF;
 }
 
 .RightSide ul {
@@ -64,12 +71,93 @@ a:visited {
   margin-right: 15px;
 }
 
-@media (max-width: 1250px) {
-  .LeftSide ul li, .RightSide ul li {
-    display: none;
-  }
+.LightTheme {
+  border-bottom: 1px solid #000000;
+}
 
-  .Center{
+.LightTheme .Center button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+/* Style pour la div des widgets en position absolue */
+.WidgetsOverlay {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.WidgetsOverlay button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Style pour les widgets déplaçables */
+.DraggableWidget {
+  position: absolute;
+  background-color: #00000000;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  z-index: 1001;
+  cursor: grab;
+}
+
+.DraggableWidget:active {
+  cursor: grabbing;
+}
+
+.WidgetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #ffffff00;
+  border-bottom: 1px solid #ccc;
+}
+
+.CloseButton {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CloseButton:hover {
+  background-color: darkred;
+}
+
+/* Poignée de redimensionnement */
+.ResizeHandle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  cursor: nwse-resize;
+  border-bottom-right-radius: 8px;
+}
+
+@media (max-width: 1250px) {
+  .Center {
     margin-left: 50px;
   }
 
@@ -77,17 +165,12 @@ a:visited {
     display: flex;
     padding: 0 10px;
   }
-}
 
-.LightTheme {
-  border-bottom: 1px solid #000000;
-  .Center {
-    button{
-  
-      background-color: #ffffff;
-      color: #000000;
-  
-      border: 1px solid #000000;
-    }
+  .NiveauxResponsive {
+    display: flex;
+  }
+
+  .EpinglesResponsive {
+    display: flex;
   }
 }

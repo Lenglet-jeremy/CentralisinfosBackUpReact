@@ -14,6 +14,8 @@ import MongoDB from "./pages/3.Tutos/1.WebDeveloppement/2.JS/5.MongoDB/SetMongoD
 import Mongoose from "./pages/3.Tutos/1.WebDeveloppement/2.JS/6.Mongoose/Mongoose";
 
 import WritingCourses from "./pages/5.Accounts/4.WritingCourses/0.0.WritingCourses";
+
+import FormulairePublicationCours from "./pages/5.Accounts/5.FormulairePublicationCours/1.0.FormulairePublicationCours";
 import Tutos from "./pages/3.Tutos/0.0.Tutos";
 import OpenPyXl from "./pages/3.Tutos/2.OpenPyXl/1.0.OpenPyXl";
 
@@ -22,6 +24,7 @@ import Fondator from "./pages/0.Admin/0.Fondator/0.0.Fondator";
 import Register from "./pages/5.Accounts/1.Register/1.0.Register";
 import ExcelInstall from "./pages/3.Tutos/2.OpenPyXl/2.0.ExcelInstall";
 import ExcelCalendInit from "./pages/3.Tutos/2.OpenPyXl/3.0.ExcelCalendInit";
+import PublishedCourse from "./pages/5.Accounts/5.FormulairePublicationCours/2.0.PublishedCourse";
 
 
 export const router = createBrowserRouter([
@@ -39,6 +42,7 @@ export const router = createBrowserRouter([
         { path : "/register", element : <Register/> },
 
         { path : "account/writingcourses", element : <WritingCourses /> },
+        { path : "account/formulairePublicationCours", element : <FormulairePublicationCours /> },
         { path : "Tutos", element : <Tutos />, },
         { path : "Tutos/WebDev", element : <WebDev />, },
         { path : "Tutos/OpenPyXl", element : <OpenPyXl />, },
@@ -51,6 +55,7 @@ export const router = createBrowserRouter([
         { path : "Tutos/WebDev/Mongoose", element : <Mongoose /> },
 
         { path : "Account/Fondator", element : <Fondator/> },
+        { path: "cours/:courseNumber", element: <PublishedCourse /> }, // Route ajoutée
         ]
     }
 ]);

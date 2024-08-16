@@ -13,7 +13,8 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
   .then(() => { app.listen(port, () => {
-                  console.log(`DB connected on port ${port}`);});
+                  console.log(`DB connected on port ${port}`);
+  });
   })
   .catch(err => {console.error('Erreur de connexion à MongoDB :', err);});
 
@@ -24,7 +25,17 @@ const UserSchema = new mongoose.Schema({
   RGPD: { type: String, required: true }
 });
 
+const CourseSchema = new mongoose.Schema({
+  categorie: { type: String, required: true },
+  nomCours: { type: String, required: true },
+  niveau: { type: String, required: true },
+  prerequis: { type: String },
+  content: { type: String, required: true },
+  urlCours: { type: String, required: true, unique: true }
+});
+
 const User = mongoose.model('User', UserSchema);
+const Course = mongoose.model('Course', CourseSchema);
 
 app.get('/api/register', async (req, res) => {
   const users = await User.find();
@@ -34,13 +45,11 @@ app.get('/api/register', async (req, res) => {
 app.post('/api/register', async (req, res) => {
   const { name, email, password, RGPD } = req.body;
 
-  // Vérifier que tous les champs nécessaires sont remplis
   if (!name || !email || !password || !RGPD) {
     return res.status(400).json({ message: 'Tous les champs sont requis.' });
   }
 
   try {
-    // Vérifier si l'e-mail existe déjà
     const existingUser = await User.findOne({ email: email });
     if (existingUser) {
       return res.status(400).json({ message: 'Cet e-mail est déjà utilisé.' });
@@ -58,11 +67,6 @@ app.post('/api/register', async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: `Erreur lors de la création de l'utilisateur`, error: err.message });
   }
-});
-
-app.get('/api/login', async (req, res) => {
-  const users = await User.find();
-  res.json(users);
 });
 
 app.post('/api/login', async (req, res) => {
@@ -94,9 +98,27 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-app.get('/api/protected', authenticateToken, (req, res) => {
-  res.json({ message: 'This is a protected route' });
+app.post('/api/courses', async (req, res) => {
+  const { categorie, nomCours, niveau, prerequis, content, urlCours } = req.body;
+
+  try {
+    const newCourse = new Course({ categorie, nomCours, niveau, prerequis, content, urlCours });
+    await newCourse.save();
+    res.status(201).json(newCourse);
+  } catch (err) {
+    res.status(400).json({ message: 'Erreur lors de la création du cours', error: err.message });
+  }
 });
+
+app.get('/api/courses', async (req, res) => {
+  try {
+    const courses = await Course.find();
+    res.json(courses);
+  } catch (err) {
+    res.status(500).json({ message: 'Erreur lors de la récupération des cours', error: err.message });
+  }
+});
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

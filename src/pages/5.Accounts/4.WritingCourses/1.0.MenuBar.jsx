@@ -1,6 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import "./1.0.MenuBar.css";
 
 export default function MenuBar({ handleMenuClick }) {
+    const navigate = useNavigate();
+
+    const handlePublishClick = () => {
+        navigate("/account/formulairePublicationCours");
+    };
+
     return (
         <div className="MenuBar">
             <div className="Left">
@@ -25,11 +34,9 @@ export default function MenuBar({ handleMenuClick }) {
             </div>
             <div className="Right">
                 <ul>
-                    <button to={"#"}>Publier</button>
+                    <button onClick={handlePublishClick}>Publier</button>
                 </ul>
             </div>
         </div>
     );
 }
-
-

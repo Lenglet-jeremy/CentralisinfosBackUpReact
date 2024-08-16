@@ -5,6 +5,7 @@
         background-color: #1a1a2e;
         color: white;
         padding: 5px 10px;
+        height: 35px;
         overflow-x: auto; /* Barre de défilement uniquement si nécessaire */
         white-space: nowrap; /* Empêche le contenu de se mettre sur plusieurs lignes */
     }

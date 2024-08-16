@@ -1,4 +1,5 @@
 import React from "react";
+import "./5.0.StatusBar.css"
 
 export default function StatusBar() {
     return (

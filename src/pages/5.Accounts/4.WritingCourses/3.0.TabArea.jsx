@@ -1,3 +1,5 @@
+import "./3.0.TabArea.css"
+
 export default function TabsBar({
     tabs,
     activeTab,

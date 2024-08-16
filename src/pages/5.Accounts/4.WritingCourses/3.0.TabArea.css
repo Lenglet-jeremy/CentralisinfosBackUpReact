@@ -22,6 +22,7 @@
     border: 2px solid #ffffff; /* Couleur dorée pour mettre en évidence */
     background-color: #06234e; /* Changer la couleur de fond */
     color: #FFFFFF; /* Changer la couleur du texte */
+    height: 30px;
     font-weight: bold; /* Mettre en gras */
 }
 
