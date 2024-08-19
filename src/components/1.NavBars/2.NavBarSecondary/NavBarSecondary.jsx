@@ -7,38 +7,42 @@ import TodoListWidget from "./widgets/TodoListWidget";
 import NoteWidget from "./widgets/NoteWidget";
 
 const NavBarSecondary = () => {
-  const navigate = useNavigate(); // Hook pour naviguer entre les routes
-  const { theme } = useContext(ThemeContext); // Utilisation du contexte du thème pour obtenir le thème actuel
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // État pour vérifier si l'utilisateur est authentifié
-  const [showWidgets, setShowWidgets] = useState(false); // État pour afficher ou masquer les widgets
-  const [openWidgets, setOpenWidgets] = useState([]); // État pour suivre les widgets ouverts
-  const [draggingIndex, setDraggingIndex] = useState(null); // État pour suivre l'index du widget en cours de déplacement
-  const [resizingIndex, setResizingIndex] = useState(null); // État pour suivre l'index du widget en cours de redimensionnement
-  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 }); // État pour enregistrer l'offset de drag
-  const [resizeStart, setResizeStart] = useState({ width: 0, height: 0 }); // État pour enregistrer les dimensions de départ lors du redimensionnement
+  const navigate = useNavigate(); 
+  const { theme } = useContext(ThemeContext); 
 
-  // Niveaux scolaires et épingles (simples tableaux de chaînes de caractères)
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const [showWidgets, setShowWidgets] = useState(false); 
+  const [openWidgets, setOpenWidgets] = useState([]); 
+
+  const [draggingIndex, setDraggingIndex] = useState(null); 
+  const [resizingIndex, setResizingIndex] = useState(null); 
+
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [resizeStart, setResizeStart] = useState({ width: 0, height: 0 });
+
   const levels = ["Sixième", "Cinquième", "Quatrième", "Troisième", "Seconde", "Première", "Terminale"];
   const pins = ["Épingle 1", "Épingle 2", "Épingle 3", "Épingle 4", "Épingle 5"];
 
   useEffect(() => {
-    // Vérifie l'authentification de l'utilisateur au chargement du composant
-    setIsAuthenticated(!!localStorage.getItem('token'));
+    setIsAuthenticated(!!localStorage.getItem('token')); // Converti la valeur de la clé "token" en un boolean
   }, []);
 
   useEffect(() => {
-    // Ajoute ou retire des gestionnaires d'événements globaux en fonction de l'état de drag ou resize
+
     if (draggingIndex !== null || resizingIndex !== null) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);
-      document.body.classList.add("no-select"); // Désactive la sélection de texte
-    } else {
+      document.body.classList.add("no-select"); 
+    } 
+
+    else {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
-      document.body.classList.remove("no-select"); // Réactive la sélection de texte
+      document.body.classList.remove("no-select"); 
     }
 
-    // Nettoyage des gestionnaires d'événements lorsqu'on quitte le composant ou que les états changent
+    // Nettoyage des gestionnaires d'événements lorsqu'on quitte le composant
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
@@ -54,12 +58,11 @@ const NavBarSecondary = () => {
   };
 
   const toggleWidgets = () => {
-    // Bascule l'affichage des options de widgets
     setShowWidgets(prevState => !prevState);
   };
 
   const handleWidgetClick = (widgetType) => {
-    // Ajoute un nouveau widget à la liste des widgets ouverts avec des positions et tailles par défaut
+    // Initialise les widgets ouverts
     setOpenWidgets(prevWidgets => [
       ...prevWidgets,
       { type: widgetType, x: 100, y: 100, width: 200, height: 300 }
@@ -67,7 +70,7 @@ const NavBarSecondary = () => {
   };
 
   const handleMouseDown = (event, index) => {
-    // Initialise le déplacement d'un widget en enregistrant son index et son offset par rapport à la souris
+    // Initialise le déplacement d'un widget
     setDraggingIndex(index);
     setDragOffset({
       x: event.clientX - openWidgets[index].x,
@@ -149,6 +152,8 @@ const NavBarSecondary = () => {
       <div className="Center">
         <button onClick={toggleWidgets}>Widgets</button>
         {showWidgets && (
+
+          // Paramettre les widgets à ouvrir
           <div className="WidgetsOverlay">
             <button onClick={() => handleWidgetClick("Calendrier")}>Calendrier</button>
             <button onClick={() => handleWidgetClick("BlocNote")}>Bloc-Note</button>
@@ -169,7 +174,8 @@ const NavBarSecondary = () => {
         </ul>
       </div>
 
-      {/* Affichage des widgets ouverts */}
+
+      {/* Affiche les widgets ouverts */}
       {openWidgets.map((widget, index) => (
         <div
           key={index}
@@ -181,9 +187,11 @@ const NavBarSecondary = () => {
             <h3>{widget.type}</h3>
             <button className="CloseButton" onClick={() => closeWidget(index)}>X</button> {/* Bouton pour fermer le widget */}
           </div>
+
           <div className="WidgetContent">
             {renderWidgetContent(widget.type)} {/* Affiche le contenu du widget */}
           </div>
+
           <div
             className="ResizeHandle"
             onMouseDown={(e) => handleResizeMouseDown(e, index)} // Permet de redimensionner le widget

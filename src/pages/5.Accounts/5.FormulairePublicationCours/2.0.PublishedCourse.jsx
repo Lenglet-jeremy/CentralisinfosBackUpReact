@@ -5,6 +5,8 @@ import NavBarSecondary from '../../../components/1.NavBars/2.NavBarSecondary/Nav
 import { ContentContext } from '../../../ContentContext';
 import { ThemeContext } from '../../../ThemeContext';
 
+import "./2.0.PublishedCourse.css"
+
 export default function PublishedCourse() {
     const { state } = useLocation();
     const [courseData, setCourseData] = useState(state?.courseData || null);
@@ -13,16 +15,15 @@ export default function PublishedCourse() {
 
     useEffect(() => {
         if (!courseData) {
-            // Si les données du cours ne sont pas dans l'état, récupérez-les depuis l'API
             const fetchCourseData = async () => {
                 const response = await fetch(`http://localhost:5000/api/courses/${state.courseId}`);
                 const data = await response.json();
                 setCourseData(data);
-                setContent(data.content);  // Mettre à jour le contenu dans le contexte
+                setContent(data.content);
             };
             fetchCourseData();
         } else {
-            setContent(courseData.content);  // Mettre à jour le contenu dans le contexte
+            setContent(courseData.content);
         }
     }, [courseData, setContent, state?.courseId]);
 

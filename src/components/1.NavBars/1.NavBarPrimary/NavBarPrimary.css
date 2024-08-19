@@ -29,6 +29,7 @@ p{
 
     width: 100%;
     
+    z-index: 10;
 
     .LeftSide{
         display: flex;
