@@ -1,0 +1,15 @@
+.todo-list-widget {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  .todo-list-widget ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-list-widget li {
+    margin-bottom: 5px;
+  }
+  

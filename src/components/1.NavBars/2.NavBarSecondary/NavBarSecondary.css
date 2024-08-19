@@ -107,10 +107,9 @@ a:visited {
 /* Style pour les widgets déplaçables */
 .DraggableWidget {
   position: absolute;
-  background-color: #00000000;
+  background-color: #000000;
   border: 1px solid #ccc;
   border-radius: 8px;
-  z-index: 1001;
   cursor: grab;
 }
 
@@ -123,7 +122,7 @@ a:visited {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  background-color: #ffffff00;
+  background-color: #000000;
   border-bottom: 1px solid #ccc;
 }
 

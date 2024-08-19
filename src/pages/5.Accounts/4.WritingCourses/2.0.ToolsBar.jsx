@@ -8,11 +8,9 @@ const handleTextFormatting = (command, value = null) => {
     const range = selectedText.getRangeAt(0);
 
     if (command === "bulletList") {
-        // Créer un div pour encapsuler chaque puce et son texte avec une indentation
         const bulletContainer = document.createElement("div");
         bulletContainer.style.marginLeft = "20px";
 
-        // Créer un élément <span> pour la puce
         const bullet = document.createElement("span");
         bullet.textContent = "•\t";
         bullet.style.marginRight = "8px"; 
@@ -44,7 +42,7 @@ const handleTextFormatting = (command, value = null) => {
 
 
 const HomeMenu = ({ addNewTab }) => {
-    const [color, setColor] = useState("#ff0000"); // Couleur par défaut : rouge
+    const [color, setColor] = useState("#ff000"); // Couleur par défaut : rouge
     const [isBoldActive, setIsBoldActive] = useState(false);
     const [isItalicActive, setIsItalicActive] = useState(false);
     const [isUnderlineActive, setIsUnderlineActive] = useState(false);
@@ -85,7 +83,7 @@ const HomeMenu = ({ addNewTab }) => {
                     <img src="/clipboard.jpg" alt="clipboard" />
                 </label>
             </div>
-            <div className="Right">
+            <div className="Centre">
                 <label className="Save">
                     <img src="/save.jpg" alt="save" />
                 </label>

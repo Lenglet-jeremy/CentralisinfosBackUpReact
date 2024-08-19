@@ -6,6 +6,7 @@
     background-color: #000000;
     border-bottom: 1px solid #FFFFFF;
     z-index: 5;
+    padding: 5px;
 }
 
 .Tab {
@@ -14,24 +15,26 @@
     align-items: center;
     border: 1px solid #FFFFFF;
     border-radius: 5px;
-    background-color: #000000; /* Ajout d'un fond pour distinguer l'onglet actif */
-    margin-right: 5px; /* Ajout d'une marge pour séparer les onglets */
+    background-color: #000000;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .Tab.active {
-    border: 2px solid #ffffff; /* Couleur dorée pour mettre en évidence */
-    background-color: #06234e; /* Changer la couleur de fond */
-    color: #FFFFFF; /* Changer la couleur du texte */
-    height: 30px;
-    font-weight: bold; /* Mettre en gras */
+    border: 2px solid #FFFFFF;
+    background-color: #06234e;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 .Tab button {
     padding: 0px 10px;
     margin: 0px;
-    background-color: #00000000;
-    border: none; /* Supprime la bordure par défaut */
+    background-color: transparent;
+    border: none;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .Tab input.editingInput {
@@ -39,6 +42,5 @@
     color: #FFFFFF;
     border: none;
     padding: 5px;
+    font-size: 14px;
 }
-
-

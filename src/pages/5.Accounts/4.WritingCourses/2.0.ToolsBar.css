@@ -5,7 +5,7 @@
         height: 50px;
         overflow-x: auto;
         white-space: nowrap;
-        position: relative;
+        position: inherit;
     }
 
     .HomeMenu {
@@ -16,7 +16,7 @@
     }
 
     .HomeMenu .Left,
-    .HomeMenu .Right {
+    .HomeMenu .Center {
         display: flex;
     }
 
@@ -67,8 +67,8 @@
         .Color {
             display: flex;
             flex-direction: column;
-            border-right: 1px solid #FFFFFF;
-            padding-right: 10px;
+            border-Center: 1px solid #FFFFFF;
+            padding-Center: 10px;
 
             .CurrentColorIndicator {
                 width: 100%;
