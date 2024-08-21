@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./2.0.ToolsBar.css"
+import "./2.0.ToolsBar.css";
 
 const handleTextFormatting = (command, value = null) => {
     const selectedText = window.getSelection();
@@ -37,18 +37,16 @@ const handleTextFormatting = (command, value = null) => {
     }
 };
 
-
-
-
-
 const HomeMenu = ({ addNewTab }) => {
-    const [color, setColor] = useState("#ff000"); // Couleur par défaut : rouge
+    const [color, setColor] = useState("#ff0000"); // Correction de la couleur par défaut : rouge
     const [isBoldActive, setIsBoldActive] = useState(false);
     const [isItalicActive, setIsItalicActive] = useState(false);
     const [isUnderlineActive, setIsUnderlineActive] = useState(false);
 
     const handleColorChange = (event) => {
-        setColor(event.target.value);
+        const newColor = event.target.value;
+        setColor(newColor);
+        handleTextFormatting("foreColor", newColor); // Appliquer la couleur directement lors de la sélection
     };
 
     const applyCurrentColor = () => {

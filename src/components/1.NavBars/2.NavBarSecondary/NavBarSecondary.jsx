@@ -70,7 +70,7 @@ const NavBarSecondary = () => {
   };
 
   const handleMouseDown = (event, index) => {
-    // Initialise le déplacement d'un widget
+    // Initialise le déplacement d'un widget    
     setDraggingIndex(index);
     setDragOffset({
       x: event.clientX - openWidgets[index].x,
