@@ -6,8 +6,8 @@
         background-color: #0d0d33;
         padding: 5px 10px;
         height: 35px;
-        overflow-x: auto; /* Barre de défilement uniquement si nécessaire */
-        white-space: nowrap; /* Empêche le contenu de se mettre sur plusieurs lignes */
+        overflow-x: auto; 
+        white-space: nowrap;
     }
 
     .MenuBar .Left ul,

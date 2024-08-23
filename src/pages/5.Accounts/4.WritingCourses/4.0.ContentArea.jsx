@@ -16,25 +16,24 @@ export default function ContentArea({ tabs, activeTab, handleContentChange }) {
 
     // Fonction pour déplacer le curseur à la fin du contenu de l'élément éditable
     const moveCaretToEnd = (element) => {
-        const range = document.createRange(); // Crée une nouvelle plage de sélection
-        const selection = window.getSelection(); // Récupère la sélection courante de l'utilisateur
+        const range = document.createRange(); 
+        const selection = window.getSelection();
         range.selectNodeContents(element); // Sélectionne le contenu complet de l'élément
-        range.collapse(false); // Déplace le curseur à la fin
-        selection.removeAllRanges(); // Supprime toutes les sélections existantes
-        selection.addRange(range); // Applique la nouvelle sélection
-        element.focus(); // Donne le focus à l'élément
+        range.collapse(false); 
+        selection.removeAllRanges(); 
+        selection.addRange(range); 
+        element.focus(); 
     };
 
     return (
         <div className="ContentArea">
             <div className="Content">
                 <div
-                    contentEditable // Rend le div éditable par l'utilisateur
-                    suppressContentEditableWarning={true} // Supprime les avertissements React sur l'édition du contenu
-                    ref={contentRef} // Associe l'élément à la référence
+                    contentEditable 
+                    suppressContentEditableWarning={true} 
+                    ref={contentRef} 
                     onInput={() => handleContentChange(contentRef.current.innerHTML, activeTab)} 
-                    // Appelle handleContentChange avec le contenu actuel et l'onglet actif lors de chaque modification
-                    className="EditableContent" // Classe CSS pour styliser le contenu
+                    className="EditableContent"
                 />
             </div>
         </div>

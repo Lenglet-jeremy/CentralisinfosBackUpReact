@@ -26,7 +26,15 @@
         white-space: nowrap;
     }
 
-    .HomeMenu label:hover {
+    .HomeMenu label p{
+        padding: 0px;
+        margin-left: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-left: 1px #FFFFFF dashed;
+    }
+
+    .HomeMenu label p:hover {
         background-color: #5a5a5a;
     }
 
@@ -67,8 +75,6 @@
         .Color {
             display: flex;
             flex-direction: column;
-            border-Center: 1px solid #FFFFFF;
-            padding-Center: 10px;
 
             .CurrentColorIndicator {
                 width: 100%;
@@ -86,6 +92,7 @@
                 color: white;
                 cursor: pointer;
                 width: 100%;
+                padding-right: 5px;
             }
 
             .ApplyColorButton:hover {

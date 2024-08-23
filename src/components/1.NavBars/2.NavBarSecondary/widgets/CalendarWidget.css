@@ -1,4 +1,4 @@
-.calendar-widget {
+.CalendarWidget {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,24 +7,24 @@
   border: 1px solid #ccc;
 }
 
-.calendar-widget table {
+.CalendarWidget table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.calendar-widget th, .calendar-widget td {
+.CalendarWidget p, .CalendarWidget td {
   border: 1px solid #ddd;
   text-align: center;
   padding: 8px;
 }
 
-.days-row {
+.DaysRow {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.days-row th {
+.DaysRow p {
   flex: 1 1 14%;
   box-sizing: border-box;
   text-align: center;

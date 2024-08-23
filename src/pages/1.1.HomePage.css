@@ -26,4 +26,11 @@
         border-top: 1px solid #000000;
         border-bottom: 1px solid #000000;
     }
+    p{
+        color: #000000;
+    }
+    
+    label{
+        color: #000000;
+    }
 }

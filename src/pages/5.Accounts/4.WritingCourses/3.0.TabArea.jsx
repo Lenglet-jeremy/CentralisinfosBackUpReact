@@ -53,12 +53,12 @@ export default function TabsBar({
                         <input
                             type="text"
                             value={newTabTitle}
-                            onChange={handleTitleChange}   // Gère les changements de texte
-                            onBlur={() => handleBlurOrEnter(tab.id)} // Gère la perte de focus
+                            onChange={handleTitleChange}   
+                            onBlur={() => handleBlurOrEnter(tab.id)} 
                             onKeyDown={(e) => {
-                                if (e.key === "Enter") handleBlurOrEnter(tab.id); // Gère la pression de la touche "Enter"
+                                if (e.key === "Enter") handleBlurOrEnter(tab.id);
                             }}
-                            ref={inputRef} // Associe la référence pour gérer le focus
+                            ref={inputRef}
                             className="editingInput"
                         />
                     ) : (

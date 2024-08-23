@@ -21,8 +21,8 @@ const NavBarSecondary = () => {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [resizeStart, setResizeStart] = useState({ width: 0, height: 0 });
 
-  const levels = ["Sixième", "Cinquième", "Quatrième", "Troisième", "Seconde", "Première", "Terminale"];
-  const pins = ["Épingle 1", "Épingle 2", "Épingle 3", "Épingle 4", "Épingle 5"];
+  // const levels = ["Sixième", "Cinquième", "Quatrième", "Troisième", "Seconde", "Première", "Terminale"];
+  // const pins = ["Épingle 1", "Épingle 2", "Épingle 3", "Épingle 4", "Épingle 5"];
 
   useEffect(() => {
     setIsAuthenticated(!!localStorage.getItem('token')); // Converti la valeur de la clé "token" en un boolean
@@ -69,7 +69,7 @@ const NavBarSecondary = () => {
     ]);
   };
 
-  const handleMouseDown = (event, index) => {
+  const handleMouseLeftClick = (event, index) => {
     // Initialise le déplacement d'un widget    
     setDraggingIndex(index);
     setDragOffset({
@@ -143,9 +143,16 @@ const NavBarSecondary = () => {
       <div className="LeftSide">
         <ul>
           <li className="NiveauxResponsive">Niveaux</li>
-          {levels.map((level, index) => (
+          <li><a href="#" className="NavLink">Sixieme</a></li>
+          <li><a href="#" className="NavLink">Cinquieme</a></li>
+          <li><a href="#" className="NavLink">Quatrieme</a></li>
+          <li><a href="#" className="NavLink">Troisieme</a></li>
+          <li><a href="#" className="NavLink">Seconde</a></li>
+          <li><a href="#" className="NavLink">Premiere</a></li>
+          <li><a href="#" className="NavLink">Terminale</a></li>
+          {/* {levels.map((level, index) => (
             <li key={index}><a href="#" className="NavLink">{level}</a></li>
-          ))}
+          ))} */}
         </ul>
       </div>
 
@@ -154,7 +161,7 @@ const NavBarSecondary = () => {
         {showWidgets && (
 
           // Paramettre les widgets à ouvrir
-          <div className="WidgetsOverlay">
+          <div className="WidgetsDropdown">
             <button onClick={() => handleWidgetClick("Calendrier")}>Calendrier</button>
             <button onClick={() => handleWidgetClick("BlocNote")}>Bloc-Note</button>
             <button onClick={() => handleWidgetClick("TodoList")}>To-Do List</button>
@@ -165,9 +172,14 @@ const NavBarSecondary = () => {
       <div className="RightSide">
         <ul>
           <li className="EpinglesResponsive">Epingles</li>
-          {pins.map((pin, index) => (
+          {/* {pins.map((pin, index) => (
             <li key={index}><a href="#" className="NavLink">{pin}</a></li>
-          ))}
+          ))} */}
+            <li><a href="#" className="NavLink">Epingle 1</a></li>
+            <li><a href="#" className="NavLink">Epingle 2</a></li>
+            <li><a href="#" className="NavLink">Epingle 3</a></li>
+            <li><a href="#" className="NavLink">Epingle 4</a></li>
+            <li><a href="#" className="NavLink">Epingle 5</a></li>
           {isAuthenticated && (
             <li><a href="#" className="NavLink" onClick={handleLogout}>Déconnexion</a></li>
           )}
@@ -177,13 +189,14 @@ const NavBarSecondary = () => {
 
       {/* Affiche les widgets ouverts */}
       {openWidgets.map((widget, index) => (
-        <div
-          key={index}
-          className="DraggableWidget"
-          style={{ top: `${widget.y}px`, left: `${widget.x}px`, width: `${widget.width}px`, height: `${widget.height}px` }}
-          onMouseDown={(e) => handleMouseDown(e, index)} // Permet de déplacer le widget
+        <div key={index}
+             className="DragableWidget"
+             style={{ top: `${widget.y}px`, left: `${widget.x}px`, width: `${widget.width}px`, height: `${widget.height}px` }}
+             
         >
-          <div className="WidgetHeader">
+          <div className="WidgetHeader"
+               onMouseDown={(e) => handleMouseLeftClick(e, index)} // Permet de déplacer le widget
+          >
             <h3>{widget.type}</h3>
             <button className="CloseButton" onClick={() => closeWidget(index)}>X</button> {/* Bouton pour fermer le widget */}
           </div>

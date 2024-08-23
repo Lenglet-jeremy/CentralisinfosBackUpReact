@@ -19,6 +19,9 @@ export default function FormulairePublicationCours() {
     const [courseNumber, setCourseNumber] = useState(1);
 
     const navigate = useNavigate();
+
+    const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
+
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -58,7 +61,7 @@ export default function FormulairePublicationCours() {
         <div>
             <NavBarPrimary handleTheme={toggleTheme} />
             <NavBarSecondary />
-            <div className="Publication">
+            <div className={`${bodyTheme} Publication`}>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Catégorie du cours:

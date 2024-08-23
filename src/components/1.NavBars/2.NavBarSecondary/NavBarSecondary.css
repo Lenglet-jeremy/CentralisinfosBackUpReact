@@ -74,6 +74,32 @@ a:visited {
 
 .LightTheme {
   border-bottom: 1px solid #000000;
+  .WidgetsDropdown{
+    background-color: #fff;
+    border-color: #000000;
+  }
+  .DragableWidget{
+    background-color: #FFFFFF;
+  }
+  .CalendarWidget{
+    background-color: #FFFFFF;
+  }
+  .DaysRow p{
+    color: #000000;
+  }
+
+  .WidgetHeader{
+    background-color: #FFFFFF;
+  }
+
+  .NoteWidget{
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+  .NoteTextArea{
+    background-color: #FFFFFF;
+    color: #000000;
+  }
 }
 
 .LightTheme .Center button {
@@ -83,7 +109,7 @@ a:visited {
 }
 
 /* Style pour la div des widgets en position absolue */
-.WidgetsOverlay {
+.WidgetsDropdown {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -100,7 +126,7 @@ a:visited {
   gap: 10px;
 }
 
-.WidgetsOverlay button {
+.WidgetsDropdown button {
   display: block;
   margin-bottom: 10px;
   padding: 10px;
@@ -108,7 +134,7 @@ a:visited {
 }
 
 /* Style pour les widgets déplaçables */
-.DraggableWidget {
+.DragableWidget {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -118,7 +144,7 @@ a:visited {
   cursor: grab;
 }
 
-.DraggableWidget:active {
+.DragableWidget:active {
   cursor: grabbing;
 }
 
@@ -135,7 +161,7 @@ a:visited {
 }
 
 .CloseButton {
-  background-color: rgb(0, 60, 255);
+  background-color: #003cff;
   color: white;
   border: none;
   cursor: pointer;
@@ -148,7 +174,7 @@ a:visited {
 }
 
 .CloseButton:hover {
-  background-color: darkred;
+  background-color: #003cff;
 }
 
 /* Poignée de redimensionnement */

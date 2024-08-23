@@ -13,12 +13,62 @@
     .DarkBody {
         background-color: #1e1e1e;
         color: #ffffff;
+
+        .MenuBar{
+            background-color: #191931;
+            .Left ul button,
+            .Right ul button{
+                color: #fff;
+            }
+        }
+
+        .ToolsBar{
+            background-color: #141435;
+        }
     }
 
     .LightBody {
         background-color: #ffffff;
         color: #000000;
+
+        .MenuBar{
+            background-color: #acc5ff;
+            .Left ul button,
+            .Right ul button{
+                color: #000000;
+            }
+        }
+        .ToolsBar{
+            background-color: #c7d8ff;
+            button{
+                color: #000000;
+            }
+            .ColorPicker{
+                border: 1px solid #000000;
+            }
+            .ApplyColorButton{
+                color: #000000;
+            }
+            .CurrentColorIndicator{
+                border: 1px solid #000000;
+            }
+            .HomeMenu label p {
+                color: #000000;
+                border-left: 1px dashed #000;
+            }
+        }
+        .TabBar{
+            background-color: #ffffff;
+            border-bottom: 1px solid #000000;
+        }
+        .ContentArea{
+            background-color: #ffffff;
+        }
+        .Content{
+            background-color: #e8eaff;
+        }
+        .EditableContent{
+            color: #000000;
+        }
     }
 }
-
-

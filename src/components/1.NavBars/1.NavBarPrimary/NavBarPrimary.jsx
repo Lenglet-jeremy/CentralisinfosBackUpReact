@@ -7,11 +7,7 @@ const NavBarPrimary = ({ handleTheme }) => {
   const { theme } = useContext(ThemeContext);
   const navItems = [
     { to: "#", label: "Disciplines" },
-    { to: "#", label: "Cursus Universitaires", dropdown: [
-        { to: "#", label: "Développement Web" },
-        { to: "#", label: "Comptabilité et Gestion" }
-      ] 
-    }
+    { to: "#", label: "Cursus Universitaires"}
   ];
 
   const renderDropdown = (dropdown) => (
@@ -26,6 +22,7 @@ const NavBarPrimary = ({ handleTheme }) => {
     <nav className={`${theme} NavBarPrimary`}>
       <ul className="LeftSide">
         <NavLink to="/" className="Logo" />
+        
         {navItems.map((item, index) => (
           <li key={index} className={item.dropdown ? "UniversityCourses" : "Subjects"}>
             <NavLink to={item.to} className="NavLink">{item.label}</NavLink>
