@@ -95,19 +95,19 @@ const HomeMenu = ({ addNewTab }) => {
             <div className="TextFormatToolbar">
                 <button
                     onClick={toggleBold}
-                    className={isBoldActive ? "active" : ""}
+                    className={isBoldActive ? "Active" : ""}
                 >
                     B
                 </button>
                 <button
                     onClick={toggleItalic}
-                    className={isItalicActive ? "active" : ""}
+                    className={isItalicActive ? "Active" : ""}
                 >
                     I
                 </button>
                 <button
                     onClick={toggleUnderline}
-                    className={isUnderlineActive ? "active" : ""}
+                    className={isUnderlineActive ? "Active" : ""}
                 >
                     U
                 </button>

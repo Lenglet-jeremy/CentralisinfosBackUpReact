@@ -65,7 +65,7 @@ const NavBarSecondary = () => {
     // Initialise les widgets ouverts
     setOpenWidgets(prevWidgets => [
       ...prevWidgets,
-      { type: widgetType, x: 100, y: 100, width: 200, height: 300 }
+      { type: widgetType, x: 0, y: 42, width: 200, height: 300 }
     ]);
   };
 
@@ -188,6 +188,7 @@ const NavBarSecondary = () => {
 
 
       {/* Affiche les widgets ouverts */}
+    
       {openWidgets.map((widget, index) => (
         <div key={index}
              className="DragableWidget"

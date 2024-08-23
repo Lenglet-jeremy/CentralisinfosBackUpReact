@@ -43,10 +43,9 @@ export default function TabsBar({
     return (
         <div className="TabBar">
             {tabs.map((tab) => (
-                <div 
-                    key={tab.id} 
-                    className={`Tab ${activeTab === tab.id ? 'active' : ''}`} 
-                    onClick={() => handleTabClick(tab.id)}
+                <div key={tab.id} 
+                     className={`Tab ${activeTab === tab.id ? 'active' : ''}`} 
+                     onClick={() => handleTabClick(tab.id)}
                 >
                     {editingTabId === tab.id ? (
                         // Si l'onglet est en cours d'édition, affiche un champ de saisie

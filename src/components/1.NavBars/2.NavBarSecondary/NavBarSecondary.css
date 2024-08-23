@@ -73,7 +73,6 @@ a:visited {
 }
 
 .LightTheme {
-  border-bottom: 1px solid #000000;
   .WidgetsDropdown{
     background-color: #fff;
     border-color: #000000;
@@ -90,6 +89,9 @@ a:visited {
 
   .WidgetHeader{
     background-color: #FFFFFF;
+    position: sticky;
+    height: 30px;
+    top: 0;
   }
 
   .NoteWidget{
@@ -100,6 +102,20 @@ a:visited {
     background-color: #FFFFFF;
     color: #000000;
   }
+  .CalendarWidget{
+    .DateSelection{
+      border-bottom: 1px solid #000000;
+      color: #000000;
+      button{
+        color: #000000;
+        border: 1px solid #000000;
+      }
+    }
+    button{
+      color: #000000;
+      border: 1px solid #000000;
+    }
+}
 }
 
 .LightTheme .Center button {
@@ -128,7 +144,6 @@ a:visited {
 
 .WidgetsDropdown button {
   display: block;
-  margin-bottom: 10px;
   padding: 10px;
   cursor: pointer;
 }
@@ -142,6 +157,12 @@ a:visited {
   border: 1px solid #ccc;
   border-radius: 8px;
   cursor: grab;
+  overflow: hidden;
+
+  .DaysRow{
+    display: flex;
+    overflow-y: scroll;
+  }
 }
 
 .DragableWidget:active {
@@ -166,8 +187,9 @@ a:visited {
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
