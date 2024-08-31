@@ -23,45 +23,24 @@ const CalendarWidget = () => {
     setNavigateNumberMonths(navigateNumberMonths - 1)
   }
 
-  const stringYear = (year = currentYear, month = 0, day = 0) => {
+  const stringDay = (year = new Date().getFullYear(), month = 1, day = 1) => {
+    
+    const invalid31DayMonths = [4, 6, 9, 11]; // Avril, Juin, Septembre, Novembre
+    
+    if (day === 31 && invalid31DayMonths.includes(month)) {
+        console.log("Date invalide : 31 dans un mois avec seulement 30 jours");
+        return; 
+    }
 
-  }
-
-  const stringMonth = (year = currentYear, month = 0, day = 0) => {
-
-  }
-
-  const stringDay = (year = currentYear, month = 0, day = 0) => {
-    let date = new Date(year, month, day);
-
+    let date = new Date(year, month - 1, day); 
+    const weekDays = ["", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
     let dayOfWeek = date.getDay();
-    dayOfWeek = (dayOfWeek + 6) % 7;
+    
+    dayOfWeek = (dayOfWeek + 6) % 7 + 1;
+    
     
     return weekDays[dayOfWeek];
 }
-
-
-  const stringDate = (year = currentYear, month = 0, day = 0) => {
-
-  }
-
-  const numberYear = (date) => {
-
-  }
-
-  const numberMonth = (date) => {
-
-  }
-
-  const numberDay = (date) => {
-
-  }
-
-  const numberDate = () => {
-
-  }
-
-
   
   return (
   <div className="CalendarWidget">

@@ -65,7 +65,7 @@ const NavBarSecondary = () => {
     // Initialise les widgets ouverts
     setOpenWidgets(prevWidgets => [
       ...prevWidgets,
-      { type: widgetType, x: 0, y: 42, width: 200, height: 300 }
+      { type: widgetType, x: 0, y: 42, width: 300, height: 350 }
     ]);
   };
 
