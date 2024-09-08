@@ -98,17 +98,24 @@ export default function Register() {
 
           <form onSubmit={handleSubmit}>
             <div className="UserId">
+            <div>
+              <p>
+                <div className="UsernameArea">
+                  Pseudo :
+                  <span className="tooltip" title="Il s'agit du nom sous lequel vous apparaîtrez dans vos posts/cours/tutos">
+                    ? 
+                  </span>
+                </div>
+              </p>
+              <input 
+                type="text"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                placeholder="Pseudo"
+              />
+            </div>
               <div>
-                <p>Pseudo : </p>
-                <input 
-                  type="text"
-                  value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Pseudo"
-                />
-              </div>
-              <div>
-                <p>Mail : </p>
+                <p className="Mail">Mail : </p>
                 <input 
                   type="text"
                   value={userMail}
@@ -117,7 +124,7 @@ export default function Register() {
                 />
               </div>
               <div className="PasswordArea">
-                <p>Mot de passe : </p>
+                <p className="MDP">Mot de passe : </p>
                 <input 
                   type="password"
                   value={userPassword}
@@ -136,7 +143,7 @@ export default function Register() {
                   </div>
                 )}
                 <br /><br />
-                <p>Confirmation : </p>
+                <p className="Confirm">Confirmation : </p>
                 <input 
                   type="password"
                   value={confirmPassword}
@@ -149,10 +156,13 @@ export default function Register() {
             <input type="checkbox"
                    checked={checked}
                    onChange={handleChecked} />
-            <label>J'accepte les <NavLink to={'/GCU'}><i>CGUs</i></NavLink></label>
+            <label> J'accepte les <NavLink to={'/GCU'}><i>CGUs</i></NavLink></label>
             {error && <p className="Error">{error}</p>}
             <br /><br />
-            <button type="submit">S'inscrire</button>
+            <div className="NavLink">
+              <NavLink to="/account"> Vous avez déjà un compte ?</NavLink>
+            </div>
+            <button className="SubmitButton" type="submit">S'inscrire</button>
           </form>
         </div>
       </div>

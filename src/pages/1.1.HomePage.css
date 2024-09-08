@@ -16,6 +16,15 @@
     .NavBarSecondary{
         border-top: 1px solid #FFFFFF;
         border-bottom: 1px solid #FFFFFF;
+        
+
+        .NiveauxResponsive{
+            color: #000000;
+        }
+
+        .EpinglesResponsive{
+            color: #000000;
+        }
     }
 }
 
@@ -29,8 +38,41 @@
     p{
         color: #000000;
     }
+    a{
+        color: #000000;
+    }
     
     label{
         color: #000000;
     }
+
+    
+    
+    .RegisterForm{
+        background-color: #FFFFFF;
+        border: 1px solid #000000;
+
+        .UsernameArea{
+            color: #000000;
+        }
+
+        label{
+            color: #000000;
+
+            i{
+                color: #008cff;
+            }
+        }
+        h2{
+            color: #000000;
+        }
+
+        .tooltip{
+            color: #000000;
+            border: 1px solid #000000;
+        }
+        a{
+            color: #008cff;
+        }
+      }
 }
