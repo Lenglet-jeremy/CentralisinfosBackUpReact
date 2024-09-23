@@ -34,12 +34,22 @@ export default function Register() {
     if (!/[A-Z]/.test(password)) {
       conditions.push('Le mot de passe doit contenir au moins une majuscule');
     }
+    if (!/[,.;:!]/.test(password)) {
+      conditions.push('Le mot de passe doit contenir un caractere spéciale');
+    }
     setPasswordConditions(conditions);
     setUserPassword(password);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  
+    // Vérifie si le mot de passe remplit toutes les conditions
+    if (passwordConditions.length > 0) {
+      setError('Le mot de passe ne respecte pas toutes les conditions');
+      return;
+    }
+  
     if (userPassword !== confirmPassword) {
       setError('Les mots de passe ne correspondent pas');
       return;
@@ -48,7 +58,7 @@ export default function Register() {
       setError('Vous devez accepter les conditions générales');
       return;
     }
-
+  
     fetch('http://localhost:5000/api/register', {
       method: 'POST',
       headers: {
@@ -74,15 +84,16 @@ export default function Register() {
     .catch(error => {
       setError(error.message);
       if (error.message === 'Cet e-mail est déjà utilisé.') {
-        setChecked(false); // Décocher la checkbox des CGUs
+        setChecked(false); 
       }
     });
-
+  
     setUserName('');
     setUserMail('');
     setUserPassword('');
     setConfirmPassword('');
   };
+  
 
   return (
     <div className={`${bodyTheme} RegisterPage`}>
@@ -102,7 +113,7 @@ export default function Register() {
               <p>
                 <div className="UsernameArea">
                   Pseudo :
-                  <span className="tooltip" title="Il s'agit du nom sous lequel vous apparaîtrez dans vos posts/cours/tutos">
+                  <span className="tooltip" title="Il s'agit du nom sous lequel vous allez apparaître dans vos posts/cours/tutos">
                     ? 
                   </span>
                 </div>

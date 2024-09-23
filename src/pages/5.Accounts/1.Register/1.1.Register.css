@@ -39,7 +39,7 @@
   }
   
   .tooltip:hover {
-    color: #000;
+    background-color: #383838;
   }
   
   
@@ -57,11 +57,12 @@
 
     input {
         background-color: transparent;
-        color: var(--color-primary);
+        color: #000000;
         border: 1px solid var(--color-primary);
         margin-left: 10px;
     }
   }
+  
   
   
   .RegisterForm h2,
@@ -97,6 +98,13 @@
     .RegisterForm{
       background-color: #FFFFFF;
     }
+
+  }
+
+
+
+  .Error{
+    color: #FF0000;
   }
   
   .RegisterHomepage {
@@ -106,7 +114,7 @@
   }
   
   .PasswordConditions {
-    color: var(--color-white);
+    color: #FF0000;
   }
   
   button {

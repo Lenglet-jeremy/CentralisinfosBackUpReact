@@ -10,6 +10,7 @@
 
 
 }
+
 .DarkBody{
     background-color: #000000;
     color: #FFFFFF;
@@ -19,13 +20,19 @@
         
 
         .NiveauxResponsive{
-            color: #000000;
+            color: #b8e0fa;
         }
 
         .EpinglesResponsive{
-            color: #000000;
+            color: #b8e0fa;
         }
     }
+    .RegisterForm {
+    
+        input {
+            color: #ffffff;
+        }
+      }
 }
 
 .LightBody{
@@ -75,4 +82,10 @@
             color: #008cff;
         }
       }
+      .RegisterForm {
+      
+          input {
+              color: #000000;
+          }
+        }
 }

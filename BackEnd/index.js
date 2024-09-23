@@ -19,23 +19,30 @@ mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
   .catch(err => {console.error('Erreur de connexion à MongoDB :', err);});
 
 const UserSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  RGPD: { type: String, required: true }
-});
+  
+  name: {  
+    type: String, 
+    required: true 
+  },
 
-const CourseSchema = new mongoose.Schema({
-  categorie: { type: String, required: true },
-  nomCours: { type: String, required: true },
-  niveau: { type: String, required: true },
-  prerequis: { type: String },
-  content: { type: String, required: true },
-  urlCours: { type: String, required: true, unique: true }
+  email: { type: String, 
+    required: true, 
+    unique: true 
+  },
+
+  password: { 
+    type: String,
+    required: true
+   },
+
+  RGPD: {
+    type: Boolean, 
+    required: true 
+  }
+
 });
 
 const User = mongoose.model('User', UserSchema);
-const Course = mongoose.model('Course', CourseSchema);
 
 app.get('/api/register', async (req, res) => {
   const users = await User.find();
@@ -86,6 +93,8 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+
+
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -97,6 +106,19 @@ const authenticateToken = (req, res, next) => {
     next();
   });
 };
+
+
+
+const CourseSchema = new mongoose.Schema({
+  categorie: { type: String, required: true },
+  nomCours: { type: String, required: true },
+  niveau: { type: String, required: true },
+  prerequis: { type: String },
+  content: { type: String, required: true },
+  urlCours: { type: String, required: true, unique: true }
+});
+
+const Course = mongoose.model('Course', CourseSchema);
 
 app.post('/api/courses', async (req, res) => {
   const { categorie, nomCours, niveau, prerequis, content, urlCours } = req.body;

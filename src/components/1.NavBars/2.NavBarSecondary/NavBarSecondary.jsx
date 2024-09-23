@@ -172,9 +172,6 @@ const NavBarSecondary = () => {
       <div className="RightSide">
         <ul>
           <li className="EpinglesResponsive">Epingles</li>
-          {/* {pins.map((pin, index) => (
-            <li key={index}><a href="#" className="NavLink">{pin}</a></li>
-          ))} */}
             <li><a href="#" className="NavLink">Epingle 1</a></li>
             <li><a href="#" className="NavLink">Epingle 2</a></li>
             <li><a href="#" className="NavLink">Epingle 3</a></li>
