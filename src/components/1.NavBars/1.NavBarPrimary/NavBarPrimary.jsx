@@ -54,7 +54,7 @@ const NavBarPrimary = ({ handleTheme }) => {
         <NavLink to="#" className="GiftResponsive">
           <img src='../../../../heart.png' alt="Coeur" />
         </NavLink>
-        <li><NavLink to="/Tutos">Tutos</NavLink></li>
+        <li><NavLink to="/Tutos" className="NavLink">Tutos</NavLink></li>
         <li><NavLink to="#" className="NavLink">Forum</NavLink></li>
         <NavLink to="/account">Compte</NavLink>
       </ul>

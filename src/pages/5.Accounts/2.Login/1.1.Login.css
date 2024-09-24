@@ -56,4 +56,20 @@
     justify-content: space-around;
     align-items: center;
   }
+
+}
+
+.LightBody{
+  .LoginForm{
+    background-color: #fff;
+    border : 1px solid #000000
+  }
+
+  a{
+    color: #57a0ff;
+  }
+  input{
+    color: #000000;
+  }
+
 }

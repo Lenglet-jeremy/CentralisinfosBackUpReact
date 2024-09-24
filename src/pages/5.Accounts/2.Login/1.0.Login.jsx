@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./1.1.Login.css";
 import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { ThemeContext } from "../../../ThemeContext";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
 
     const navigate = useNavigate();
 
@@ -39,7 +43,7 @@ export default function Login() {
     };
 
     return (
-        <div className="LoginPage">
+        <div className={`${bodyTheme} LoginPage`}>
             <div className="BodyLogin">
                 <div className="LoginForm">
                     <div className="LoginHomepage">

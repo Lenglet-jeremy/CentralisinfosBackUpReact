@@ -35,9 +35,11 @@
       }
 }
 
+
 .LightBody{
     background-color: #ffffff;
-    color: #FFFFFF;
+    color: #ffffff;
+    
     .NavBarSecondary{
         border-top: 1px solid #000000;
         border-bottom: 1px solid #000000;
@@ -51,6 +53,23 @@
     
     label{
         color: #000000;
+    }
+
+    .GiftResponsive{
+        border: 1px solid #000000;
+    }
+
+    .NiveauxResponsive{
+        color: #000000;
+    }
+    
+    .EpinglesResponsive{
+        color: #000000;
+    }
+
+    .StatusBar{
+        p{color: #FFFFFF;}
+        
     }
 
     
@@ -81,11 +100,8 @@
         a{
             color: #008cff;
         }
-      }
-      .RegisterForm {
-      
           input {
               color: #000000;
           }
-        }
+      }
 }

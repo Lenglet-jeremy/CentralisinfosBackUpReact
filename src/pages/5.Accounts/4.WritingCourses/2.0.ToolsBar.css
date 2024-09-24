@@ -128,5 +128,17 @@
         background-color: #7a7a7a;
         color: white;
     }
+
+    b{
+        color: #5a5a5a;
+    }
+
+    i{
+        color: rgb(79, 120, 255);
+    }
+
+    u{
+        color: #5a5a5a;
+    }
     
 }

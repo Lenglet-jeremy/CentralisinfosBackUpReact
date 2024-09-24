@@ -38,3 +38,12 @@
           }
     }
 }
+
+.LightBody{
+    p{
+        color: #000000;
+    }
+    pre{
+        color: #000000;
+    }
+}
