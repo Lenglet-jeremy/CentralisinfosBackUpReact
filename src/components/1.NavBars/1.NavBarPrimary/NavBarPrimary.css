@@ -259,6 +259,12 @@ p{
     nav ul li{
         display: none;
     }
+    .Discipline{
+        display: none;
+    }
+    .Sixieme{
+        display: none;
+    }
     .SearchBar{
         display: none;
     }

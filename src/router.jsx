@@ -25,6 +25,8 @@ import Register from "./pages/5.Accounts/1.Register/1.0.Register";
 import ExcelInstall from "./pages/3.Tutos/2.OpenPyXl/2.0.ExcelInstall";
 import ExcelCalendInit from "./pages/3.Tutos/2.OpenPyXl/3.0.ExcelCalendInit";
 import PublishedCourse from "./pages/5.Accounts/5.FormulairePublicationCours/2.0.PublishedCourse";
+import Skills from "./pages/6.Skills/0.Skills";
+import Subjects from "./pages/1.Subjects/0.Subjects";
 
 
 export const router = createBrowserRouter([
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
         { path : "privacy", element : <Privacy /> },
 
         { path : "/register", element : <Register/> },
+
+        { path : "/subjects", element : <Subjects/>},
+
+        { path : "/skills", element : <Skills/>},
 
         { path : "account/writingcourses", element : <WritingCourses /> },
         { path : "account/formulairePublicationCours", element : <FormulairePublicationCours /> },

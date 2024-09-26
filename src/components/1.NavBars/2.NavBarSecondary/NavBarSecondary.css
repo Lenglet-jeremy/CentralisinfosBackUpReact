@@ -30,13 +30,14 @@ a:visited {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .LeftSide ul {
   display: flex;
   flex-direction: row;
+  margin-left: 15px;
 }
 
 .LeftSide li {
@@ -79,10 +80,14 @@ a:visited {
       width: 30px;
       height: 30px;
     }
+    .NavBarSecondary{
+      border: 1px solid #FFFFFF;
+    }
 }}
 
 
 .LightTheme {
+
 
   .GiftResponsive{
     border: 1px solid #000000;
@@ -107,6 +112,7 @@ a:visited {
   }
   .DragableWidget{
     background-color: #FFFFFF;
+    border: 1px solid #000000;
   }
   .CalendarWidget{
     background-color: #FFFFFF;
@@ -158,6 +164,8 @@ a:visited {
   border: 1px solid #000000;
 }
 
+
+
 /* Style pour la div des widgets en position absolue */
 .WidgetsDropdown {
   position: absolute;
@@ -188,7 +196,7 @@ a:visited {
   flex-direction: column;
   position: absolute;
   background-color: #000000;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   cursor: grab;
   overflow: hidden;

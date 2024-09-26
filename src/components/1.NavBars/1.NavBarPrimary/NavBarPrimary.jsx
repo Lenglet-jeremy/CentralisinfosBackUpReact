@@ -23,12 +23,8 @@ const NavBarPrimary = ({ handleTheme }) => {
       <ul className="LeftSide">
         <NavLink to="/" className="Logo" />
         
-        {navItems.map((item, index) => (
-          <li key={index} className={item.dropdown ? "UniversityCourses" : "Subjects"}>
-            <NavLink to={item.to} className="NavLink">{item.label}</NavLink>
-            {item.dropdown && renderDropdown(item.dropdown)}
-          </li>
-        ))}
+        <NavLink to={"/subjects"} className={"Discipline"}>Disciplines</NavLink>
+        <li><a href="#">Cursus Universitaire</a></li>
         <label className="DarkLightThemeToggle">
           <input type="checkbox" onChange={handleTheme} />
           <span className="DarkLightThemeSlider"></span>

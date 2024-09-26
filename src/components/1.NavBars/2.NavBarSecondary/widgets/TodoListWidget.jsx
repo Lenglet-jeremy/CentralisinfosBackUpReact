@@ -36,6 +36,7 @@ const TodoListWidget = () => {
     <div className="todo-list-widget">
       <ul>
         {tasks.map(task => (
+          <label>
           <li key={task.id}>
             <input type="checkbox" />
             {task.isEditing ? (
@@ -53,6 +54,7 @@ const TodoListWidget = () => {
               </span>
             )}
           </li>
+          </label>
         ))}
       </ul>
     </div>

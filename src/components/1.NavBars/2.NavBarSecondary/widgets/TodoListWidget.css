@@ -11,4 +11,6 @@
   .todo-list-widget label {
     margin-bottom: 5px;
   }
-  
+   input{
+    color: #000000;
+   }

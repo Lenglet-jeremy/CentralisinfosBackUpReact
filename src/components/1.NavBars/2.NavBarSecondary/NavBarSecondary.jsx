@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../../ThemeContext"; // Importation du contexte du thème
 import "./NavBarSecondary.css";
 import CalendarWidget from "./widgets/CalendarWidget";
@@ -21,11 +21,8 @@ const NavBarSecondary = () => {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [resizeStart, setResizeStart] = useState({ width: 0, height: 0 });
 
-  // const levels = ["Sixième", "Cinquième", "Quatrième", "Troisième", "Seconde", "Première", "Terminale"];
-  // const pins = ["Épingle 1", "Épingle 2", "Épingle 3", "Épingle 4", "Épingle 5"];
-
   useEffect(() => {
-    setIsAuthenticated(!!localStorage.getItem('token')); // Converti la valeur de la clé "token" en un boolean
+    setIsAuthenticated(!!localStorage.getItem('token'));
   }, []);
 
   useEffect(() => {
@@ -42,7 +39,6 @@ const NavBarSecondary = () => {
       document.body.classList.remove("no-select"); 
     }
 
-    // Nettoyage des gestionnaires d'événements lorsqu'on quitte le composant
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
@@ -51,7 +47,6 @@ const NavBarSecondary = () => {
   }, [draggingIndex, resizingIndex]);
 
   const handleLogout = () => {
-    // Déconnecte l'utilisateur en supprimant le token et redirige vers la page d'accueil
     localStorage.removeItem('token');
     setIsAuthenticated(false);
     navigate('/');
@@ -62,7 +57,6 @@ const NavBarSecondary = () => {
   };
 
   const handleWidgetClick = (widgetType) => {
-    // Initialise les widgets ouverts
     setOpenWidgets(prevWidgets => [
       ...prevWidgets,
       { type: widgetType, x: 0, y: 42, width: 300, height: 350 }
@@ -70,7 +64,6 @@ const NavBarSecondary = () => {
   };
 
   const handleMouseLeftClick = (event, index) => {
-    // Initialise le déplacement d'un widget    
     setDraggingIndex(index);
     setDragOffset({
       x: event.clientX - openWidgets[index].x,
@@ -79,9 +72,7 @@ const NavBarSecondary = () => {
   };
 
   const handleMouseMove = (event) => {
-    // Gère le déplacement ou le redimensionnement des widgets pendant que la souris bouge
     if (draggingIndex !== null) {
-      // Si un widget est en cours de déplacement
       const newWidgets = [...openWidgets];
       newWidgets[draggingIndex] = {
         ...newWidgets[draggingIndex],
@@ -90,7 +81,6 @@ const NavBarSecondary = () => {
       };
       setOpenWidgets(newWidgets);
     } else if (resizingIndex !== null) {
-      // Si un widget est en cours de redimensionnement
       const newWidgets = [...openWidgets];
       newWidgets[resizingIndex] = {
         ...newWidgets[resizingIndex],
@@ -102,13 +92,11 @@ const NavBarSecondary = () => {
   };
 
   const handleMouseUp = () => {
-    // Réinitialise les états de déplacement et de redimensionnement
     setDraggingIndex(null);
     setResizingIndex(null);
   };
 
   const handleResizeMouseDown = (event, index) => {
-    // Initialise le redimensionnement d'un widget
     event.stopPropagation();
     setResizingIndex(index);
     setResizeStart({
@@ -120,12 +108,10 @@ const NavBarSecondary = () => {
   };
 
   const closeWidget = (index) => {
-    // Ferme un widget en le retirant de la liste des widgets ouverts
     setOpenWidgets(prevWidgets => prevWidgets.filter((_, i) => i !== index));
   };
 
   const renderWidgetContent = (widgetType) => {
-    // Retourne le contenu approprié en fonction du type de widget
     switch (widgetType) {
       case "Calendrier":
         return <CalendarWidget />;
@@ -142,17 +128,14 @@ const NavBarSecondary = () => {
     <nav className={`${theme} NavBarSecondary`} onMouseUp={handleMouseUp}>
       <div className="LeftSide">
         <ul>
-          <li className="NiveauxResponsive">Niveaux</li>
-          <li><a href="#" className="NavLink">Sixieme</a></li>
+          <NavLink to={"/skills"}>Niveaux</NavLink>
+          <NavLink to="/skills"className={"Sixieme"}>Sixieme</NavLink>
           <li><a href="#" className="NavLink">Cinquieme</a></li>
           <li><a href="#" className="NavLink">Quatrieme</a></li>
           <li><a href="#" className="NavLink">Troisieme</a></li>
           <li><a href="#" className="NavLink">Seconde</a></li>
           <li><a href="#" className="NavLink">Premiere</a></li>
           <li><a href="#" className="NavLink">Terminale</a></li>
-          {/* {levels.map((level, index) => (
-            <li key={index}><a href="#" className="NavLink">{level}</a></li>
-          ))} */}
         </ul>
       </div>
 
@@ -193,19 +176,19 @@ const NavBarSecondary = () => {
              
         >
           <div className="WidgetHeader"
-               onMouseDown={(e) => handleMouseLeftClick(e, index)} // Permet de déplacer le widget
+               onMouseDown={(e) => handleMouseLeftClick(e, index)}
           >
             <h3>{widget.type}</h3>
-            <button className="CloseButton" onClick={() => closeWidget(index)}>X</button> {/* Bouton pour fermer le widget */}
+            <button className="CloseButton" onClick={() => closeWidget(index)}>X</button>
           </div>
 
           <div className="WidgetContent">
-            {renderWidgetContent(widget.type)} {/* Affiche le contenu du widget */}
+            {renderWidgetContent(widget.type)}
           </div>
 
           <div
             className="ResizeHandle"
-            onMouseDown={(e) => handleResizeMouseDown(e, index)} // Permet de redimensionner le widget
+            onMouseDown={(e) => handleResizeMouseDown(e, index)}
           />
         </div>
       ))}

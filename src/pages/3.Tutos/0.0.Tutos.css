@@ -13,6 +13,7 @@
     
     .CoursesArea{
         display : flex;
+        height: calc(100vh - 202px);
     }
 }
 
