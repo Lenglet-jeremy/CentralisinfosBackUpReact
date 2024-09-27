@@ -72,3 +72,12 @@
         }
     }
 }
+
+.DarkTheme{
+    
+
+    .Center button{
+        border: 1px solid #ffffff;
+        border-radius: 10px;
+    }
+}

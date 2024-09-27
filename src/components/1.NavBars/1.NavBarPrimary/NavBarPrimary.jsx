@@ -24,7 +24,8 @@ const NavBarPrimary = ({ handleTheme }) => {
         <NavLink to="/" className="Logo" />
         
         <NavLink to={"/subjects"} className={"Discipline"}>Disciplines</NavLink>
-        <li><a href="#">Cursus Universitaire</a></li>
+        
+        <NavLink to={"/universaryCourses"} className={"universaryCourses"}>Cursus Universitaires</NavLink>
         <label className="DarkLightThemeToggle">
           <input type="checkbox" onChange={handleTheme} />
           <span className="DarkLightThemeSlider"></span>

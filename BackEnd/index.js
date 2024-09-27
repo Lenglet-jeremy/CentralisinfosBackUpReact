@@ -12,11 +12,14 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(process.env.MONGO_URI, process.env.MONGO_OPTIONS)
-  .then(() => { app.listen(port, () => {
-                  console.log(`DB connected on port ${port}`);
-  });
-  })
-  .catch(err => {console.error('Erreur de connexion à MongoDB :', err);});
+        .then(() => {
+
+          app.listen(port, () => {
+            console.log(`DB connected on port ${port}`);
+          });
+          
+        })
+        .catch(err => {console.error('Erreur de connexion à MongoDB :', err);});
 
 const UserSchema = new mongoose.Schema({
   

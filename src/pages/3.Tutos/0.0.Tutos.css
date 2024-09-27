@@ -8,8 +8,8 @@
 .Body{
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     
     .CoursesArea{
         display : flex;
@@ -17,3 +17,18 @@
     }
 }
 
+.Dev{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+
+.LightTheme{
+  
+    .NavBarSecondary{
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+    }
+  }

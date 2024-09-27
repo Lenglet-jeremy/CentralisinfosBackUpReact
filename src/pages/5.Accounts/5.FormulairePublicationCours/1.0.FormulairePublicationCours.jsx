@@ -42,18 +42,20 @@ export default function FormulairePublicationCours() {
                 },
                 body: JSON.stringify(courseData)
             });
-    
+        
             if (!response.ok) {
-                throw new Error('Erreur lors de la sauvegarde du cours');
+                const errorMessage = await response.text(); // Ajoutez cette ligne pour lire la réponse
+                throw new Error(errorMessage);
             }
-    
+        
             const responseData = await response.json();
             console.log('Course saved:', responseData);
-            navigate(`/cours/${responseData._id}`, { state: { courseData: responseData } }); // Passer les données du cours via l'état de navigation
-    
+            navigate(`/cours/${responseData._id}`, { state: { courseData: responseData } });
+        
         } catch (error) {
             console.error('Erreur lors de la sauvegarde du cours:', error);
         }
+        
     };
     
 

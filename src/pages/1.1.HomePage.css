@@ -45,7 +45,6 @@
       }
 }
 
-
 .LightBody{
     background-color: #ffffff;
     color: #ffffff;
@@ -114,4 +113,12 @@
               color: #000000;
           }
       }
+}
+
+@media (max-width : 1250px) {
+    
+  .Sixieme{
+    display: none;
+  }
+    
 }

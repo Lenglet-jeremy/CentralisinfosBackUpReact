@@ -1,0 +1,20 @@
+.SixiemeArea{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.Sixieme{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.Body{
+    display: flex;
+    flex-direction: column;
+  }

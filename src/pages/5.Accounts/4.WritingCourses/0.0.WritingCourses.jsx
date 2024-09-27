@@ -13,8 +13,15 @@ import StatusBar from "./5.0.StatusBar";
 import { ContentContext } from "../../../ContentContext";
 
 import "./0.0.WritingCourses.css";
+import { Navigate } from "react-router-dom";
 
 export default function WritingCourses() {
+    const isAuthenticated = !!localStorage.getItem('token'); // Remplace par ta logique d'auth
+
+  if (!isAuthenticated) {
+    // Si l'utilisateur n'est pas authentifié, redirection vers la page de connexion
+    return <Navigate to="/account" />;
+  }
 
     const { theme, toggleTheme } = useContext(ThemeContext);
     const { setContent } = useContext(ContentContext);

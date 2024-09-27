@@ -15,7 +15,7 @@ export default function Privacy() {
     <div className={`${bodyTheme}`}>
             <NavBarPrimary handleTheme={handleTheme} />
             <NavBarSecondary />
-        <div class="container">
+        <div class="ContainerPrivacy">
             
             
             <h1>Politique de Confidentialité</h1>

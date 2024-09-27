@@ -5,23 +5,27 @@ body {
     margin: 0;
     background-color: #000000;
 }
-.container {
+.ContainerCGU {
     max-width: 800px;
     margin: 20px auto 20px auto;
-    background: #222222;
+    background: #cde3ff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h1, h2, h3 {
-    color: #888888;
+.ContainerCGU{
+    h1, h2, h3 {
+        color: #000000;
+    }
 }
 p {
     margin: 0.5em 0;
 }
-a {
-    color: #007BFF;
-    text-decoration: none;
+.ContainerCGU{
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
 }
 a:hover {
     text-decoration: underline;

@@ -5,7 +5,82 @@
         width: 30px;
         height: 30px;
       }
-      .NavBarSecondary{
-        border: 1px solid #FFFFFF;
-      }
-  }}
+  }
+  .NavBarSecondary{
+    border: 1px solid #FFFFFF;
+  }
+
+}
+
+.SubjectsArea{
+  display: flex;
+  flex-direction: column;
+  gap : 50px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.DarkBody{
+  .Section{
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+  }
+  .Title{
+    border-bottom: 1px solid #FFFFFF;
+  }
+
+  .Content{
+    padding: 50px;
+
+  }
+}
+
+.LightBody{
+  background-color: #ffffff;
+  color: #ffffff;
+  
+  .NavBarSecondary{
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+  }
+
+  .Section{
+    border: 1px solid #000000;
+    border-radius: 30px;
+  }
+  .Title{
+    border-bottom: 1px solid #000000;
+  }
+
+  .Content{
+    padding: 50px;
+    a{
+      color: #1395ff;
+    }
+  }
+}
+
+.Body{
+  display: flex;
+  flex-direction: column;
+}
+
+.CollegeLycee{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.CursusUniversitaires{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.LightTheme{
+  
+  .NavBarSecondary{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+}

@@ -5,16 +5,22 @@
             margin: 0;
             background-color: #000000;
         }
-        .container {
+        .ContainerPrivacy {
             max-width: 800px;
             margin: 20px auto 20px auto;
-            background: #222222;
+            background: #b8ddff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            li{
+                color: #000000;
+            }
+            strong{
+                color: #000000;
+            }
         }
         h1, h2, h3 {
-            color: #888888;
+            color: #000000;
         }
         p {
             margin: 0.5em 0;
@@ -25,4 +31,15 @@
         }
         a:hover {
             text-decoration: underline;
+        }
+
+        .NavBarPrimary{
+            background-color: #FFFFFF;
+        }
+
+        .NavBarSecondary{
+            background-color: #FFFFFF;
+            .LOGO{
+                background-image: url('/LogoCentralisinfos/300ppi/LOGO1.png');
+            }
         }

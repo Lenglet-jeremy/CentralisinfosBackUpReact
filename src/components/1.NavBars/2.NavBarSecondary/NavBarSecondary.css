@@ -87,6 +87,7 @@ a:visited {
 
 
 .LightTheme {
+  
 
 
   .GiftResponsive{
@@ -258,6 +259,10 @@ a:visited {
     margin-left: 30px;
   }
 
+  .NavLink{
+    display: none;
+  }
+
   .Responsive1 {
     display: flex;
     padding: 0 10px;
@@ -269,5 +274,18 @@ a:visited {
 
   .EpinglesResponsive {
     display: flex;
+    color: #003cff;
+  }
+}
+
+
+
+.EpinglesResponsive {
+  color: #003cff;
+}
+
+@media (min-width : 1251px){
+  .Niveaux{
+    display: none;
   }
 }

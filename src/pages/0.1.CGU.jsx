@@ -17,7 +17,7 @@ export default function GCU() {
         <NavBarPrimary handleTheme={handleTheme} />
         <NavBarSecondary />
     
-        <div className="container">
+        <div className="ContainerCGU">
         
             <h1>Conditions Générales d'Utilisation (CGU)</h1>
 

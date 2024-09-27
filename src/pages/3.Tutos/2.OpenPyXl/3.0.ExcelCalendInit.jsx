@@ -8,7 +8,7 @@ import ExcelInitialisation from "./img/initialisation-Excel.webp";
 
 export default function ExcelCalendInit() {
     const { theme, toggleTheme } = useContext(ThemeContext);
-    const [detailsLevel, setDetailsLevel] = useState('élevé'); // état pour gérer le niveau de détails
+    const [detailsLevel, setDetailsLevel] = useState('élevé');
 
     const bodyTheme = theme === "DarkTheme" ? "DarkBody" : "LightBody";
     return (
@@ -25,7 +25,7 @@ export default function ExcelCalendInit() {
                     <h2>Initialisation du projet</h2>
                     
                     {/* Boutons de sélection du niveau de détails */}
-                    <div className="details-buttons">
+                    <div className="DetailsButtons">
                         <button onClick={() => setDetailsLevel('faible')}>détails : faible</button>
                         <button onClick={() => setDetailsLevel('moyen')}>détails : moyen</button>
                         <button onClick={() => setDetailsLevel('élevé')}>détails : élevé</button>

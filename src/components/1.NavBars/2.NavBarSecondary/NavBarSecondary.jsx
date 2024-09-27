@@ -57,8 +57,8 @@ const NavBarSecondary = () => {
   };
 
   const handleWidgetClick = (widgetType) => {
-    setOpenWidgets(prevWidgets => [
-      ...prevWidgets,
+    setOpenWidgets(Widgets => [
+      ...Widgets,
       { type: widgetType, x: 0, y: 42, width: 300, height: 350 }
     ]);
   };
@@ -128,8 +128,8 @@ const NavBarSecondary = () => {
     <nav className={`${theme} NavBarSecondary`} onMouseUp={handleMouseUp}>
       <div className="LeftSide">
         <ul>
-          <NavLink to={"/skills"}>Niveaux</NavLink>
-          <NavLink to="/skills"className={"Sixieme"}>Sixieme</NavLink>
+          <NavLink to="/skills" className="Niveaux">Niveaux</NavLink>
+          <NavLink to="/sixieme"className={"NavLink"}>Sixieme</NavLink>
           <li><a href="#" className="NavLink">Cinquieme</a></li>
           <li><a href="#" className="NavLink">Quatrieme</a></li>
           <li><a href="#" className="NavLink">Troisieme</a></li>
@@ -170,28 +170,32 @@ const NavBarSecondary = () => {
       {/* Affiche les widgets ouverts */}
     
       {openWidgets.map((widget, index) => (
+        // Affichage du Widget
         <div key={index}
              className="DragableWidget"
-             style={{ top: `${widget.y}px`, left: `${widget.x}px`, width: `${widget.width}px`, height: `${widget.height}px` }}
-             
-        >
+             style={{ top: `${widget.y}px`, left: `${widget.x}px`, 
+             width: `${widget.width}px`, height: `${widget.height}px` }}>
+
           <div className="WidgetHeader"
-               onMouseDown={(e) => handleMouseLeftClick(e, index)}
-          >
+               onMouseDown={(e) => handleMouseLeftClick(e, index)}>
+
             <h3>{widget.type}</h3>
             <button className="CloseButton" onClick={() => closeWidget(index)}>X</button>
+
           </div>
 
+          {/* Rendu du contenu de la Widget */}
           <div className="WidgetContent">
             {renderWidgetContent(widget.type)}
           </div>
 
-          <div
-            className="ResizeHandle"
-            onMouseDown={(e) => handleResizeMouseDown(e, index)}
+          {/* Rend le widget redimentionnable */}
+          <div className="ResizeHandle"
+               onMouseDown={(e) => handleResizeMouseDown(e, index)}
           />
         </div>
       ))}
+
     </nav>
   );
 };

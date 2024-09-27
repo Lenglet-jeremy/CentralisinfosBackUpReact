@@ -1,0 +1,35 @@
+
+.Footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px 0;
+    border-top: 1px solid #000;
+}
+
+h4{
+    color: #000000;
+}
+
+
+.ContainerFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.SectionFooter{
+    max-width: 200px;
+    margin-bottom: 20px;
+    div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.CopyrightFooter{
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #000000;
+    padding-top: 10px;
+}
