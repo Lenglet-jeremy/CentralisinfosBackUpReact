@@ -19,10 +19,9 @@
   }
 
   .UsernameArea{
-    p{
-      display: flex;
-      flex-direction: row;
-    }
+    display: flex;
+    flex-direction: row;
+
   }
 
   .tooltip {
@@ -30,17 +29,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
-    background-color: #eaff00;
-    font-size: 20px;
+    color: #ffffff;
+    font-size: 16px;
     border-radius: 50%;
     border: 2px solid #ffffff;
   }
   
   .tooltip:hover {
-    background-color: #ffffff;
+    background-color: #383838;
   }
   
   
@@ -144,4 +143,3 @@
     margin: 0;
     margin-top: 10px;
   }
-  

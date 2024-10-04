@@ -27,9 +27,6 @@ import ExcelCalendInit from "./pages/3.Tutos/2.OpenPyXl/3.0.ExcelCalendInit";
 import PublishedCourse from "./pages/5.Accounts/5.FormulairePublicationCours/2.0.PublishedCourse";
 import Skills from "./pages/6.Skills/0.Skills";
 import Subjects from "./pages/1.Subjects/0.Subjects";
-import Sixieme from "./pages/6.Skills/1.Sixieme/0.Sixieme";
-import UniversaryCourses from "./pages/2.UniversaryCourses/UniversaryCourses";
-
 
 
 export const router = createBrowserRouter([
@@ -49,9 +46,6 @@ export const router = createBrowserRouter([
         { path : "/subjects", element : <Subjects/>},
 
         { path : "/skills", element : <Skills/>},
-        { path : "/sixieme", element : <Sixieme/>},
-
-        { path : "/universaryCourses", element : <UniversaryCourses/>},
 
         { path : "account/writingcourses", element : <WritingCourses /> },
         { path : "account/formulairePublicationCours", element : <FormulairePublicationCours /> },

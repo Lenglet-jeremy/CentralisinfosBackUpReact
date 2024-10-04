@@ -25,8 +25,8 @@ export default function Register() {
   const handlePasswordConditions = (event) => {
     const password = event.target.value;
     const conditions = [];
-    if (password.length < 12) {
-      conditions.push('Le mot de passe doit contenir au moins 12 caractères');
+    if (password.length < 8) {
+      conditions.push('Le mot de passe doit contenir au moins 8 caractères');
     }
     if (!/\d/.test(password)) {
       conditions.push('Le mot de passe doit contenir au moins un chiffre');
@@ -110,14 +110,14 @@ export default function Register() {
           <form onSubmit={handleSubmit}>
             <div className="UserId">
             <div>
-            <div className="UsernameArea">
               <p>
-                Pseudo :
-                <span className="Tooltip" title="Il s'agit du nom sous lequel 
-                vous allez apparaître dans vos posts/cours/tutos">!</span>
+                <div className="UsernameArea">
+                  Pseudo :
+                  <span className="tooltip" title="Il s'agit du nom sous lequel vous allez apparaître dans vos posts/cours/tutos">
+                    ? 
+                  </span>
+                </div>
               </p>
-            </div>
-
               <input 
                 type="text"
                 value={userName}

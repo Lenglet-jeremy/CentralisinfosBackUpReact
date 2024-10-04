@@ -93,13 +93,22 @@ const HomeMenu = ({ addNewTab }) => {
                 </label>
             </div>
             <div className="TextFormatToolbar">
-                <button onClick={toggleBold} className={isBoldActive ? "Active" : ""}>
+                <button
+                    onClick={toggleBold}
+                    className={isBoldActive ? "Active" : ""}
+                >
                     B
                 </button>
-                <button onClick={toggleItalic} className={isItalicActive ? "Active" : ""}>
+                <button
+                    onClick={toggleItalic}
+                    className={isItalicActive ? "Active" : ""}
+                >
                     I
                 </button>
-                <button onClick={toggleUnderline} className={isUnderlineActive ? "Active" : ""}>
+                <button
+                    onClick={toggleUnderline}
+                    className={isUnderlineActive ? "Active" : ""}
+                >
                     U
                 </button>
                 <button onClick={() => handleTextFormatting("bulletList")}>•</button>

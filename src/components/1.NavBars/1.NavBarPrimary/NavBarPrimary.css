@@ -15,10 +15,6 @@ p{
     color: #FFFFFF;
 }
 
-.universaryCourses{
-    margin-left: 15px;
-}
-
 
 .NavBarPrimary {
     position: sticky;
@@ -122,8 +118,6 @@ p{
         flex-direction: row;
         align-items: center;
     }
-    
-
         .SearchBarContainerResponsive{display: none;}
         
     .SearchBar{
@@ -159,10 +153,6 @@ p{
     
 }
 
-}
-
-.Discipline{
-    margin-left: 15px;
 }
 
 .DarkTheme{
